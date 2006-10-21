@@ -210,7 +210,7 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
       </engine>
    </engines>
    <gear>
-      <tailwheel-lock>false</tailwheel-lock>
+      <tailwheel-lock>true</tailwheel-lock>
    </gear>
    <canopy>
       <canopy-pos-norm type="float">1.0</canopy-pos-norm>
