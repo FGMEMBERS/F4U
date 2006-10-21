@@ -33,7 +33,7 @@ October 2006,  Detlef Faber
 
   <submodels> 
     <serviceable type="bool">true</serviceable>
-    <path>Aircraft/corsair/Models/submodels.xml</path>
+    <path>Aircraft/F4U/Models/submodels.xml</path>
   </submodels>
 
   <panel>
@@ -42,7 +42,7 @@ October 2006,  Detlef Faber
   </panel>
 
   <model>
-   <path>Aircraft/corsair/Models/f4u-model.xml</path>
+   <path>Aircraft/F4U/Models/f4u-model.xml</path>
   </model> 
 
   <view n="0">
@@ -337,13 +337,13 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 <!-- Nasal files/scripts -->
   <nasal>
     <f4u>
-      <file>Aircraft/corsair/f4u.nas</file>
+      <file>Aircraft/F4U/f4u.nas</file>
 <!--
       <script>ext_slats();</script>
 -->
     </f4u>
     <pilot-g>
-     <file>Aircraft/corsair/pilot-g.nas</file>
+     <file>Aircraft/F4U/pilot-g.nas</file>
     </pilot-g>
   </nasal>
 

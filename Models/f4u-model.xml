@@ -35,7 +35,7 @@
 
  <!-- panel models -->
  <model>
-  <path>Aircraft/corsair/Models/alt.xml</path>
+  <path>Aircraft/F4U/Models/alt.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>-0.16</y-m>
@@ -44,7 +44,7 @@
  </model>
 
  <model>
-  <path>Aircraft/corsair/Models/p51d-jw-compass.xml</path>
+  <path>Aircraft/F4U/Models/p51d-jw-compass.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>-0.08</y-m>
@@ -53,7 +53,7 @@
  </model>
 
  <model>
-  <path>Aircraft/corsair/Models/p51d-jw-attitude.xml</path>
+  <path>Aircraft/F4U/Models/p51d-jw-attitude.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>0.095</y-m>
@@ -63,7 +63,7 @@
 
 
  <model>
-  <path>Aircraft/corsair/Models/asi.xml</path>
+  <path>Aircraft/F4U/Models/asi.xml</path>
   <offsets>
    <x-m>4.415</x-m>
    <y-m>-0.083</y-m>
@@ -72,7 +72,7 @@
  </model>
 
  <model>
-  <path>Aircraft/corsair/Models/p51d-jw-tach.xml</path>
+  <path>Aircraft/F4U/Models/p51d-jw-tach.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>-0.243</y-m>
@@ -81,7 +81,7 @@
  </model>
 
  <model>
-  <path>Aircraft/corsair/Models/p51d-jw-vsi.xml</path>
+  <path>Aircraft/F4U/Models/p51d-jw-vsi.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>0.083</y-m>
@@ -90,7 +90,7 @@
  </model>
 
  <model>
-  <path>Aircraft/corsair/Models/p51d-jw-turn.xml</path>
+  <path>Aircraft/F4U/Models/p51d-jw-turn.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>-0.0</y-m>
@@ -99,7 +99,7 @@
  </model>
 
  <model>
-  <path>Aircraft/corsair/Models/p51d-jw-remote.xml</path>
+  <path>Aircraft/F4U/Models/p51d-jw-remote.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>-0.0</y-m>
@@ -108,7 +108,7 @@
  </model>
 
  <model>
-  <path>Aircraft/corsair/Models/p51d-jw-carbtemp.xml</path>
+  <path>Aircraft/F4U/Models/p51d-jw-carbtemp.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>0.225</y-m>
@@ -117,7 +117,7 @@
  </model>
 
  <model>
-  <path>Aircraft/corsair/Models/p51d-jw-cooltemp.xml</path>
+  <path>Aircraft/F4U/Models/p51d-jw-cooltemp.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>0.22</y-m>
@@ -126,7 +126,7 @@
  </model>
 
  <model>
-  <path>Aircraft/corsair/Models/p51d-jw-vac.xml</path>
+  <path>Aircraft/F4U/Models/p51d-jw-vac.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>0.23</y-m>
@@ -135,7 +135,7 @@
  </model>
 
  <model>
-  <path>Aircraft/corsair/Models/p51d-jw-clock.xml</path>
+  <path>Aircraft/F4U/Models/p51d-jw-clock.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>0.17</y-m>
@@ -144,7 +144,7 @@
  </model>
 
  <model>
-  <path>Aircraft/corsair/Models/p51d-jw-man.xml</path>
+  <path>Aircraft/F4U/Models/p51d-jw-man.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>-0.165</y-m>
@@ -1890,7 +1890,7 @@
 
 
   <model> 
-   <path>Aircraft/corsair/Models/blackout.xml</path>
+   <path>Aircraft/F4U/Models/blackout.xml</path>
    <name>Blackout</name>
     <offsets> 
      <x-m>4.9</x-m>
