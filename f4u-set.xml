@@ -1,0 +1,355 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+F4U-1 Corsair simulation config.
+
+October 2006,  Detlef Faber
+************************************************************************
+-->
+
+<PropertyList>
+
+ <sim>
+
+  <description>Vought F4U-1 Corsair</description>
+  <author>Detlef Faber</author>
+  
+  <flight-model>yasim</flight-model>
+  <aero>f4u-yasim</aero>
+  <fuel-fraction>0.75</fuel-fraction>
+
+  <systems>
+   <electrical>
+    <path>Aircraft/Generic/generic-electrical.xml</path>
+   </electrical>
+  </systems> 
+ 
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+  <sound>
+   <path>Aircraft/p51d/p51d-sound.xml</path>
+  </sound>
+
+  <submodels> 
+    <serviceable type="bool">true</serviceable>
+    <path>Aircraft/corsair/Models/submodels.xml</path>
+  </submodels>
+
+  <panel>
+  <path>Aircraft/Generic/Panels/generic-vfr-panel.xml</path>
+  <visibility>false</visibility>
+  </panel>
+
+  <model>
+   <path>Aircraft/corsair/Models/f4u-model.xml</path>
+  </model> 
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y" type="double">0.0</x-offset-m>
+    <y-offset-m archive="y" type="double">1.0</y-offset-m>
+    <z-offset-m archive="y" type="double">5.1</z-offset-m>
+    <pitch-offset-deg>-7.5</pitch-offset-deg>
+   </config>
+  </view>
+
+  <view n="1">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="2">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="3">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="4">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+   </config>
+  </view>
+
+ <autopilot>
+   <config>
+     <min-climb-speed-kt type="float">70.0</min-climb-speed-kt>
+     <best-climb-speed-kt type="float">75.0</best-climb-speed-kt>
+     <target-climb-rate-fpm type="float">500.0</target-climb-rate-fpm>
+     <target-descent-rate-fpm type="float">1000.0</target-descent-rate-fpm>
+     <elevator-adj-factor type="float">4000.0</elevator-adj-factor>
+     <integral-contribution type="float">0.01</integral-contribution>
+     <zero-pitch-throttle type="float">0.45</zero-pitch-throttle>
+     <zero-pitch-trim-full-throttle type="float">0.14</zero-pitch-trim-full-throttle>
+   </config>
+ </autopilot>
+
+  <hud>
+   <enable3d>false</enable3d>
+  </hud>  
+
+    <help>
+    <key>
+      <name>Ctrl-l</name>
+      <desc>toggle Tailwheel Lock</desc>
+    </key>
+    <key>
+      <name>C</name>
+      <desc>toggle Canopy</desc>
+    </key>
+    <key>
+      <name>D</name>
+      <desc>toggle Cowlflaps</desc>
+    </key>
+    <key>
+      <name>O/o</name>
+      <desc>extend/retract Tailhook</desc>
+    </key>
+    <text>---Take Off---
+Flaps down 10 degrees. Do not apply too much power. Be prepared to use Aileron against Torque and Rudder to counteract Swing. Keep elevator neutral and wait for the tail to raise. The aircraft will lift off easily. 
+
+---Landing---
+lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Approach is recommended, because visibility on Final is bad. Approach the carrier with 90 kts and hook down.</text>
+  </help>
+
+
+  <weight n="0">
+      <name>Fuselage</name>
+      <tank>1</tank>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>Droptank</name>
+      <lbs>50.0</lbs>
+	<gals>86</gals>
+      </opt>
+      <opt><name>SC250 Bomb</name>
+      <lbs>552.0</lbs>
+      </opt>
+  </weight>
+
+  <weight n="1">
+      <name>left Wing</name>
+      <weight-lb type="double">0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>MG 151 Machine gun</name>
+      <lbs>110.0</lbs>
+      </opt>
+      <opt><name>WGr 21 Rocket</name>
+      <lbs>270.0</lbs>
+      </opt>
+  </weight>
+
+  <weight n="2">
+      <name>right Wing</name>
+      <weight-lb type="double">0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>MG 151 Machine gun</name>
+      <lbs>110.0</lbs>
+      </opt>
+      <opt><name>WGr 21 Rocket</name>
+      <lbs>270.0</lbs>
+      </opt>
+  </weight>
+
+<!-- Logo and Number -->
+  <model>
+    <corsair>
+      <front>logos/skull.rgb</front>
+      <number>logos/224.rgb</number>
+    </corsair>
+  </model>
+ </sim>
+
+ <engines>
+  <engine>
+   <rpm type="double">700</rpm>
+   <!-- fake unimplemented settings -->
+   <fuel-pump-psi type="double">18</fuel-pump-psi>
+   <oil-pressure-psi type="double">75</oil-pressure-psi>
+
+  </engine>
+ </engines>
+
+ <consumables>
+  <fuel>
+   <tank n="0">
+    <name>Internal</name>
+   </tank>
+   <tank n="1">
+    <name>Droptank</name>
+    <selected type="bool">false</selected>
+   </tank>
+  </fuel>
+ </consumables>
+
+ <!-- set prop for the manual "bookmark" arrow on the remote compas -->
+ <instrumentation>
+    <magnetic-compass>
+       <bookmark-heading-deg type="double">43.0</bookmark-heading-deg>
+    </magnetic-compass>
+ </instrumentation>
+
+ <!-- set up control properties for YASim -->
+ <controls>
+   <engines>
+      <engine n="0">
+        <magnetos>3</magnetos>
+        <cowl-flaps-norm type="float">1.0</cowl-flaps-norm>
+        <boost type="double">0.33</boost>
+      </engine>
+   </engines>
+   <gear>
+      <tailwheel-lock>false</tailwheel-lock>
+   </gear>
+   <canopy>
+      <canopy-pos-norm type="float">1.0</canopy-pos-norm>
+   </canopy>
+   <fuel>
+     <switch-position type = "int">0</switch-position>
+     <tank n="0">
+       <fuel_selector>true</fuel_selector>
+     </tank>
+     <tank n="1">
+       <fuel_selector>true</fuel_selector>
+     </tank>  
+   </fuel>
+
+
+ </controls>
+ <!-- Map Keys -->
+ <input>
+    <keyboard>
+      <key n="12"> 
+          <name>Ctrl-L</name>
+          <desc>Toggle Tailwheel Lock.</desc>
+          <binding> 
+            <command>property-toggle</command>
+            <property>controls/gear/tailwheel-lock</property>
+          </binding>
+      </key>
+
+      <key n="67">
+        <name>C</name>
+        <desc>Toggle Canopy</desc>
+        <binding>
+          <command>nasal</command>
+          <script>f4u.toggle_canopy()</script>
+        </binding>
+      </key>
+
+      <key n="68">
+        <name>D</name>
+        <desc>Toggle Cowl Flaps</desc>
+        <binding>
+          <command>nasal</command>
+          <script>f4u.toggle_cowlflaps()</script>
+        </binding>
+      </key>
+
+<!-- map keys for Propeller Control -->
+      <key n="78"> 
+        <name>N</name>
+        <desc>Propeller Coarse.</desc>
+        <binding> 
+          <command>property-adjust</command>
+          <property>/controls/engines/engine/propeller-pitch</property>
+          <step type="double">0.1</step>
+          <min type="double">-1</min>
+          <max type="double">1</max>
+        </binding>
+      </key>
+      <key n="110"> 
+        <name>n</name>
+        <desc>Propeller Fine.</desc>
+        <binding> 
+          <command>property-adjust</command>
+          <property>/controls/engines/engine/propeller-pitch</property>
+          <step type="double">-0.1</step>
+          <min type="double">-1</min>
+          <max type="double">1</max>
+        </binding>
+      </key>
+      <key n="2">
+        <name>Ctrl-B</name>
+        <desc>Toggle engine boost.</desc>
+        <binding>
+          <command>property-adjust</command>
+          <property>/controls/engines/engine[0]/boost</property>
+          <step type="double">0.33</step>
+          <min type="double">0.0</min>
+          <max type="double">1.5</max>
+        </binding>
+        <binding>
+          <condition>
+          <greater-than>
+            <property>/controls/engines/engine[0]/boost</property>
+            <value type="double">1.0001</value>
+          </greater-than>
+          </condition>
+          <command>property-assign</command>
+          <property>/controls/engines/engine[0]/boost</property>
+          <value type="double">0.0</value>
+        </binding>
+        <binding> 	 
+          <condition> 	 
+          <greater-than> 	 
+            <property>/controls/engines/engine[0]/boost</property> 	 
+            <value type="double">0.55</value> 	 
+          </greater-than> 	 
+          </condition> 	 
+          <command>property-assign</command> 	 
+          <property>/controls/engines/engine[0]/boost</property> 	 
+          <value type="double">1.0</value> 	 
+        </binding>
+      </key>
+        <key n="79"> 
+          <name>O</name>
+          <desc>Hook down.</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>controls/gear/tailhook</property>
+            <value type="double">1.0</value>
+          </binding>
+        </key>
+        <key n="111"> 
+          <name>o</name>
+          <desc>Hook Up.</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>controls/gear/tailhook</property>
+            <value type="double">0.0</value>
+          </binding>
+        </key>
+     </keyboard>
+ </input>
+
+<!-- Nasal files/scripts -->
+  <nasal>
+    <f4u>
+      <file>Aircraft/corsair/f4u.nas</file>
+<!--
+      <script>ext_slats();</script>
+-->
+    </f4u>
+    <pilot-g>
+     <file>Aircraft/corsair/pilot-g.nas</file>
+    </pilot-g>
+  </nasal>
+
+
+</PropertyList>
+
+
+
+

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>p51d-jw-attitude.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>plate</object-name>
+  <object-name>bezelinside</object-name>
+  <emission>
+    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    <red>0.5</red>
+    <green>0.25</green>
+    <blue>0.25</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Face</object-name>
+  <property>/instrumentation/attitude-indicator/indicated-roll-deg</property>
+  <center>
+     <x-m>0.00</x-m>
+     <y-m>-0.005</y-m>
+     <z-m>-0.0</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>OnOffKnob</object-name>
+  <property>/instrumentation/attitude-indicator/serviceable</property>
+  <factor>60.0</factor>
+  <center>
+     <x-m>0.00</x-m>
+     <y-m>0.041</y-m>
+     <z-m>-0.045</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>
