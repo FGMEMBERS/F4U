@@ -43,6 +43,11 @@ October 2006,  Detlef Faber
 
   <model>
    <path>Aircraft/F4U/Models/f4u-model.xml</path>
+   <crew>
+      <pilot>
+        <visible>1.0</visible>
+      </pilot>
+   </crew>
   </model> 
 
   <view n="0">
@@ -57,25 +62,31 @@ October 2006,  Detlef Faber
 
   <view n="1">
    <config>
-    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
    </config>
   </view>
 
   <view n="2">
    <config>
-    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
    </config>
   </view>
 
   <view n="3">
    <config>
-    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
    </config>
   </view>
 
   <view n="4">
    <config>
-    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="5">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
    </config>
   </view>
 
@@ -110,8 +121,16 @@ October 2006,  Detlef Faber
       <desc>toggle Cowlflaps</desc>
     </key>
     <key>
-      <name>O/o</name>
+      <name>o/O</name>
       <desc>extend/retract Tailhook</desc>
+    </key>
+    <key>
+      <name>m/M</name>
+      <desc>Master Arm on/off</desc>
+    </key>
+    <key>
+      <name>e</name>
+      <desc>fire MGs</desc>
     </key>
     <text>---Take Off---
 Flaps down 10 degrees. Do not apply too much power. Be prepared to use Aileron against Torque and Rudder to counteract Swing. Keep elevator neutral and wait for the tail to raise. The aircraft will lift off easily. 
@@ -257,29 +276,6 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
         </binding>
       </key>
 
-<!-- map keys for Propeller Control -->
-      <key n="78"> 
-        <name>N</name>
-        <desc>Propeller Coarse.</desc>
-        <binding> 
-          <command>property-adjust</command>
-          <property>/controls/engines/engine/propeller-pitch</property>
-          <step type="double">0.1</step>
-          <min type="double">-1</min>
-          <max type="double">1</max>
-        </binding>
-      </key>
-      <key n="110"> 
-        <name>n</name>
-        <desc>Propeller Fine.</desc>
-        <binding> 
-          <command>property-adjust</command>
-          <property>/controls/engines/engine/propeller-pitch</property>
-          <step type="double">-0.1</step>
-          <min type="double">-1</min>
-          <max type="double">1</max>
-        </binding>
-      </key>
       <key n="2">
         <name>Ctrl-B</name>
         <desc>Toggle engine boost.</desc>
@@ -313,8 +309,8 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
           <value type="double">1.0</value> 	 
         </binding>
       </key>
-        <key n="79"> 
-          <name>O</name>
+        <key n="111"> 
+          <name>o</name>
           <desc>Hook down.</desc>
           <binding> 
             <command>property-assign</command>
@@ -322,8 +318,8 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
             <value type="double">1.0</value>
           </binding>
         </key>
-        <key n="111"> 
-          <name>o</name>
+        <key n="79"> 
+          <name>O</name>
           <desc>Hook Up.</desc>
           <binding> 
             <command>property-assign</command>
@@ -331,6 +327,43 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
             <value type="double">0.0</value>
           </binding>
         </key>
+      <key n="109"> 
+        <name>m</name>
+        <desc>Toggle Master Arm on</desc>
+        <binding> 
+          <command>property-adjust</command>
+          <property>/controls/armament/master-arm</property>
+          <step type="double">1</step>
+          <min type="double">0</min>
+          <max type="double">1</max>
+        </binding>
+      </key>
+      <key n="77"> 
+        <name>M</name>
+        <desc>Toggle Master Arm off</desc>
+        <binding> 
+          <command>property-adjust</command>
+          <property>/controls/armament/master-arm</property>
+          <step type="double">-1</step>
+          <min type="double">0</min>
+          <max type="double">1</max>
+        </binding>
+      </key>
+      <key n="101">
+        <name>e</name>
+        <desc>Fire MG</desc>
+        <binding>
+          <command>nasal</command>
+          <script>f4u.fire_MG()</script>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>nasal</command>
+            <script>f4u.stop_MG()</script>
+          </binding>
+        </mod-up>
+      </key>
+
      </keyboard>
  </input>
 

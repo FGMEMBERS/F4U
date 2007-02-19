@@ -10,7 +10,7 @@ YASim aerodynamic model for a F4U Corsair
 <airplane mass="8981">
 
 <!-- Approach configuration -->
-<approach speed="88" aoa="13">
+<approach speed="95" aoa="13">
   <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
   <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65"/>
   <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.5"/>
@@ -32,7 +32,7 @@ YASim aerodynamic model for a F4U Corsair
 <cockpit x="-4.495" y="0" z="0.689"/>
 
 <fuselage ax="0.0" ay="0.0" az="0.0" bx="-10.2" by="0.0" bz="0.3"
-          width="1.4" taper="0.38" midpoint="0.2"/>
+          width="1.4" taper="0.38" midpoint="0.3" cy="2" cx="2"/>
 
 <!--
 stall aoa not available
@@ -52,22 +52,12 @@ flap drag not available
 -->
 
 
-<!--Stub wing -->
-<wing x="-3.33" y="0.565" z="-0.395" taper="1.0" incidence="0.0"
-      length="1.3" chord="2.7" sweep="0.0" dihedral="-12.0" camber="0.2">
-  <stall aoa="13" width="8" peak="1.5"/>
-  <flap0 start="0.0" end="1.0" lift="1.8" drag="2.7"/>
-  <control-input axis="/controls/flight/flaps" control="FLAP0"/>
-  <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
-  <control-speed control="FLAP0" transition-time="7"/>
-</wing>
-
 <!--Main Wing -->
 <wing x="-3.33" y="0.575" z="-0.84" taper="0.8" incidence="1.0"
       length="5.0" chord="2.7" sweep="-0.1" dihedral="4" camber="0.1">
   <stall aoa="12" width="8" peak="1.5"/>
-  <flap0 start="0.0" end="0.39" lift="1.8" drag="2.7"/>
-  <flap1 start="0.39" end="1.0" lift="1.4" drag="1.1"/>
+  <flap0 start="0.0" end="0.39" lift="1.5" drag="2.6"/>
+  <flap1 start="0.39" end="1.0" lift="1.3" drag="1.1"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
   <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
   <control-speed control="FLAP0" transition-time="7"/>
@@ -75,13 +65,22 @@ flap drag not available
   <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
 </wing>
 
+<!--Stub wing -->
+<mstab x="-3.33" y="0.565" z="-0.395" taper="1.0" incidence="0.0"
+      length="1.3" chord="2.7" sweep="0.0" dihedral="-12.0" camber="0.2">
+  <stall aoa="13" width="8" peak="1.5"/>
+  <flap0 start="0.0" end="1.0" lift="1.5" drag="2.6"/>
+  <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+  <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+  <control-speed control="FLAP0" transition-time="7"/>
+</mstab>
+
 <!--Wing tip -->
 
-<vstab x="-3.25" y="5.77" z="-0.183 " chord="1.47" length="0.4" taper="0.6"
+<mstab x="-3.25" y="5.77" z="-0.183 " chord="1.47" length="0.4" taper="0.6"
          dihedral="10">
    <stall aoa="12" width="15" peak="1.5"/>
-</vstab>
-
+</mstab>
 
 
 <hstab x="-9.28" y="0.22" z="0.46" taper="0.639" 
@@ -137,8 +136,8 @@ flap drag not available
 
 
  <!-- left main -->
-<gear x="-2.3" y="1.9" z="-2.32" compression="0.2" spring="0.7" damp="2.2"
-   dfric="0.05" sfric ="0.10">
+<gear x="-2.3" y="1.9" z="-2.32" compression="0.1" spring="0.7" damp="2.2"
+   dfric="0.7" sfric ="0.40">
   <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -147,8 +146,8 @@ flap drag not available
 </gear>
 
  <!-- right main -->
-<gear x="-2.3" y="-1.9" z="-2.32" compression="0.2" spring="0.7" damp="2.2"
-   dfric="0.05" sfric ="0.10">
+<gear x="-2.3" y="-1.9" z="-2.32" compression="0.1" spring="0.7" damp="2.2"
+   dfric="0.7" sfric ="0.40">
   <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -159,7 +158,7 @@ flap drag not available
 <!-- Tail wheel -->
 
 <gear x="-8.50" y="0" z="-0.9" compression="0.1" castering="1"
-  dfric="0.1" sfric ="0.20">
+  dfric="0.6" sfric ="0.40">
   <control-input axis="/controls/gear/tailwheel-lock" src0="0" src1="1"
                  dst0="1" dst1="0" control="CASTERING"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>

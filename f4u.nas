@@ -24,15 +24,14 @@ toggle_tailhook = func {
 }
 
 
-fire_wgr = func {
-  rcount=getprop("/sim/weight[1]/weight-lb");
-  if(rcount > 20){
-    if(rcount == 270)  {
-     setprop("/controls/armament/wgr", 1)
+fire_MG = func {
+ if (getprop("/controls/armament/master-arm") == 1)  {
+     setprop("/controls/armament/trigger", 1);
      } 
-  setprop("sim/weight[1]/weight-lb", rcount - 250.0);
-  setprop("sim/weight[2]/weight-lb", rcount - 250.0);
-  }
 }
+stop_MG = func {
+     setprop("/controls/armament/trigger", 0); 
+}
+
 
 

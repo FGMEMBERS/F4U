@@ -3,6 +3,7 @@
 <PropertyList>
 
   <!-- left-1 -->
+<!--
   <submodel>
     <name>left-1</name>
     <model>Aircraft/F4U/Models/blaze.ac</model>
@@ -23,7 +24,7 @@
     <cd>0</cd>
     <buoyancy>31</buoyancy>
   </submodel>
-
+-->
   <submodel>
     <name>left-1-tracer</name>
     <model>Aircraft/F4U/Models/tracer.xml</model>
@@ -63,6 +64,7 @@
 	  <life>1</life>
     </submodel>
 <!--left-2-->
+<!--
   <submodel>
     <name>left-2</name>
     <model>Aircraft/F4U/Models/blaze.ac</model>
@@ -103,7 +105,7 @@
     <cd>0.193</cd>
     <eda>0.00136354</eda> 
   </submodel>
-
+-->
 	<submodel> 
       <name>left-2-smoke</name>
       <model>Aircraft/F4U/Models/smoke.xml</model>
@@ -124,6 +126,7 @@
     </submodel>
 
 <!--left-3-->
+<!--
   <submodel>
     <name>left-3</name>
     <model>Aircraft/F4U/Models/blaze.ac</model>
@@ -164,7 +167,7 @@
     <cd>0.193</cd>
     <eda>0.00136354</eda> 
   </submodel>
-
+-->
 	<submodel> 
       <name>left-3-smoke</name>
       <model>Aircraft/F4U/Models/smoke.xml</model>
@@ -185,6 +188,7 @@
     </submodel>
 
   <!-- right-1 -->
+<!--
   <submodel>
     <name>right-1</name>
     <model>Aircraft/F4U/Models/blaze.ac</model>
@@ -205,7 +209,7 @@
     <cd>0</cd>
     <buoyancy>31</buoyancy>
   </submodel>
-
+-->
   <submodel>
     <name>right-1-tracer</name>
     <model>Aircraft/F4U/Models/tracer.xml</model>
@@ -245,6 +249,7 @@
 	  <life>1</life>
     </submodel>
 <!--right-2-->
+<!--
   <submodel>
     <name>right-2</name>
     <model>Aircraft/F4U/Models/blaze.ac</model>
@@ -285,7 +290,7 @@
     <cd>0.193</cd>
     <eda>0.00136354</eda> 
   </submodel>
-
+-->
 	<submodel> 
       <name>right-2-smoke</name>
       <model>Aircraft/F4U/Models/smoke.xml</model>
@@ -306,6 +311,7 @@
     </submodel>
 
 <!--right-3-->
+<!--
   <submodel>
     <name>right-3</name>
     <model>Aircraft/F4U/Models/blaze.ac</model>
@@ -346,9 +352,9 @@
     <cd>0.193</cd>
     <eda>0.00136354</eda> 
   </submodel>
-
+-->
 	<submodel> 
-      <name>rightt-3-smoke</name>
+      <name>right-3-smoke</name>
       <model>Aircraft/F4U/Models/smoke.xml</model>
       <trigger>controls/armament/trigger</trigger>
       <speed>10</speed>

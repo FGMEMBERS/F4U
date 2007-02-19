@@ -208,11 +208,11 @@
 
  <model>
   <name>GUNSIGHT</name>
-  <path>Aircraft/p51d/Models/p51d-jw-gunsight.ac</path>
+  <path>Aircraft/F4U/Models/gunsight.ac</path>
   <offsets>
-   <x-m>3.875</x-m>
+   <x-m>4.55</x-m>
    <y-m>0.0</y-m>
-   <z-m>0.60</z-m>
+   <z-m>0.93</z-m>
   </offsets>
  </model>
 
@@ -273,7 +273,7 @@
   <condition>
    <less-than>
     <property>/engines/engine[0]/rpm</property>
-    <value>1000</value>
+    <value>1051</value>
    </less-than>
   </condition>
  </animation>
@@ -289,13 +289,28 @@
   </condition>
  </animation>
 
+ <animation>
+  <type>select</type>
+  <object-name>noshadow.spdisk</object-name>
+  <condition>
+   <less-than>
+    <property>engines/engine[0]/rpm</property>
+    <value>2001</value>
+   </less-than>
+   <greater-than>
+    <property>engines/engine[0]/rpm</property>
+    <value>1000</value>
+   </greater-than>
+  </condition>
+ </animation>
+
 <animation>
   <type>select</type>
-  <object-name>noshadow.pdisk</object-name>
+  <object-name>noshadow.fpdisk</object-name>
   <condition>
    <greater-than>
     <property>/engines/engine[0]/rpm</property>
-    <value>1000</value>
+    <value>2000</value>
    </greater-than>
   </condition>
  </animation>
@@ -319,7 +334,24 @@
 
 <animation>
   <type>spin</type>
-  <object-name>noshadow.pdisk</object-name>
+  <object-name>noshadow.spdisk</object-name>
+    <property>/engines/engine[0]/rpm</property>
+    <factor>-0.2</factor>
+  <center>
+   <x-m>3.40</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+<animation>
+  <type>spin</type>
+  <object-name>noshadow.fpdisk</object-name>
     <property>/engines/engine[0]/rpm</property>
     <factor>-0.01</factor>
   <center>
@@ -356,7 +388,6 @@
  <animation>
   <type>rotate</type>
   <object-name>gearleg.L</object-name>
-  <object-name>gearleg2.L</object-name>
   <object-name>gearsc1.L</object-name>
   <object-name>gearp2.L</object-name>
   <object-name>gearsc2.L</object-name>
@@ -500,7 +531,7 @@
  </animation>
  <animation>
   <type>rotate</type>
-  <object-name>wheel.L</object-name>
+  <object-name>stopwheel.L</object-name>
   <object-name>gearleg2.L</object-name>
   <property>/gear/gear[0]/position-norm</property>
   <interpolation>
@@ -530,7 +561,8 @@
 
  <animation>
   <type>rotate</type>
-  <object-name>wheel.L</object-name>
+  <object-name>stopwheel.L</object-name>
+  <object-name>gearleg2.L</object-name>
   <property>/gear/gear[0]/position-norm</property>
   <interpolation>
    <entry>
@@ -674,15 +706,17 @@
   <interpolation>
    <entry>
     <ind>0.0</ind>
-    <dep>0.0</dep>
+    <dep>-0.16</dep>
    </entry>
+<!--
    <entry>
     <ind>0.12</ind>
-    <dep>-0.2</dep>
+    <dep>-0.1</dep>
    </entry>
+-->
    <entry>
     <ind>1.00</ind>
-    <dep>-0.26</dep>
+    <dep>0.0</dep>
    </entry>
   </interpolation>
   <axis>
@@ -692,12 +726,48 @@
   </axis>
  </animation>
 
+ <animation>
+  <type>select</type>
+  <object-name>stopwheel.L</object-name>
+  <condition>
+   <equals>
+    <property>/gear/gear[0]/compression-norm</property>
+    <value>0.0</value>
+   </equals>
+  </condition>
+ </animation>
+ <animation>
+  <type>select</type>
+  <object-name>wheel.L</object-name>
+  <condition>
+   <greater-than>
+    <property>/gear/gear[0]/compression-norm</property>
+    <value>0.0</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>wheel.L</object-name>
+  <property>/velocities/uBody-fps</property>
+  <factor>-2.0</factor>
+  <center>
+   <x-m>2.312</x-m>
+   <y-m>-1.939</y-m>
+   <z-m>-2.112</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
 
 <!-- right Maingear -->
  <animation>
   <type>rotate</type>
   <object-name>gearleg.R</object-name>
-  <object-name>gearleg2.R</object-name>
   <object-name>gearp2.R</object-name>
 <!--
   <object-name>gearsc1.R</object-name>
@@ -818,7 +888,7 @@
  </animation>
  <animation>
   <type>rotate</type>
-  <object-name>wheel.R</object-name>
+  <object-name>stopwheel.R</object-name>
   <object-name>gearleg2.R</object-name>
   <property>/gear/gear[1]/position-norm</property>
   <interpolation>
@@ -848,7 +918,8 @@
 
  <animation>
   <type>rotate</type>
-  <object-name>wheel.R</object-name>
+  <object-name>stopwheel.R</object-name>
+  <object-name>gearleg2.R</object-name>
   <property>/gear/gear[1]/position-norm</property>
   <interpolation>
    <entry>
@@ -993,21 +1064,61 @@
   <interpolation>
    <entry>
     <ind>0.0</ind>
-    <dep>0.0</dep>
+    <dep>-0.16</dep>
    </entry>
+<!--
    <entry>
     <ind>0.12</ind>
-    <dep>-0.2</dep>
+    <dep>-0.1</dep>
    </entry>
+-->
    <entry>
     <ind>1.00</ind>
-    <dep>-0.26</dep>
+    <dep>0.0</dep>
    </entry>
   </interpolation>
   <axis>
    <x>0.0</x>
    <y>0.00</y>
    <z>-1.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>stopwheel.R</object-name>
+  <condition>
+   <equals>
+    <property>/gear/gear[1]/compression-norm</property>
+    <value>0.0</value>
+   </equals>
+  </condition>
+ </animation>
+ <animation>
+  <type>select</type>
+  <object-name>wheel.R</object-name>
+  <condition>
+   <greater-than>
+    <property>/gear/gear[1]/compression-norm</property>
+    <value>0.0</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>wheel.R</object-name>
+  <property>/velocities/uBody-fps</property>
+  <factor>-1.0</factor>
+  <center>
+   <x-m>2.312</x-m>
+   <y-m>-1.939</y-m>
+   <z-m>-2.112</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
   </axis>
  </animation>
 
@@ -1915,5 +2026,26 @@
       <object-name>doorlogo.L</object-name>
         <texture-prop>sim/model[1]/corsair/number</texture-prop>
   </animation>
+<!-- Pilot -->
+    <model> 
+      <path>Aircraft/F4U/Models/pilot.xml</path>
+	  <name>pilot</name>
+      <offsets> 
+        <x-m>4.9</x-m>
+        <y-m>0.0</y-m>
+        <z-m>0.3</z-m>
+        <pitch-deg>14</pitch-deg>
+      </offsets>
+    </model>
+ <animation>
+  <type>select</type>
+  <object-name>pilot</object-name>
+  <condition>
+   <greater-than>
+    <property>/sim/current-view/view-number</property>
+    <value>0.0</value>
+   </greater-than>
+  </condition>
+ </animation>
 
 </PropertyList>
