@@ -90,6 +90,12 @@ October 2006,  Detlef Faber
    </config>
   </view>
 
+  <view n="6">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
+   </config>
+  </view>
+
  <autopilot>
    <config>
      <min-climb-speed-kt type="float">70.0</min-climb-speed-kt>
