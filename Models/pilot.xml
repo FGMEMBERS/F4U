@@ -216,26 +216,6 @@
  </animation>
 
 
-<animation>
-  <type>rotate</type>
-  <object-name>leftyoke</object-name>
-  <object-name>leftyokewheel</object-name>
-  <object-name>rightyoke</object-name>
-  <object-name>rightyokewheel</object-name>
-  <property>/controls/flight/elevator</property>
-  <factor>-10</factor>
-  <center>
-   <x-m>2.568</x-m>
-   <y-m>-0.405</y-m>
-   <z-m>-0.298</z-m>
-  </center>
-  <axis>
-   <x>0.0</x>
-   <y>1.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
-
  <animation>
   <type>rotate</type>
   <object-name>hand.R</object-name>

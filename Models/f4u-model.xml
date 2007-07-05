@@ -388,6 +388,7 @@
  <animation>
   <type>rotate</type>
   <object-name>gearleg.L</object-name>
+  <object-name>gearleg2.L</object-name>
   <object-name>gearsc1.L</object-name>
   <object-name>gearp2.L</object-name>
   <object-name>gearsc2.L</object-name>
@@ -532,7 +533,6 @@
  <animation>
   <type>rotate</type>
   <object-name>stopwheel.L</object-name>
-  <object-name>gearleg2.L</object-name>
   <property>/gear/gear[0]/position-norm</property>
   <interpolation>
    <entry>
@@ -701,19 +701,12 @@
  <animation>
   <type>translate</type>
   <object-name>wheel.L</object-name>
-  <object-name>gearleg2.L</object-name>
   <property>/gear/gear[0]/compression-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
     <dep>-0.16</dep>
    </entry>
-<!--
-   <entry>
-    <ind>0.12</ind>
-    <dep>-0.1</dep>
-   </entry>
--->
    <entry>
     <ind>1.00</ind>
     <dep>0.0</dep>
@@ -725,7 +718,26 @@
    <z>-1.0</z>
   </axis>
  </animation>
-
+ <animation>
+  <type>translate</type>
+  <object-name>gearleg2.L</object-name>
+  <property>/gear/gear[0]/compression-norm</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>-0.16</dep>
+   </entry>
+   <entry>
+    <ind>1.00</ind>
+    <dep>0.0</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>0.0</x>
+   <y>0.00</y>
+   <z>-1.0</z>
+  </axis>
+ </animation>
  <animation>
   <type>select</type>
   <object-name>stopwheel.L</object-name>
@@ -768,6 +780,7 @@
  <animation>
   <type>rotate</type>
   <object-name>gearleg.R</object-name>
+  <object-name>gearleg2.R</object-name>
   <object-name>gearp2.R</object-name>
 <!--
   <object-name>gearsc1.R</object-name>
@@ -889,7 +902,6 @@
  <animation>
   <type>rotate</type>
   <object-name>stopwheel.R</object-name>
-  <object-name>gearleg2.R</object-name>
   <property>/gear/gear[1]/position-norm</property>
   <interpolation>
    <entry>
@@ -1059,19 +1071,12 @@
  <animation>
   <type>translate</type>
   <object-name>wheel.R</object-name>
-  <object-name>gearleg2.R</object-name>
   <property>/gear/gear[1]/compression-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
     <dep>-0.16</dep>
    </entry>
-<!--
-   <entry>
-    <ind>0.12</ind>
-    <dep>-0.1</dep>
-   </entry>
--->
    <entry>
     <ind>1.00</ind>
     <dep>0.0</dep>
@@ -1083,7 +1088,26 @@
    <z>-1.0</z>
   </axis>
  </animation>
-
+ <animation>
+  <type>translate</type>
+  <object-name>gearleg2.R</object-name>
+  <property>/gear/gear[1]/compression-norm</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>-0.16</dep>
+   </entry>
+   <entry>
+    <ind>1.00</ind>
+    <dep>0.0</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>0.0</x>
+   <y>0.00</y>
+   <z>-1.0</z>
+  </axis>
+ </animation>
  <animation>
   <type>select</type>
   <object-name>stopwheel.R</object-name>
@@ -1979,7 +2003,6 @@
  <animation>
   <type>translate</type>
   <object-name>canopy</object-name>
-  <object-name>noshadow.canopyglas</object-name>
   <property>/controls/canopy/canopy-pos-norm</property>
   <interpolation>
    <entry>
@@ -2010,22 +2033,7 @@
     </offsets>
   </model>
 
- <animation>
-    <type>material</type>
-      <object-name>cowllogo</object-name>
-        <texture-prop>sim/model[1]/corsair/front</texture-prop>
-  </animation>
 
-  <animation>
-    <type>material</type>
-      <object-name>number</object-name>
-        <texture-prop>sim/model[1]/corsair/number</texture-prop>
-  </animation>
-  <animation>
-    <type>material</type>
-      <object-name>doorlogo.L</object-name>
-        <texture-prop>sim/model[1]/corsair/number</texture-prop>
-  </animation>
 <!-- Pilot -->
     <model> 
       <path>Aircraft/F4U/Models/pilot.xml</path>
@@ -2047,5 +2055,39 @@
    </greater-than>
   </condition>
  </animation>
+    <model> 
+      <path>Aircraft/F4U/Models/pdisk.xml</path>
+	  <name>propdisk</name>
+      <offsets> 
+        <x-m>0.0</x-m>
+        <y-m>0.0</y-m>
+        <z-m>0.0</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/F4U/Models/transparent.xml</path>
+	  <name>transparent</name>
+      <offsets> 
+        <x-m>0.0</x-m>
+        <y-m>0.0</y-m>
+        <z-m>0.0</z-m>
+      </offsets>
+    </model>
+ <animation>
+    <type>material</type>
+      <object-name>cowllogo</object-name>
+        <texture-prop>sim/model[1]/corsair/front</texture-prop>
+  </animation>
+
+  <animation>
+    <type>material</type>
+      <object-name>number</object-name>
+        <texture-prop>sim/model[1]/corsair/number</texture-prop>
+  </animation>
+  <animation>
+    <type>material</type>
+      <object-name>doorlogo.L</object-name>
+        <texture-prop>sim/model[1]/corsair/number</texture-prop>
+  </animation>
 
 </PropertyList>
