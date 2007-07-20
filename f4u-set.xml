@@ -42,7 +42,7 @@ October 2006,  Detlef Faber
   </panel>
 
   <model>
-   <path>Aircraft/F4U/Models/f4u-model.xml</path>
+   <path>Aircraft/F4U/Models/F4U-1.xml</path>
    <crew>
       <pilot>
         <visible>1.0</visible>
