@@ -1968,6 +1968,7 @@
   <model> 
    <path>Aircraft/F4U/Models/blackout.xml</path>
    <name>Blackout</name>
+		<nopreview/>
     <offsets> 
      <x-m>4.9</x-m>
      <y-m>0.0000</y-m>
@@ -1980,6 +1981,7 @@
     <model> 
       <path>Aircraft/F4U/Models/pilot.xml</path>
 	  <name>pilot</name>
+		<nopreview/>
       <offsets> 
         <x-m>4.9</x-m>
         <y-m>0.0</y-m>
@@ -2000,6 +2002,7 @@
     <model> 
       <path>Aircraft/F4U/Models/pdisk.xml</path>
 	  <name>propdisk</name>
+		<nopreview/>
       <offsets> 
         <x-m>0.0</x-m>
         <y-m>0.0</y-m>
