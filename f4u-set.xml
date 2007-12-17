@@ -13,7 +13,7 @@ October 2006,  Detlef Faber
 
   <description>Vought F4U-1 Corsair</description>
   <author>Detlef Faber</author>
-  
+  <status>beta</status>  
   <flight-model>yasim</flight-model>
   <aero>f4u-yasim</aero>
   <fuel-fraction>0.75</fuel-fraction>
