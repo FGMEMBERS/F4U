@@ -1962,21 +1962,6 @@
    <z>-0.0</z>
   </axis>
  </animation>
-
-
-
-  <model> 
-   <path>Aircraft/F4U/Models/blackout.xml</path>
-   <name>Blackout</name>
-		<nopreview/>
-    <offsets> 
-     <x-m>4.9</x-m>
-     <y-m>0.0000</y-m>
-     <z-m>1.0</z-m>
-    </offsets>
-  </model>
-
-
 <!-- Pilot -->
     <model> 
       <path>Aircraft/F4U/Models/pilot.xml</path>
@@ -1999,6 +1984,48 @@
    </greater-than>
   </condition>
  </animation>
+<!-- guns -->
+    <model> 
+      <path>Aircraft/F4U/Models/Effects/blaze.xml</path>
+	  <name>leftblaze</name>
+		<nopreview/>
+      <offsets> 
+        <x-m>1.4</x-m>
+        <y-m>-2.55</y-m>
+        <z-m>-0.7</z-m>
+      </offsets>
+    </model>
+ <animation>
+  <type>select</type>
+  <object-name>leftblaze</object-name>
+  <condition>
+   <greater-than>
+    <property>controls/armament/trigger</property>
+    <value>0.0</value>
+   </greater-than>
+  </condition>
+ </animation>
+    <model> 
+      <path>Aircraft/F4U/Models/Effects/blaze.xml</path>
+	  <name>rightblaze</name>
+		<nopreview/>
+      <offsets> 
+        <x-m>1.4</x-m>
+        <y-m>2.55</y-m>
+        <z-m>-0.7</z-m>
+      </offsets>
+    </model>
+ <animation>
+  <type>select</type>
+  <object-name>rightblaze</object-name>
+  <condition>
+   <greater-than>
+    <property>controls/armament/trigger</property>
+    <value>0.0</value>
+   </greater-than>
+  </condition>
+ </animation>
+
     <model> 
       <path>Aircraft/F4U/Models/pdisk.xml</path>
 	  <name>propdisk</name>

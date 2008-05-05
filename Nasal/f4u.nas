@@ -24,14 +24,5 @@ toggle_tailhook = func {
 }
 
 
-fire_MG = func {
- if (getprop("/controls/armament/master-arm") == 1)  {
-     setprop("/controls/armament/trigger", 1);
-     } 
-}
-stop_MG = func {
-     setprop("/controls/armament/trigger", 0); 
-}
-
 
 
