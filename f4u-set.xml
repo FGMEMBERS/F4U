@@ -48,6 +48,15 @@ October 2006,  Detlef Faber
         <visible>1.0</visible>
       </pilot>
    </crew>
+    <corsair>
+      <front>logos/skull.rgb</front>
+      <number>logos/224.rgb</number>
+    </corsair>
+		<aircraft>
+			<impact>
+				<splash type="bool">false</splash>
+			</impact>
+		</aircraft>
   </model> 
 
   <view n="0">
@@ -187,13 +196,6 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
       </opt>
   </weight>
 
-<!-- Logo and Number -->
-  <model>
-    <corsair>
-      <front>logos/skull.rgb</front>
-      <number>logos/224.rgb</number>
-    </corsair>
-  </model>
  </sim>
 
  <engines>
@@ -333,8 +335,8 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
             <value type="double">0.0</value>
           </binding>
         </key>
-      <key n="109"> 
-        <name>m</name>
+      <key n="100"> 
+        <name>d</name>
         <desc>Toggle Master Arm on</desc>
         <binding> 
           <command>property-adjust</command>
@@ -344,8 +346,8 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
           <max type="double">1</max>
         </binding>
       </key>
-      <key n="77"> 
-        <name>M</name>
+      <key n="68"> 
+        <name>D</name>
         <desc>Toggle Master Arm off</desc>
         <binding> 
           <command>property-adjust</command>
@@ -360,12 +362,12 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
         <desc>Fire MG</desc>
         <binding>
           <command>nasal</command>
-          <script>f4u.fire_MG()</script>
+          <script>weapons.fire_MG()</script>
         </binding>
         <mod-up>
           <binding>
             <command>nasal</command>
-            <script>f4u.stop_MG()</script>
+            <script>weapons.stop_MG()</script>
           </binding>
         </mod-up>
       </key>
@@ -376,14 +378,11 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 <!-- Nasal files/scripts -->
   <nasal>
     <f4u>
-      <file>Aircraft/F4U/f4u.nas</file>
-<!--
-      <script>ext_slats();</script>
--->
+      <file>Aircraft/F4U/Nasal/f4u.nas</file>
     </f4u>
-    <pilot-g>
-     <file>Aircraft/F4U/pilot-g.nas</file>
-    </pilot-g>
+		<weapons>
+			<file>Aircraft/F4U/Nasal/weapons.nas</file>
+		</weapons>
   </nasal>
 
 
