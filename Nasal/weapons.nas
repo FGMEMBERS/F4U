@@ -1,5 +1,5 @@
-  setlistener("sim/model/aircraft/impact/gun", func {
-    var impact = cmdarg().getValue();
+  setlistener("sim/model/aircraft/impact/gun", func(n) {
+    var impact = n.getValue();
     var solid = getprop(impact ~ "/material/solid");
     
     if (solid) {
