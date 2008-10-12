@@ -4,7 +4,7 @@ MATERIAL "glass" rgb 0.1 0.1 0.1 amb 0.5 0.5 0.5 emis 0 0 0 spec 1 1 1 shi 32 tr
 OBJECT world
 kids 2
 OBJECT poly
-name "noshadow.canopyglas"
+name "canopyglas"
 data 10
 Circle.026
 crease 30
@@ -536,7 +536,7 @@ refs 3
 51 0 0
 kids 0
 OBJECT poly
-name "noshadow.frontglass"
+name "frontglass"
 data 10
 Circle.027
 crease 30

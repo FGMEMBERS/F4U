@@ -1,0 +1,220 @@
+<PropertyList>
+ <panel>
+  <path>Aircraft/p51d/Models/p51d-jw-panel-hotspots.xml</path>
+  <bottom-left>
+   <x-m>4.41</x-m>
+   <y-m>-0.30</y-m>
+   <z-m>-0.80</z-m>
+  </bottom-left>
+  <bottom-right>
+   <x-m>3.705</x-m>
+   <y-m> 0.30</y-m>
+   <z-m>-0.30</z-m>
+  </bottom-right>
+  <top-left>
+   <x-m>3.705</x-m>
+   <y-m>-0.30</y-m>
+   <z-m> 0.62</z-m>
+  </top-left>
+ </panel>
+
+ <!-- panel models -->
+ <model>
+  <path>Aircraft/F4U/Models/alt.xml</path>
+  <offsets>
+   <x-m>4.41</x-m>
+   <y-m>-0.16</y-m>
+   <z-m>0.75</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/F4U/Models/p51d-jw-compass.xml</path>
+  <offsets>
+   <x-m>4.41</x-m>
+   <y-m>-0.08</y-m>
+   <z-m>0.75</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/F4U/Models/p51d-jw-attitude.xml</path>
+  <offsets>
+   <x-m>4.41</x-m>
+   <y-m>0.095</y-m>
+   <z-m>0.755</z-m>
+  </offsets>
+ </model>
+
+
+ <model>
+  <path>Aircraft/F4U/Models/asi.xml</path>
+  <offsets>
+   <x-m>4.415</x-m>
+   <y-m>-0.083</y-m>
+   <z-m>0.64</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/F4U/Models/p51d-jw-tach.xml</path>
+  <offsets>
+   <x-m>4.41</x-m>
+   <y-m>-0.243</y-m>
+   <z-m>0.68</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/F4U/Models/p51d-jw-vsi.xml</path>
+  <offsets>
+   <x-m>4.41</x-m>
+   <y-m>0.083</y-m>
+   <z-m>0.64</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/F4U/Models/p51d-jw-turn.xml</path>
+  <offsets>
+   <x-m>4.41</x-m>
+   <y-m>-0.0</y-m>
+   <z-m>0.64</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/F4U/Models/p51d-jw-remote.xml</path>
+  <offsets>
+   <x-m>4.41</x-m>
+   <y-m>-0.0</y-m>
+   <z-m>0.735</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/F4U/Models/p51d-jw-carbtemp.xml</path>
+  <offsets>
+   <x-m>4.41</x-m>
+   <y-m>0.225</y-m>
+   <z-m>0.66</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/F4U/Models/p51d-jw-cooltemp.xml</path>
+  <offsets>
+   <x-m>4.41</x-m>
+   <y-m>0.22</y-m>
+   <z-m>0.6</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/F4U/Models/p51d-jw-vac.xml</path>
+  <offsets>
+   <x-m>4.41</x-m>
+   <y-m>0.23</y-m>
+   <z-m>0.72</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/F4U/Models/p51d-jw-clock.xml</path>
+  <offsets>
+   <x-m>4.41</x-m>
+   <y-m>0.17</y-m>
+   <z-m>0.75</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/F4U/Models/p51d-jw-man.xml</path>
+  <offsets>
+   <x-m>4.41</x-m>
+   <y-m>-0.165</y-m>
+   <z-m>0.66</z-m>
+  </offsets>
+ </model>
+
+
+ <model>
+  <name>IGNITION</name>
+  <path>Aircraft/p51d/Models/p51d-jw-ignition.xml</path>
+  <offsets>
+   <x-m>4.435</x-m>
+   <y-m>-0.10</y-m>
+   <z-m>0.18</z-m>
+  </offsets>
+ </model>
+
+ <!-- non-panel models -->
+
+ <model>
+  <name>TRIMKNOBAILERON</name>
+  <path>Aircraft/p51d/Models/p51d-jw-trimknobaileron.xml</path>
+  <offsets>
+   <x-m>3.955</x-m>
+   <y-m>-0.34</y-m>
+   <z-m>0.067</z-m>
+   <pitch-deg>15.0</pitch-deg>
+  </offsets>
+ </model>
+
+ <model>
+  <name>TRIMKNOBRUDDER</name>
+  <path>Aircraft/p51d/Models/p51d-jw-trimknobrudder.xml</path>
+  <offsets>
+   <x-m>4.085</x-m>
+   <y-m>-0.34</y-m>
+   <z-m>0.047</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>TRIMWHEELELEVATOR</name>
+  <path>Aircraft/p51d/Models/p51d-jw-trimwheelelevator.xml</path>
+  <offsets>
+   <x-m>3.995</x-m>
+   <y-m>-0.30</y-m>
+   <z-m>-0.067</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>THROTTLE</name>
+  <path>Aircraft/p51d/Models/p51d-jw-throttle.xml</path>
+  <offsets>
+   <x-m>3.895</x-m>
+   <y-m>-0.32</y-m>
+   <z-m>0.22</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>GUNSIGHT</name>
+  <path>Aircraft/F4U/Models/gunsight.ac</path>
+  <offsets>
+   <x-m>4.55</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.93</z-m>
+  </offsets>
+ </model>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ReostatKnob</object-name>
+  <property>controls/lighting/instruments-norm</property>
+  <factor>-270</factor>
+  <center>
+   <x-m>3.97</x-m>
+   <y-m>0.085</y-m>
+   <z-m>0.068</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+</PropertyList>

@@ -8,265 +8,11 @@
  <offsets>
    <z-m>0.0</z-m>
  </offsets>
-<!--
+
 	<model>
-		<path>Aircraft/bf109/Models/equipment.xml</path>
+		<path>Aircraft/F4U/Models/cockpit.xml</path>
 	</model>
--->
- <!-- Front hotspots -->
- <panel>
-  <path>Aircraft/p51d/Models/p51d-jw-panel-hotspots.xml</path>
-  <bottom-left>
-   <x-m>4.41</x-m>
-   <y-m>-0.30</y-m>
-   <z-m>-0.80</z-m>
-  </bottom-left>
-  <bottom-right>
-   <x-m>3.705</x-m>
-   <y-m> 0.30</y-m>
-   <z-m>-0.30</z-m>
-  </bottom-right>
-  <top-left>
-   <x-m>3.705</x-m>
-   <y-m>-0.30</y-m>
-   <z-m> 0.62</z-m>
-  </top-left>
- </panel>
 
- <!-- panel models -->
- <model>
-  <path>Aircraft/F4U/Models/alt.xml</path>
-  <offsets>
-   <x-m>4.41</x-m>
-   <y-m>-0.16</y-m>
-   <z-m>0.75</z-m>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/F4U/Models/p51d-jw-compass.xml</path>
-  <offsets>
-   <x-m>4.41</x-m>
-   <y-m>-0.08</y-m>
-   <z-m>0.75</z-m>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/F4U/Models/p51d-jw-attitude.xml</path>
-  <offsets>
-   <x-m>4.41</x-m>
-   <y-m>0.095</y-m>
-   <z-m>0.755</z-m>
-  </offsets>
- </model>
-
-
- <model>
-  <path>Aircraft/F4U/Models/asi.xml</path>
-  <offsets>
-   <x-m>4.415</x-m>
-   <y-m>-0.083</y-m>
-   <z-m>0.64</z-m>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/F4U/Models/p51d-jw-tach.xml</path>
-  <offsets>
-   <x-m>4.41</x-m>
-   <y-m>-0.243</y-m>
-   <z-m>0.68</z-m>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/F4U/Models/p51d-jw-vsi.xml</path>
-  <offsets>
-   <x-m>4.41</x-m>
-   <y-m>0.083</y-m>
-   <z-m>0.64</z-m>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/F4U/Models/p51d-jw-turn.xml</path>
-  <offsets>
-   <x-m>4.41</x-m>
-   <y-m>-0.0</y-m>
-   <z-m>0.64</z-m>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/F4U/Models/p51d-jw-remote.xml</path>
-  <offsets>
-   <x-m>4.41</x-m>
-   <y-m>-0.0</y-m>
-   <z-m>0.735</z-m>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/F4U/Models/p51d-jw-carbtemp.xml</path>
-  <offsets>
-   <x-m>4.41</x-m>
-   <y-m>0.225</y-m>
-   <z-m>0.66</z-m>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/F4U/Models/p51d-jw-cooltemp.xml</path>
-  <offsets>
-   <x-m>4.41</x-m>
-   <y-m>0.22</y-m>
-   <z-m>0.6</z-m>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/F4U/Models/p51d-jw-vac.xml</path>
-  <offsets>
-   <x-m>4.41</x-m>
-   <y-m>0.23</y-m>
-   <z-m>0.72</z-m>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/F4U/Models/p51d-jw-clock.xml</path>
-  <offsets>
-   <x-m>4.41</x-m>
-   <y-m>0.17</y-m>
-   <z-m>0.75</z-m>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/F4U/Models/p51d-jw-man.xml</path>
-  <offsets>
-   <x-m>4.41</x-m>
-   <y-m>-0.165</y-m>
-   <z-m>0.66</z-m>
-  </offsets>
- </model>
-
-
- <model>
-  <name>IGNITION</name>
-  <path>Aircraft/p51d/Models/p51d-jw-ignition.xml</path>
-  <offsets>
-   <x-m>4.435</x-m>
-   <y-m>-0.10</y-m>
-   <z-m>0.18</z-m>
-  </offsets>
- </model>
-
- <!-- non-panel models -->
-
- <model>
-  <name>TRIMKNOBAILERON</name>
-  <path>Aircraft/p51d/Models/p51d-jw-trimknobaileron.xml</path>
-  <offsets>
-   <x-m>3.955</x-m>
-   <y-m>-0.34</y-m>
-   <z-m>0.067</z-m>
-   <pitch-deg>15.0</pitch-deg>
-  </offsets>
- </model>
-
- <model>
-  <name>TRIMKNOBRUDDER</name>
-  <path>Aircraft/p51d/Models/p51d-jw-trimknobrudder.xml</path>
-  <offsets>
-   <x-m>4.085</x-m>
-   <y-m>-0.34</y-m>
-   <z-m>0.047</z-m>
-  </offsets>
- </model>
-
- <model>
-  <name>TRIMWHEELELEVATOR</name>
-  <path>Aircraft/p51d/Models/p51d-jw-trimwheelelevator.xml</path>
-  <offsets>
-   <x-m>3.995</x-m>
-   <y-m>-0.30</y-m>
-   <z-m>-0.067</z-m>
-  </offsets>
- </model>
-
- <model>
-  <name>THROTTLE</name>
-  <path>Aircraft/p51d/Models/p51d-jw-throttle.xml</path>
-  <offsets>
-   <x-m>3.895</x-m>
-   <y-m>-0.32</y-m>
-   <z-m>0.22</z-m>
-  </offsets>
- </model>
-
- <model>
-  <name>GUNSIGHT</name>
-  <path>Aircraft/F4U/Models/gunsight.ac</path>
-  <offsets>
-   <x-m>4.55</x-m>
-   <y-m>0.0</y-m>
-   <z-m>0.93</z-m>
-  </offsets>
- </model>
-
- <animation>
-  <type>rotate</type>
-  <object-name>ReostatKnob</object-name>
-  <property>controls/lighting/instruments-norm</property>
-  <factor>-270</factor>
-  <center>
-   <x-m>3.97</x-m>
-   <y-m>0.085</y-m>
-   <z-m>0.068</z-m>
-  </center>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
-<!--
- <animation>
-  <type>rotate</type>
-  <object-name>Stick</object-name>
-  <property>controls/flight/elevator</property>
-  <factor>-10</factor>
-  <center>
-   <x-m>3.94</x-m>
-   <y-m>0.00</y-m>
-   <z-m>-0.22</z-m>
-  </center>
-  <axis>
-   <x>0.0</x>
-   <y>1.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>rotate</type>
-  <object-name>Stick</object-name>
-  <property>controls/flight/aileron</property>
-  <factor>-10</factor>
-  <center>
-   <x-m>3.94</x-m>
-   <y-m>0.00</y-m>
-   <z-m>-0.22</z-m>
-  </center>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
--->
  <animation>
   <type>select</type>
   <object-name>prop</object-name>
@@ -1945,7 +1691,7 @@
  <animation>
   <type>translate</type>
   <object-name>canopy</object-name>
-  <property>controls/canopy/canopy-pos-norm</property>
+  <property>controls/canopy/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -1990,9 +1736,10 @@
 	  <name>leftblaze</name>
 		<nopreview/>
       <offsets> 
-        <x-m>1.4</x-m>
+        <x-m>2.3</x-m>
         <y-m>-2.55</y-m>
         <z-m>-0.7</z-m>
+				<roll-deg>-8</roll-deg>
       </offsets>
     </model>
  <animation>
@@ -2010,9 +1757,10 @@
 	  <name>rightblaze</name>
 		<nopreview/>
       <offsets> 
-        <x-m>1.4</x-m>
+        <x-m>2.3</x-m>
         <y-m>2.55</y-m>
         <z-m>-0.7</z-m>
+				<roll-deg>8</roll-deg>
       </offsets>
     </model>
  <animation>
@@ -2060,6 +1808,67 @@
     <type>material</type>
       <object-name>doorlogo.L</object-name>
         <texture-prop>sim/model[1]/corsair/number</texture-prop>
+  </animation>
+  <animation>
+    <type>material</type>
+    <object-name>fuselage</object-name>
+    <object-name>cowling</object-name>
+    <object-name>verstab</object-name>
+    <object-name>rudder</object-name>
+    <object-name>frontcanopy</object-name>
+    <object-name>canopy</object-name>
+    <object-name>centerwing</object-name>
+    <object-name>centerwing.001</object-name>
+    <object-name>flap1.L</object-name>
+    <object-name>flap2.L</object-name>
+    <object-name>geardoorright.L</object-name>
+    <object-name>geardoorleft.L</object-name>
+    <object-name>geardoorfront.L</object-name>
+    <object-name>oilcoolflap.L</object-name>
+    <object-name>cowlflap1.L</object-name>
+    <object-name>cowlflap2.L</object-name>
+    <object-name>cowlflap3.L</object-name>
+    <object-name>cowlflap4.L</object-name>
+    <object-name>cowlflap5.L</object-name>
+    <object-name>tailwheeldoor.L</object-name>
+    <object-name>flap1.R</object-name>
+    <object-name>flap2.R</object-name>
+    <object-name>geardoorright.R</object-name>
+    <object-name>geardoorleft.R</object-name>
+    <object-name>geardoorfront.R</object-name>
+    <object-name>oilcoolflap.R</object-name>
+    <object-name>cowlflap1.R</object-name>
+    <object-name>cowlflap2.R</object-name>
+    <object-name>cowlflap3.R</object-name>
+    <object-name>cowlflap4.R</object-name>
+    <object-name>cowlflap5.R</object-name>
+    <object-name>tailwheeldoor.R</object-name>
+    <object-name>cowlflap6</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>f4u-1.png</texture>
+  </animation>
+  <animation>
+    <type>material</type>
+    <object-name>outerwing.L</object-name>
+    <object-name>aileron.L</object-name>
+    <object-name>flap3.L</object-name>
+    <object-name>horstabl</object-name>
+    <object-name>elevator.L</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture-left</texture-prop>
+    <texture>f4u-2.png</texture>
+  </animation>
+  <animation>
+    <type>material</type>
+    <object-name>outerwing.R</object-name>
+    <object-name>aileron.R</object-name>
+    <object-name>flap3.R</object-name>
+    <object-name>horstabr</object-name>
+    <object-name>elevator.R</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture-right</texture-prop>
+    <texture>f4u-3.png</texture>
   </animation>
 
 </PropertyList>

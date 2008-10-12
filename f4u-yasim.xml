@@ -3,15 +3,14 @@
 <!--
 ************************************************************************
 YASim aerodynamic model for a F4U Corsair
-
 -->
 
 <!-- Weight of everything but fuel  (7010 empty) -->
 <airplane mass="8981">
 
 <!-- Approach configuration -->
-<approach speed="95" aoa="13">
-  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
+<approach speed="70" aoa="11">
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.6"/>
   <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65"/>
   <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.5"/>
   <control-setting axis="/controls/flight/flaps" value="1.0"/>
@@ -19,11 +18,11 @@ YASim aerodynamic model for a F4U Corsair
 </approach>
 
 <!-- Cruise configuration -->
-<cruise speed="170" alt="20000">
-  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.6"/>
+<cruise speed="320" alt="22600">
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
   <control-setting axis="/controls/engines/engine[0]/mixture" value="1.00"/>
   <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
-  <control-setting axis="/controls/engines/engine[0]/boost" value="0.33"/>
+  <control-setting axis="/controls/engines/engine[0]/boost" value="1.0"/>
   <control-setting axis="/controls/flight/flaps" value="0.0"/>
   <control-setting axis="/controls/gear/gear-down" value="0"/>
 </cruise>
@@ -34,28 +33,11 @@ YASim aerodynamic model for a F4U Corsair
 <fuselage ax="0.0" ay="0.0" az="0.0" bx="-10.2" by="0.0" bz="0.3"
           width="1.4" taper="0.38" midpoint="0.3" cy="2" cx="2"/>
 
-<!--
-stall aoa not available
-flap drag not available
-
-<wing x="-3.96" y="0.55" z="-0.60" taper="0.481" incidence="1.0"
-      length="5.5" chord="2.7" sweep="-3.5" dihedral="5" camber="0.1">
-  <stall aoa="18" width="4" peak="1.5"/>
-  <flap0 start="0.024" end="0.543" lift="1.2" drag="1.8"/>
-  <flap1 start="0.543" end="0.945" lift="1.3" drag="1.4"/>
-  <control-input axis="/controls/flight/flaps" control="FLAP0"/>
-  <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
-  <control-speed control="FLAP0" transition-time="5"/>
-  <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
-  <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
-</wing>
--->
-
 
 <!--Main Wing -->
-<wing x="-3.33" y="0.575" z="-0.84" taper="0.8" incidence="1.0"
-      length="5.0" chord="2.7" sweep="-0.1" dihedral="4" camber="0.1">
-  <stall aoa="12" width="8" peak="1.5"/>
+<wing x="-3.33" y="0.575" z="-0.84" taper="0.8" incidence="3.0" twist="1.0"
+      length="5.0" chord="2.7" sweep="-0.1" dihedral="4" camber="0.0">
+  <stall aoa="12" width="12" peak="1.5"/>
   <flap0 start="0.0" end="0.39" lift="1.5" drag="2.6"/>
   <flap1 start="0.39" end="1.0" lift="1.3" drag="1.1"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
@@ -66,9 +48,9 @@ flap drag not available
 </wing>
 
 <!--Stub wing -->
-<mstab x="-3.33" y="0.565" z="-0.395" taper="1.0" incidence="0.0"
-      length="1.3" chord="2.7" sweep="0.0" dihedral="-12.0" camber="0.2">
-  <stall aoa="13" width="8" peak="1.5"/>
+<mstab x="-3.33" y="0.565" z="-0.395" taper="1.0" incidence="1.0"
+      length="1.3" chord="2.7" sweep="0.0" dihedral="-12.0" camber="0.0">
+  <stall aoa="13" width="15" peak="1.5"/>
   <flap0 start="0.0" end="1.0" lift="1.5" drag="2.6"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
   <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
@@ -79,49 +61,43 @@ flap drag not available
 
 <mstab x="-3.25" y="5.77" z="-0.183 " chord="1.47" length="0.4" taper="0.6"
          dihedral="10">
-   <stall aoa="12" width="15" peak="1.5"/>
+   <stall aoa="14" width="15" peak="1.5"/>
 </mstab>
 
 
 <hstab x="-9.28" y="0.22" z="0.46" taper="0.639" 
        length="2.5" chord="1.43" sweep="0" incidence="2.0">
   <stall aoa="17" width="16" peak="1.5"/>
-  <flap0 start="0.0" end="1.1" lift="1.6" drag="1.3"/>
+  <flap0 start="0.0" end="1.1" lift="1.8" drag="1.9"/>
   <control-input axis="/controls/flight/elevator" control="FLAP0"/>
   <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
   <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
 </hstab>
 
 <!-- rudder has to be able to counteract aileron drag -->
-<vstab x="-8.30" y="0" z="-0.6" taper="0.432" effectiveness="3.5"
-       length="1.6" chord="1.65" sweep="0"  incidence="-0.58">
+<vstab x="-8.30" y="0" z="-0.6" taper="0.432" 
+       length="2.1" chord="1.65" sweep="0" >
   <stall aoa="15" width="14" peak="1.5"/>
-  <flap0 start="0" end="1" lift="1.3" drag="1.2"/>
+  <flap0 start="0" end="1" lift="1.3" drag="1.4"/>
   <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
   <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
   <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"
     min="1" max="-1"/>
 </vstab>
 
-<!-- moment calculated using formula submitted by Donald Simon:
-      MOI = # of Blades * (8.2*(10^-5))*(D^5), slug-ft^2
-      then converted to kg-m^2 and finally square root to kg-m for torque value -->
-<!-- FIXME: wastegate setting should not apply.  set here so that calculations would approximate.
-      YASim doesn't model gear supercharger.  Have read various figures (turbo-mul) 4.0 to 5.8 for 
-      running the second stage blower.  The second stage should boost at 17000ft. -->
-<!-- cruise-rpm roughly estimated from documented gear ratio of 0.479 -->
+
 <propeller   x="-0.45" y="0" z="0"
            radius="2.1" 
            mass="1900" moment="105.5"
-           cruise-alt="20000" cruise-power="1895"
-           cruise-speed="200" cruise-rpm="1437"
+           cruise-alt="2000" cruise-power="1095"
+           cruise-speed="190" cruise-rpm="1037"
            gear-ratio="0.479"
            min-rpm="766" max-rpm="1437" >
   <actionpt x="-1.25" y="0" z="0"/>
   <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
   <piston-engine
     eng-power="2100" eng-rpm="2800"
-    turbo-mul="5.5" wastegate-mp="61"
+    turbo-mul="4.3" wastegate-mp="61"
     >
     <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
     <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
@@ -175,9 +151,12 @@ flap drag not available
 
 <tank x="-3.4" y="0" z="0.2" capacity="1581"/> 
 
+<tank x="-2.7" y="3.5" z="-0.5" capacity="421"/> 
+<tank x="-2.7" y="-3.5" z="-0.5" capacity="421"/>
+
 <!-- pilot -->
 <ballast x="-4.495" y="0" z="0.689" mass="180"/>
 
-<ballast x="-8.0" y="0" z="0.689" mass="500"/>
+<ballast x="-8.0" y="0" z="0.689" mass="-1000"/>
 
 </airplane>

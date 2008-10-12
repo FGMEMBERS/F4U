@@ -3,12 +3,12 @@ MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 
 OBJECT world
 kids 2
 OBJECT poly
-name "noshadow.fpdisk"
+name "fpdisk"
 data 10
 Circle.099
-texture "fastpdisk.rgb"
+texture "fastpdisk.png"
 texrep 1 1
-crease 30
+crease 30.000000
 numvert 34
 0.423143 1.471564 -1.471564
 0.423143 1.1562 -1.730376
@@ -431,12 +431,12 @@ refs 3
 33 0.500015199184 0.500000476837
 kids 0
 OBJECT poly
-name "noshadow.spdisk"
+name "spdisk"
 data 10
 Circle.082
-texture "slowpdisk.rgb"
+texture "slowpdisk.png"
 texrep 1 1
-crease 30
+crease 30.000000
 numvert 34
 0.423143 1.471564 -1.471564
 0.423143 1.1562 -1.730376

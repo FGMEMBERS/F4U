@@ -20,8 +20,8 @@
 
  <animation>
   <type>translate</type>
-  <object-name>noshadow.canopyglas</object-name>
-  <property>/controls/canopy/canopy-pos-norm</property>
+  <object-name>canopyglas</object-name>
+  <property>/controls/canopy/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>

@@ -22,10 +22,6 @@
     <weight>0.1069</weight>
     <cd>0.193</cd>
     <eda>0.00136354</eda> 
-		<collision>true</collision>
-		<impact>true</impact>
-		<impact-reports>sim/model/aircraft/impact/gun</impact-reports>
-		<submodel-path>Aircraft/F4U/Models/subsubmodels.xml</submodel-path>
   </submodel>
 
 <!--left-2-->
@@ -48,10 +44,6 @@
     <weight>0.1069</weight>
     <cd>0.193</cd>
     <eda>0.00136354</eda> 
-		<collision>true</collision>
-		<impact>true</impact>
-		<impact-reports>sim/model/aircraft/impact/gun</impact-reports>
-		<submodel-path>Aircraft/F4U/Models/subsubmodels.xml</submodel-path>
   </submodel>
 
 <!--left-3-->
@@ -74,10 +66,6 @@
     <weight>0.1069</weight>
     <cd>0.193</cd>
     <eda>0.00136354</eda> 
-		<collision>true</collision>
-		<impact>true</impact>
-		<impact-reports>sim/model/aircraft/impact/gun</impact-reports>
-		<submodel-path>Aircraft/F4U/Models/subsubmodels.xml</submodel-path>
   </submodel>
 
 
@@ -101,10 +89,6 @@
     <weight>0.1069</weight>
     <cd>0.193</cd>
     <eda>0.00136354</eda> 
-		<collision>true</collision>
-		<impact>true</impact>
-		<impact-reports>/sim/model/aircraft/impact/gun</impact-reports>
-		<submodel-path>Aircraft/F4U/Models/subsubmodels.xml</submodel-path>
   </submodel>
 
 	
@@ -128,10 +112,6 @@
     <weight>0.1069</weight>
     <cd>0.193</cd>
     <eda>0.00136354</eda> 
-		<collision>true</collision>
-		<impact>true</impact>
-		<impact-reports>/sim/model/aircraft/impact/gun</impact-reports>
-		<submodel-path>Aircraft/F4U/Models/subsubmodels.xml</submodel-path>
   </submodel>
 
 <!--right-3-->
@@ -154,10 +134,6 @@
     <weight>0.1069</weight>
     <cd>0.193</cd>
     <eda>0.00136354</eda> 
-		<collision>true</collision>
-		<impact>true</impact>
-		<impact-reports>/sim/model/aircraft/impact/gun</impact-reports>
-		<submodel-path>Aircraft/F4U/Models/subsubmodels.xml</submodel-path>
   </submodel>
 
 
@@ -172,7 +148,7 @@
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
-    <delay>0.07</delay>
+    <delay>0.25</delay>
     <count>-1</count>
     <x-offset>-4.9</x-offset>
     <y-offset>-8.4</y-offset>
@@ -185,8 +161,9 @@
     <cd>0.193</cd>
     <eda>0.00136354</eda> 
 		<collision>true</collision>
+		<collision-reports>ai/models/model-collision</collision-reports>
 		<impact>true</impact>
-		<impact-reports>/sim/model/aircraft/impact/gun</impact-reports>
+		<impact-reports>ai/models/model-impact</impact-reports>
 		<submodel-path>Aircraft/F4U/Models/subsubmodels.xml</submodel-path>
   </submodel>
 
@@ -200,7 +177,7 @@
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
-    <delay>0.13</delay>
+    <delay>0.21</delay>
     <count>-1</count>
     <x-offset>-4.9</x-offset>
     <y-offset>8.4</y-offset>
@@ -213,9 +190,9 @@
     <cd>0.193</cd>
     <eda>0.00136354</eda> 
 		<collision>true</collision>
-		<collision-reports>/sim/model/aircraft/collision/gun</collision-reports>
+		<collision-reports>ai/models/model-collision</collision-reports>
 		<impact>true</impact>
-		<impact-reports>/sim/model/aircraft/impact/gun</impact-reports>
+		<impact-reports>ai/models/model-impact</impact-reports>
 		<submodel-path>Aircraft/F4U/Models/subsubmodels.xml</submodel-path>
   </submodel>
 
