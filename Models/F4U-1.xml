@@ -8,10 +8,28 @@
  <offsets>
    <z-m>0.0</z-m>
  </offsets>
-
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/F4U/Models/Liveries", 10);
+    </load>
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
 	<model>
+		<name>cockpit</name>
 		<path>Aircraft/F4U/Models/cockpit.xml</path>
 	</model>
+ <animation>
+  <type>select</type>
+  <object-name>cockpit</object-name>
+  <condition>
+   <equals>
+    <property>sim/model/cockpit-visible</property>
+    <value>true</value>
+   </equals>
+  </condition>
+ </animation>
 
  <animation>
   <type>select</type>
