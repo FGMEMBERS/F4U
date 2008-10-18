@@ -21,7 +21,7 @@
  <animation>
   <type>translate</type>
   <object-name>canopyglas</object-name>
-  <property>/controls/canopy/position-norm</property>
+  <property>controls/canopy/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>

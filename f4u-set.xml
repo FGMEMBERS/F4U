@@ -38,6 +38,10 @@ October 2006,  Detlef Faber
   <model>
    <path>Aircraft/F4U/Models/F4U-1.xml</path>
 		<cockpit-visible type="bool">true</cockpit-visible>
+		<logo>
+			<name>Skull</name>
+			<texture>logos/skull.rgb</texture>
+		</logo>
    <crew>
       <pilot>
         <visible>1.0</visible>
@@ -47,6 +51,7 @@ October 2006,  Detlef Faber
       <front>logos/skull.rgb</front>
       <number>logos/224.rgb</number>
     </corsair>
+
 		<aircraft>
 			<impact>
 				<splash type="bool">false</splash>
@@ -205,6 +210,14 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
                 <script>aircraft.livery.dialog.toggle()</script>
               </binding>
 					</item>
+					<item>
+						<label>Select Logo</label>
+              <binding>
+                <command>nasal</command>
+                <script>f4u.logo_dialog.toggle()</script>
+              </binding>
+					</item>
+
 			</menu>
 		</default>
 	</menubar>

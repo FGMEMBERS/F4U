@@ -10,7 +10,7 @@
  </offsets>
   <nasal>
     <load>
-      var livery_update = aircraft.livery_update.new("Aircraft/F4U/Models/Liveries", 10);
+      var livery_update = aircraft.livery_update.new("Aircraft/F4U/Models/AI-Liveries", 10);
     </load>
     <unload>
       livery_update.stop();
@@ -1814,18 +1814,18 @@
  <animation>
     <type>material</type>
       <object-name>cowllogo</object-name>
-        <texture-prop>sim/model[1]/corsair/front</texture-prop>
+        <texture-prop>sim/model/logo/texture</texture-prop>
   </animation>
 
   <animation>
     <type>material</type>
       <object-name>number</object-name>
-        <texture-prop>sim/model[1]/corsair/number</texture-prop>
+        <texture-prop>sim/model/corsair/number</texture-prop>
   </animation>
   <animation>
     <type>material</type>
       <object-name>doorlogo.L</object-name>
-        <texture-prop>sim/model[1]/corsair/number</texture-prop>
+        <texture-prop>sim/model/corsair/number</texture-prop>
   </animation>
   <animation>
     <type>material</type>
