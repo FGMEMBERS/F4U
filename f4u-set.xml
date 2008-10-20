@@ -42,6 +42,9 @@ October 2006,  Detlef Faber
 			<name>Skull</name>
 			<texture>logos/skull.rgb</texture>
 		</logo>
+  <livery>
+    <file/>
+  </livery>
    <crew>
       <pilot>
         <visible>1.0</visible>
@@ -221,6 +224,11 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 			</menu>
 		</default>
 	</menubar>
+	<multiplay>
+		<generic>
+			<string/>
+		</generic>
+	</multiplay>
  </sim>
 
  <engines>

@@ -53,5 +53,4 @@ var toggle_tailhook = func {
 
 aircraft.livery.init("Aircraft/F4U/Models/Liveries", "sim/model/livery/name");
 
-var logo_dialog = gui.OverlaySelector.new("Select Logo", "Aircraft/F4U/Models/logos","sim/model/logo/name");
-
+var logo_dialog = gui.OverlaySelector.new("Select Logo", "Aircraft/F4U/Models/logos", "sim/model/logo/name", nil, "sim/multiplay/generic/string");

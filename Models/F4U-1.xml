@@ -10,10 +10,12 @@
  </offsets>
   <nasal>
     <load>
-      var livery_update = aircraft.livery_update.new("Aircraft/F4U/Models/AI-Liveries", 10);
+      var update = aircraft.overlay_update.new();
+      update.add("Aircraft/F4U/Models/AI-Liveries", "sim/model/livery/file");
+      update.add("Aircraft/F4U/Models/logos", "sim/multiplay/generic/string");
     </load>
     <unload>
-      livery_update.stop();
+      update.stop();
     </unload>
   </nasal>
 	<model>
