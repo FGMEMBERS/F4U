@@ -1,22 +1,4 @@
 <PropertyList>
- <panel>
-  <path>Aircraft/p51d/Models/p51d-jw-panel-hotspots.xml</path>
-  <bottom-left>
-   <x-m>4.41</x-m>
-   <y-m>-0.30</y-m>
-   <z-m>-0.80</z-m>
-  </bottom-left>
-  <bottom-right>
-   <x-m>3.705</x-m>
-   <y-m> 0.30</y-m>
-   <z-m>-0.30</z-m>
-  </bottom-right>
-  <top-left>
-   <x-m>3.705</x-m>
-   <y-m>-0.30</y-m>
-   <z-m> 0.62</z-m>
-  </top-left>
- </panel>
 
  <!-- panel models -->
  <model>
@@ -82,6 +64,16 @@
    <z-m>0.64</z-m>
   </offsets>
  </model>
+ <model>
+  <path>Aircraft/F4U/Models/Instruments/cyltemp.xml</path>
+  <offsets>
+   <x-m>4.41</x-m>
+   <y-m>0.163</y-m>
+   <z-m>0.64</z-m>
+  </offsets>
+ </model>
+
+
 
  <model>
   <path>Aircraft/F4U/Models/p51d-jw-remote.xml</path>
@@ -93,7 +85,7 @@
  </model>
 
  <model>
-  <path>Aircraft/F4U/Models/p51d-jw-carbtemp.xml</path>
+  <path>Aircraft/F4U/Models/Instruments/oilpress.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>0.225</y-m>
@@ -102,7 +94,7 @@
  </model>
 
  <model>
-  <path>Aircraft/F4U/Models/p51d-jw-cooltemp.xml</path>
+  <path>Aircraft/F4U/Models/Instruments/fuelpress.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>0.22</y-m>
@@ -111,13 +103,22 @@
  </model>
 
  <model>
-  <path>Aircraft/F4U/Models/p51d-jw-vac.xml</path>
+  <path>Aircraft/F4U/Models/Instruments/oiltemp.xml</path>
   <offsets>
    <x-m>4.41</x-m>
    <y-m>0.23</y-m>
    <z-m>0.72</z-m>
   </offsets>
  </model>
+ <model>
+  <path>Aircraft/F4U/Models/Instruments/hydpress.xml</path>
+  <offsets>
+   <x-m>4.41</x-m>
+   <y-m>0.29</y-m>
+   <z-m>0.51</z-m>
+  </offsets>
+ </model>
+
 
  <model>
   <path>Aircraft/F4U/Models/p51d-jw-clock.xml</path>
@@ -150,46 +151,6 @@
 
  <!-- non-panel models -->
 
- <model>
-  <name>TRIMKNOBAILERON</name>
-  <path>Aircraft/p51d/Models/p51d-jw-trimknobaileron.xml</path>
-  <offsets>
-   <x-m>3.955</x-m>
-   <y-m>-0.34</y-m>
-   <z-m>0.067</z-m>
-   <pitch-deg>15.0</pitch-deg>
-  </offsets>
- </model>
-
- <model>
-  <name>TRIMKNOBRUDDER</name>
-  <path>Aircraft/p51d/Models/p51d-jw-trimknobrudder.xml</path>
-  <offsets>
-   <x-m>4.085</x-m>
-   <y-m>-0.34</y-m>
-   <z-m>0.047</z-m>
-  </offsets>
- </model>
-
- <model>
-  <name>TRIMWHEELELEVATOR</name>
-  <path>Aircraft/p51d/Models/p51d-jw-trimwheelelevator.xml</path>
-  <offsets>
-   <x-m>3.995</x-m>
-   <y-m>-0.30</y-m>
-   <z-m>-0.067</z-m>
-  </offsets>
- </model>
-
- <model>
-  <name>THROTTLE</name>
-  <path>Aircraft/p51d/Models/p51d-jw-throttle.xml</path>
-  <offsets>
-   <x-m>3.895</x-m>
-   <y-m>-0.32</y-m>
-   <z-m>0.22</z-m>
-  </offsets>
- </model>
 
  <model>
   <name>GUNSIGHT</name>
