@@ -131,12 +131,20 @@ October 2006,  Detlef Faber
       <desc>toggle Tailwheel Lock</desc>
     </key>
     <key>
-      <name>C</name>
+      <name>Ctrl-c</name>
       <desc>toggle Canopy</desc>
     </key>
     <key>
       <name>o/O</name>
       <desc>extend/retract Tailhook</desc>
+    </key>
+    <key>
+      <name>C/c</name>
+      <desc>close/open Cowlflaps</desc>
+    </key>
+    <key>
+      <name>F/f</name>
+      <desc>shift Blower one Gear higher/</desc>
     </key>
     <key>
       <name>d/D</name>
@@ -146,7 +154,11 @@ October 2006,  Detlef Faber
       <name>e</name>
       <desc>fire MGs</desc>
     </key>
-    <text>---Take Off---
+    <text>
+Maximum allowable Manifold pressure is 54 inhg, War emergency power is 59 inhg for 5 minutes. Maximum allowable RPM is 2700. Allowed Cylinder Head Temperature is 260 °C. Adjust Cowlflaps (c/C) to maintain approx. 230 °C.
+The engines supercharger can be operated in three modes: neutral, low Blower and high Blower. neutral is used from ground level up to 5500 ft, low Blower from 5500 ft up to 22000 ft, high Blower from 16500 and upwards. To shift blower upwards throttle back to avoid excessive Manifold Pressure, then shift Blower up (F).
+
+---Take Off---
 Flaps down 10 degrees. Do not apply too much power. Be prepared to use Aileron against Torque and Rudder to counteract Swing. Keep elevator neutral and wait for the tail to raise. The aircraft will lift off easily. 
 
 ---Landing---
@@ -231,13 +243,16 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 	</multiplay>
  </sim>
 
- <engines>
-  <engine>
-   <fuel-pump-psi type="double">18</fuel-pump-psi>
-   <oil-pressure-psi type="double">75</oil-pressure-psi>
-
-  </engine>
- </engines>
+	<engines>
+		<engine>
+			<fuel-pump-psi type="double">18</fuel-pump-psi>
+			<oil-pressure-psi type="double">75</oil-pressure-psi>
+			<oil-temp-calc type="double">15</oil-temp-calc>
+			<oil-visc type="double">0.0</oil-visc>
+			<cylinder-temp-degc type="double">15</cylinder-temp-degc>
+			<carburator-entry-temp-degc type="double">15</carburator-entry-temp-degc>
+		</engine>
+	</engines>
 
  <consumables>
   <fuel>
@@ -294,10 +309,18 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 
       <key n="67">
         <name>C</name>
-        <desc>Toggle Canopy</desc>
-        <binding>
+        <desc>close Cowlflaps</desc>
+        <binding> 
           <command>nasal</command>
-          <script>f4u.toggle_canopy()</script>
+          <script>f4u.close_cowlflaps()</script>
+        </binding>
+      </key>
+      <key n="99">
+        <name>c</name>
+        <desc>open Cowlflaps</desc>
+        <binding> 
+          <command>nasal</command>
+          <script>f4u.open_cowlflaps()</script>
         </binding>
       </key>
 
@@ -309,16 +332,30 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
           <script>f4u.toggle_cowlflaps()</script>
         </binding>
       </key>
-<!-- boost levels: neutral 0.3, low Blower 0.75, high Blower 1.0 -->
-      <key n="2">
-        <name>Ctrl-B</name>
-        <desc>Toggle engine boost.</desc>
+      <key n="102">
+        <name>f</name>
+        <desc>shift Blower down</desc>
+        <binding> 
+          <command>nasal</command>
+          <script>f4u.shift_blower_dn()</script>
+        </binding>
+      </key>
+
+      <key n="70">
+        <name>F</name>
+        <desc>shift Blower up</desc>
         <binding>
-          <command>property-adjust</command>
-          <property>/controls/engines/engine[0]/boost</property>
-          <step type="double">0.45</step>
-          <min type="double">0.3</min>
-          <max type="double">1.0</max>
+          <command>nasal</command>
+          <script>f4u.shift_blower_up()</script>
+        </binding>
+      </key>
+<!-- boost levels: neutral 0.3, low Blower 0.75, high Blower 1.0 -->
+      <key n="3">
+        <name>Ctrl-c</name>
+        <desc>Toggle Canopy.</desc>
+        <binding>
+          <command>nasal</command>
+          <script>f4u.toggle_canopy()</script>
         </binding>
         <binding>
           <condition>
@@ -405,7 +442,6 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
   <nasal>
     <f4u>
       <file>Aircraft/F4U/Nasal/f4u.nas</file>
-			<script>init();</script>
     </f4u>
 		<weapons>
 			<file>Aircraft/F4U/Nasal/weapons.nas</file>
