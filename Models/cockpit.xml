@@ -1,5 +1,6 @@
 <PropertyList>
 
+ <path>cockpit.ac</path>
  <!-- panel models -->
  <model>
   <path>Aircraft/F4U/Models/alt.xml</path>

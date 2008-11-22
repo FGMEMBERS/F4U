@@ -22,16 +22,12 @@
 		<name>cockpit</name>
 		<path>Aircraft/F4U/Models/cockpit.xml</path>
 	</model>
- <animation>
-  <type>select</type>
+	<animation>
   <object-name>cockpit</object-name>
-  <condition>
-   <equals>
-    <property>sim/model/cockpit-visible</property>
-    <value>true</value>
-   </equals>
-  </condition>
- </animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>10</max-m>
+	</animation>
 
  <animation>
   <type>select</type>
@@ -1390,7 +1386,7 @@
    <z2-m>-0.693</z2-m>
   </axis>
  </animation>
-
+<!--
 <animation>
   <type>rotate</type>
   <object-name>rightcoolflap</object-name>
@@ -1428,7 +1424,7 @@
    <z>-0.092485</z>
   </axis>
  </animation>
-
+-->
  <animation>
   <type>rotate</type>
   <object-name>flap1.L</object-name>
@@ -1473,27 +1469,7 @@
   </axis>
  </animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>flap3.L</object-name>
-  <property>surface-positions/flap-pos-norm</property>
-  <factor>50.0</factor>
 
-  <center>
-   <x-m>4.309</x-m>
-   <y-m>-2.841</y-m>
-   <z-m>-0.766</z-m>
-  </center>
-
-  <axis>
-   <x1-m>4.205</x1-m>
-   <y1-m>-3.438</y1-m>
-   <z1-m>-0.668</z1-m>
-   <x2-m>4.358</x2-m>
-   <y2-m>-2.245</y2-m>
-   <z2-m>-0.864</z2-m>
-  </axis>
- </animation>
 
 
  <animation>
@@ -1538,75 +1514,6 @@
    <y2-m>1.571</y2-m>
    <z2-m>-0.805</z2-m>
   </axis>
- </animation>
-
- <animation>
-  <type>rotate</type>
-  <object-name>flap3.R</object-name>
-  <property>surface-positions/flap-pos-norm</property>
-  <factor>-50.0</factor>
-
-  <center>
-   <x-m>4.309</x-m>
-   <y-m>2.841</y-m>
-   <z-m>-0.766</z-m>
-  </center>
-
-  <axis>
-   <x1-m>4.205</x1-m>
-   <y1-m>3.438</y1-m>
-   <z1-m>-0.668</z1-m>
-   <x2-m>4.358</x2-m>
-   <y2-m>2.245</y2-m>
-   <z2-m>-0.864</z2-m>
-  </axis>
- </animation>
-
-
- <animation>
-  <type>rotate</type>
-  <object-name>aileron.L</object-name>
-  <property>controls/flight/aileron</property>
-  <factor>18.0</factor>
-
-  <center>
-   <x-m>4.054</x-m>
-   <y-m>-4.545</y-m>
-   <z-m>-0.47</z-m>
-  </center>
-
-  <axis>
-   <x1-m>3.96</x1-m>
-   <y1-m>-5.787</y1-m>
-   <z1-m>-0.20</z1-m>
-   <x2-m>4.235</x2-m>
-   <y2-m>-3.438</y2-m>
-   <z2-m>-0.676</z2-m>
-  </axis>
-
- </animation>
-
- <animation>
-  <type>rotate</type>
-  <object-name>aileron.R</object-name>
-  <property>controls/flight/aileron</property>
-  <factor>18.0</factor>
-
-  <center>
-   <x-m>4.054</x-m>
-   <y-m>4.545</y-m>
-   <z-m>-0.47</z-m>
-  </center>
-
-  <axis>
-   <x1-m>3.96</x1-m>
-   <y1-m>5.787</y1-m>
-   <z1-m>-0.20</z1-m>
-   <x2-m>4.235</x2-m>
-   <y2-m>3.438</y2-m>
-   <z2-m>-0.676</z2-m>
-  </axis>
-
  </animation>
 
  <animation>
@@ -1728,6 +1635,80 @@
    <z>-0.0</z>
   </axis>
  </animation>
+<!-- Wings -->
+    <model> 
+      <path>Aircraft/F4U/Models/lwing.xml</path>
+	  <name>leftwing</name>
+		<nopreview/>
+      <offsets> 
+        <x-m>0.0</x-m>
+        <y-m>0.0</y-m>
+        <z-m>0.0</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/F4U/Models/rwing.xml</path>
+	  <name>rightwing</name>
+		<nopreview/>
+      <offsets> 
+        <x-m>0.0</x-m>
+        <y-m>0.0</y-m>
+        <z-m>0.0</z-m>
+      </offsets>
+    </model>
+	<animation> 
+      <type>rotate</type>
+      <object-name>leftwing</object-name>
+      <property>controls/wingfold/position-norm</property>
+      <factor>95</factor>
+      <center> 
+        <x-m>3.038</x-m>
+        <y-m>-2.278</y-m>
+        <z-m>-0.68</z-m>
+      </center>
+      <axis> 
+   <x>-1.0</x>
+   <y>-0.06</y>
+   <z>-0.15</z>
+      </axis>
+    </animation> 
+	<animation> 
+      <type>rotate</type>
+      <object-name>rightwing</object-name>
+      <property>controls/wingfold/position-norm</property>
+      <factor>95</factor>
+      <center> 
+        <x-m>3.038</x-m>
+        <y-m>2.278</y-m>
+        <z-m>-0.68</z-m>
+      </center>
+      <axis> 
+   <x>1.0</x>
+   <y>-0.06</y>
+   <z>0.15</z>
+      </axis>
+    </animation> 
+  <animation>
+    <type>select</type>
+    <object-name>leftwing</object-name>      
+    <condition>
+        <equals>
+          <property>sim/systems/structural/left-wing-torn</property>
+          <value>false</value>
+        </equals>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <object-name>rightwing</object-name>      
+    <condition>
+        <equals>
+          <property>sim/systems/structural/right-wing-torn</property>
+          <value>false</value>
+        </equals>
+    </condition>
+  </animation>
+
 <!-- Pilot -->
     <model> 
       <path>Aircraft/F4U/Models/pilot.xml</path>
@@ -1813,6 +1794,17 @@
         <z-m>0.0</z-m>
       </offsets>
     </model>
+	<model>
+		<name>external loads</name>
+		<nopreview/>
+		<path>Aircraft/F4U/Models/loads.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+	</model>	
  <animation>
     <type>material</type>
       <object-name>cowllogo</object-name>
@@ -1870,9 +1862,6 @@
   </animation>
   <animation>
     <type>material</type>
-    <object-name>outerwing.L</object-name>
-    <object-name>aileron.L</object-name>
-    <object-name>flap3.L</object-name>
     <object-name>horstabl</object-name>
     <object-name>elevator.L</object-name>
     <property-base>sim/model/livery</property-base>
@@ -1881,9 +1870,6 @@
   </animation>
   <animation>
     <type>material</type>
-    <object-name>outerwing.R</object-name>
-    <object-name>aileron.R</object-name>
-    <object-name>flap3.R</object-name>
     <object-name>horstabr</object-name>
     <object-name>elevator.R</object-name>
     <property-base>sim/model/livery</property-base>

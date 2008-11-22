@@ -21,6 +21,10 @@ October 2006,  Detlef Faber
    <electrical>
     <path>Aircraft/Generic/generic-electrical.xml</path>
    </electrical>
+	<structural>
+		<left-wing-torn type="bool">false</left-wing-torn>
+		<right-wing-torn type="bool">false</right-wing-torn>
+	</structural>
   </systems> 
  
   <virtual-cockpit archive="y">true</virtual-cockpit>
@@ -135,6 +139,10 @@ October 2006,  Detlef Faber
       <desc>toggle Canopy</desc>
     </key>
     <key>
+      <name>Ctrl-f</name>
+      <desc>toggle Wingfold (only when Engine is running)</desc>
+    </key>
+    <key>
       <name>o/O</name>
       <desc>extend/retract Tailhook</desc>
     </key>
@@ -167,43 +175,74 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 
 
   <weight n="0">
-      <name>Fuselage</name>
-      <tank>1</tank>
+      <name>Center</name>
+      <tank>3</tank>
       <weight-lb>0</weight-lb>
       <selected>none</selected>
       <opt><name>none</name><lbs>0</lbs></opt>
       <opt><name>Droptank</name>
       <lbs>50.0</lbs>
-	<gals>86</gals>
+	<gals>146</gals>
       </opt>
-      <opt><name>SC250 Bomb</name>
-      <lbs>552.0</lbs>
+      <opt><name>500 lbs Bomb</name>
+      <lbs>510.0</lbs>
+      </opt>
+      <opt><name>1000 lbs Bomb</name>
+      <lbs>1020.0</lbs>
       </opt>
   </weight>
-
   <weight n="1">
       <name>left Wing</name>
+      <tank>4</tank>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>Droptank</name>
+      <lbs>50.0</lbs>
+	<gals>146</gals>
+      </opt>
+      <opt><name>500 lbs Bomb</name>
+      <lbs>510.0</lbs>
+      </opt>
+      <opt><name>1000 lbs Bomb</name>
+      <lbs>1020.0</lbs>
+      </opt>
+  </weight>
+  <weight n="2">
+      <name>right Wing</name>
+      <tank>5</tank>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>Droptank</name>
+      <lbs>50.0</lbs>
+	<gals>146</gals>
+      </opt>
+      <opt><name>500 lbs Bomb</name>
+      <lbs>510.0</lbs>
+      </opt>
+      <opt><name>1000 lbs Bomb</name>
+      <lbs>1020.0</lbs>
+      </opt>
+  </weight>
+  <weight n="3">
+      <name>left outer Wing</name>
       <weight-lb type="double">0</weight-lb>
       <selected>none</selected>
       <opt><name>none</name><lbs>0</lbs></opt>
-      <opt><name>MG 151 Machine gun</name>
+      <opt><name>Rockets</name>
       <lbs>110.0</lbs>
-      </opt>
-      <opt><name>WGr 21 Rocket</name>
-      <lbs>270.0</lbs>
       </opt>
   </weight>
 
-  <weight n="2">
-      <name>right Wing</name>
+
+  <weight n="4">
+      <name>right outer Wing</name>
       <weight-lb type="double">0</weight-lb>
       <selected>none</selected>
       <opt><name>none</name><lbs>0</lbs></opt>
-      <opt><name>MG 151 Machine gun</name>
+      <opt><name>Rockets</name>
       <lbs>110.0</lbs>
-      </opt>
-      <opt><name>WGr 21 Rocket</name>
-      <lbs>270.0</lbs>
       </opt>
   </weight>
 	<menubar>
@@ -234,7 +273,23 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 					</item>
 
 			</menu>
-		</default>
+		</default>  <weight n="2">
+      <name>right Wing</name>
+      <tank>5</tank>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>Droptank</name>
+      <lbs>50.0</lbs>
+	<gals>86</gals>
+      </opt>
+      <opt><name>500 lbs Bomb</name>
+      <lbs>510.0</lbs>
+      </opt>
+      <opt><name>1000 lbs Bomb</name>
+      <lbs>1020.0</lbs>
+      </opt>
+  </weight>
 	</menubar>
 	<multiplay>
 		<generic>
@@ -251,6 +306,10 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 			<oil-visc type="double">0.0</oil-visc>
 			<cylinder-temp-degc type="double">15</cylinder-temp-degc>
 			<carburator-entry-temp-degc type="double">15</carburator-entry-temp-degc>
+			<rev-strain type="double">0.0</rev-strain>
+			<boost-strain type="double">0.0</boost-strain>
+			<overrev type="bool">false</overrev>
+			<overboost type="bool">false</overboost>
 		</engine>
 	</engines>
 
@@ -272,6 +331,26 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 
  <!-- set up control properties for YASim -->
  <controls>
+		<armament>
+			<station n="0">
+				<release type="bool">false</release>
+			</station>
+			<station n="1">
+				<release type="bool">false</release>
+			</station>
+			<station n="2">
+				<release type="bool">false</release>
+			</station>
+			<station n="3">
+				<release type="int">4</release>
+			</station>
+			<station n="4">
+				<release type="int">4</release>
+			</station>
+		</armament>
+   <canopy>
+      <position-norm type="float">1.0</position-norm>
+   </canopy>
    <engines>
 			<on-startup-running type="bool">false</on-startup-running>
       <engine n="0">
@@ -280,20 +359,21 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
         <boost type="double">0.3</boost>
       </engine>
    </engines>
-   <gear>
-      <tailwheel-lock>true</tailwheel-lock>
-   </gear>
-   <canopy>
-      <position-norm type="float">1.0</position-norm>
-   </canopy>
+	<flight>
+		<controls-failure type="double">0.0</controls-failure>
+	</flight>
    <fuel>
      <switch-position type = "int">-1</switch-position>
      <tank n="0">
        <fuel_selector>false</fuel_selector>
      </tank>
    </fuel>
-
-
+   <gear>
+      <tailwheel-lock>true</tailwheel-lock>
+   </gear>
+	 <wingfold>
+			<position-norm type="double">1.0</position-norm>
+	 </wingfold>
  </controls>
  <!-- Map Keys -->
  <input>
@@ -357,27 +437,13 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
           <command>nasal</command>
           <script>f4u.toggle_canopy()</script>
         </binding>
+			</key>
+      <key n="6">
+        <name>Ctrl-f</name>
+        <desc>Toggle Wingfold.</desc>
         <binding>
-          <condition>
-          <greater-than>
-            <property>/controls/engines/engine[0]/boost</property>
-            <value type="double">1.0001</value>
-          </greater-than>
-          </condition>
-          <command>property-assign</command>
-          <property>/controls/engines/engine[0]/boost</property>
-          <value type="double">0.0</value>
-        </binding>
-        <binding> 	 
-          <condition> 	 
-          <greater-than> 	 
-            <property>/controls/engines/engine[0]/boost</property> 	 
-            <value type="double">0.55</value> 	 
-          </greater-than> 	 
-          </condition> 	 
-          <command>property-assign</command> 	 
-          <property>/controls/engines/engine[0]/boost</property> 	 
-          <value type="double">1.0</value> 	 
+          <command>nasal</command>
+          <script>f4u.toggle_wingfold()</script>
         </binding>
       </key>
         <key n="111"> 

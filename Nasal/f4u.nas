@@ -1,5 +1,8 @@
 var engine_count = 1;
-var looptime =0.2;
+var looptime = 0.2;
+var emptyw = 8980;
+var breakload = 8;
+var bendload = 7;
 var cyltemp = props.globals.getNode("engines/engine[0]/cylinder-temp-degc");
 var exhtempf = props.globals.getNode("engines/engine[0]/egt-degf");
 var rpm = props.globals.getNode("engines/engine[0]/rpm");
@@ -13,8 +16,14 @@ var airspeed = props.globals.getNode("velocities/airspeed-kt");
 var envtemp = props.globals.getNode("environment/temperature-degc");
 var cowlflap = props.globals.getNode("controls/engines/engine[0]/cowl-flaps-norm");
 var mixture = props.globals.getNode("controls/engines/engine[0]/mixture");
-
 var viscosity = props.globals.getNode("engines/engine[0]/oil-visc");
+var rstrain = props.globals.getNode("engines/engine[0]/rev-strain");
+var oboost = props.globals.getNode("engines/engine[0]/boost-strain");
+var nofuel = props.globals.getNode("engines/engine[0]/out-of-fuel","true" );
+var gload = props.globals.getNode("accelerations/pilot-g",1);
+var weight = props.globals.getNode("yasim/gross-weight-lbs",100);
+var turn = props.globals.getNode("instrumentation/turn-indicator/indicated-turn-rate");
+var failure = props.globals.getNode("controls/flight/controls-failure");
 
 var init = func {
 
@@ -33,7 +42,11 @@ var main_loop = func {
 	if (engstat.getValue()){
 		engine_update();
 		fluid_update();
+		check_engine();
+	} else {
+	#	cool_down();
 	}
+	check_airframe();
   settimer(main_loop, looptime);
 }
 
@@ -45,6 +58,8 @@ var engine_update = func {
 	var ct = cyltemp.getValue();
 	var et0 = envtemp.getValue();
 	var egt = exhtempf.getValue();
+	var ob = oboost.getValue();
+	var rs = rstrain.getValue();
 	#	var thr = thrust.getValue();
 	var thr = getprop("engines/engine[0]/thrust-lbs"); # fixme: don't know why I have to do it this way
 	var rpm0 = rpm.getValue();
@@ -55,9 +70,9 @@ var engine_update = func {
 	#print ("CET: ",cat);
 	carbetemp.setValue(cat);
 	# summing up various parameters with a weighing factor
-	var temp = 3 * cat + 0.08 * rpm0 + 0.1 * egt - 0.04* as - 0.01* thr * (cf+0.1) -20 * mix ;
+	var temp = 3 * cat + 0.3 * rpm0 + 0.5 * egt - 0.005 * as * as - 0.07* thr * (cf+0.1) -20 * mix ;
 	#print ("Temp: ",temp,"Mix: ",mix);
-	cyltemp.setDoubleValue (temp * 0.85);
+	cyltemp.setDoubleValue (temp * 0.4);
 }
 
 var fluid_update = func {
@@ -67,9 +82,73 @@ var fluid_update = func {
 	interpolate ("engines/engine[0]/oil-press", 8.2 - 2*visc, looptime);
 	interpolate ("engines/engine[0]/oil-temp-calc", otemp *visc-70, looptime);
 	if (visc < 1.0 ) {
-		setprop("engines/engine[0]/oil-visc", visc + 0.002);
+		interpolate ("engines/engine[0]/oil-visc", visc + 0.002);
 
 	}
+}
+var check_engine = func {
+	var rs = rstrain.getValue();
+	var ob = oboost.getValue();
+	var rpm0 = rpm.getValue();
+	var mp = manpress.getValue();
+	#check for overrev
+	if (rpm0 > 3100) {
+		var rs0 = 0.01 * (rpm0 - 3100) * ( rpm0 - 3100);
+		rstrain.setValue (rs + rs0);
+		# print (rs0, " ",rs + rs0);
+	}
+	if (rs > 300000 ) {
+		setprop("/engines/engine[0]/overrev", 1);
+		kill_engine();
+	}	
+	#check for overboostbreakload - 0.2 * ow * ow
+	if (mp > 55) {
+		var ob0 = ( mp - 57)*(mp - 57);
+		oboost.setValue (ob + ob0);
+		# print (ob0, " ",ob + ob0);"engines/engine[0]/cylinder-temp-degc"
+	}
+	if (ob > 500 ) {
+		setprop("/engines/engine[0]/overboost", 1);
+		kill_engine();
+	}
+}
+
+var check_airframe = func {
+	var gl = gload.getValue();
+	var gw = weight.getValue();
+	var as = airspeed.getValue();
+	var slip = turn.getValue();
+	var fail = failure.getValue();
+	var ow = gw - emptyw;
+		#print(gl, breakload - 0.0004 * ow );
+	if (gl > (breakload - 0.0003 * ow)) {
+		print ("break");
+		if (slip < 0) {
+			setprop ("sim/systems/structural/left-wing-torn", "1");
+			failure.setValue(1);
+		} else {
+			setprop ("sim/systems/structural/right-wing-torn", "1");
+			failure.setValue(-1);
+		}
+	}
+	if (gl > (bendload - 0.0004 * ow)) {
+		print ("bend");
+	}
+}
+
+var cool_down = func {
+	print ("cooling");
+	var et0 = envtemp.getValue();
+	interpolate ("engines/engine[0]/cylinder-temp-degc", et0, looptime);
+	interpolate ("engines/engine[0]/oil-temp-calc", et0, looptime);
+	interpolate ("engines/engine[0]/oil-visc" , 0, looptime);
+}
+
+var kill_engine = func {
+	nofuel.setValue(1);
+	nofuel.setAttribute("writable", 0);
+	interpolate ("/engines/engine[0]/fuel-press", 0, 1);
+	interpolate ("/engines/engine[0]/mp-osi", 0, 1.5);
 }
 
 var magicstart = func {
@@ -92,6 +171,18 @@ var toggle_canopy = func {
       canopy.open();
   }
 }
+
+var toggle_wingfold = func {
+	if (engstat.getValue()){
+ 	 wingfold = aircraft.door.new ("/controls/wingfold/",15);
+ 	 if(getprop("/controls/wingfold/position-norm") > 0) {
+	      wingfold.close();
+ 	 } else {
+  	    wingfold.open();
+  	}
+	}
+}
+
 var open_cowlflaps = func {
 	if (cowlflap.getValue() < 1.0){
 		interpolate("controls/engines/engine[0]/cowl-flaps-norm",cowlflap.getValue() + 0.1,1);
