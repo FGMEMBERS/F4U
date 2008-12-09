@@ -5,18 +5,15 @@
 	<!--back-->
 	<!--right -->
 	<!--up -->
-		
-  <model>
-    <name>lofos</name>
-    <path>Aircraft/F4U/Models/transparent.ac</path>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-      <pitch-deg>0.0</pitch-deg>
-    </offsets>
-  </model>	
+	<path>transparent.ac</path>
 
+	<animation>
+		<type>shader</type>
+		<shader>chrome</shader>
+		<texture>Aircraft/F4U/Models/glass_shader.png</texture>
+		<object-name>canopyglas</object-name>
+		<object-name>frontglass</object-name>
+	</animation>
 
  <animation>
   <type>translate</type>

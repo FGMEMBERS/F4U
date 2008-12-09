@@ -31,7 +31,7 @@ YASim aerodynamic model for a F4U Corsair
 <cockpit x="-4.495" y="0" z="0.689"/>
 
 <fuselage ax="0.0" ay="0.0" az="0.0" bx="-10.2" by="0.0" bz="0.3"
-          width="1.4" taper="0.38" midpoint="0.3" cy="2" cx="2"/>
+          width="1.0" taper="0.38" midpoint="0.3" />
 
 
 <!--Main Wing -->
@@ -151,8 +151,18 @@ YASim aerodynamic model for a F4U Corsair
       <control-speed control="HEXTEND" transition-time="3"/>
     </hook>
 
-<tank x="-3.4" y="0" z="0.2" capacity="1581"/> 
+<!-- belly gear -->
+<gear x="-2.9" y="-1.62" z="-1.4" compression="0.1" spring="0.7" damp="2.2"
+   dfric="1.7" sfric ="0.40" ignored-by-solver="1">
+</gear>
+<gear x="-2.9" y="1.62" z="-1.4" compression="0.1" spring="0.7" damp="2.2"
+   dfric="1.7" sfric ="0.40" ignored-by-solver="1">
+</gear>
+<gear x="-7.817" y="-0.0" z="-0.8" compression="0.1" spring="0.7" damp="2.2"
+   dfric="1.7" sfric ="0.40" ignored-by-solver="1">
+</gear>
 
+<tank x="-3.4" y="0" z="0.2" capacity="1581"/> 
 <tank x="-2.468" y="3.65" z="-0.5" capacity="306"/> 
 <tank x="-2.468" y="-3.65" z="-0.5" capacity="306"/>
 <tank x="2.454" y="0" z="-1.152" capacity="0"/>
@@ -163,8 +173,8 @@ YASim aerodynamic model for a F4U Corsair
 <ballast x="-4.495" y="0" z="0.689" mass="180"/>
 
 <ballast x="-8.0" y="0" z="0.689" mass="-1000"/>
-<weight x="2.454" y="0" z="-1.152" mass-prop="sim/weight[0]/weight-lb" size="0.6" />
-<weight x="3.428" y="-0.808" z="-1.089" mass-prop="sim/weight[1]/weight-lb" size="0.6" />
+<weight x="2.654" y="0" z="-1.152" mass-prop="sim/weight[0]/weight-lb" size="0.6" />
+<weight x="3.628" y="-0.808" z="-1.089" mass-prop="sim/weight[1]/weight-lb" size="0.6" />
 <weight x="3.428" y="0.808" z="-1.089" mass-prop="sim/weight[2]/weight-lb" size="0.6" />
 <weight x="3.07" y="3.226" z="-0.78" mass-prop="sim/weight[3]/weight-lb" size="0.3" />
 <weight x="3.07" y="-3.226" z="-0.78" mass-prop="sim/weight[4]/weight-lb" size="0.3" />

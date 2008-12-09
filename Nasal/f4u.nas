@@ -2,11 +2,12 @@ var engine_count = 1;
 var looptime = 0.2;
 var emptyw = 8980;
 var breakload = 8;
+var breakspeed = 415;
 var bendload = 7;
 var cyltemp = props.globals.getNode("engines/engine[0]/cylinder-temp-degc");
 var exhtempf = props.globals.getNode("engines/engine[0]/egt-degf");
 var rpm = props.globals.getNode("engines/engine[0]/rpm");
-# var thrust = props.globals.getNode("engines/engine[0]/thrust-lbs");
+var thrust = props.globals.getNode("engines/engine[0]/thrust-lbs",1);
 var carbetemp = props.globals.getNode("engines/engine[0]/carburator-entry-temp-degc");
 var manpress = props.globals.getNode("engines/engine[0]/mp-osi");
 var engstat = props.globals.getNode("engines/engine[0]/running");
@@ -19,16 +20,14 @@ var mixture = props.globals.getNode("controls/engines/engine[0]/mixture");
 var viscosity = props.globals.getNode("engines/engine[0]/oil-visc");
 var rstrain = props.globals.getNode("engines/engine[0]/rev-strain");
 var oboost = props.globals.getNode("engines/engine[0]/boost-strain");
-var nofuel = props.globals.getNode("engines/engine[0]/out-of-fuel","true" );
+var nofuel = props.globals.getNode("engines/engine[0]/out-of-fuel",1 );
 var gload = props.globals.getNode("accelerations/pilot-g",1);
-var weight = props.globals.getNode("yasim/gross-weight-lbs",100);
+var weight = props.globals.getNode("yasim/gross-weight-lbs",1);
 var turn = props.globals.getNode("instrumentation/turn-indicator/indicated-turn-rate");
 var failure = props.globals.getNode("controls/flight/controls-failure");
 
+
 var init = func {
-
-
-
 	var et0 = envtemp.getValue();
 	#	print (et0);
 	cyltemp.setDoubleValue (et0);
@@ -60,8 +59,8 @@ var engine_update = func {
 	var egt = exhtempf.getValue();
 	var ob = oboost.getValue();
 	var rs = rstrain.getValue();
-	#	var thr = thrust.getValue();
-	var thr = getprop("engines/engine[0]/thrust-lbs"); # fixme: don't know why I have to do it this way
+	var thr = thrust.getValue();
+	#var thr = getprop("engines/engine[0]/thrust-lbs"); # fixme: don't know why I have to do it this way
 	var rpm0 = rpm.getValue();
 	var mp = manpress.getValue();
 	var mix = mixture.getValue();
@@ -101,7 +100,7 @@ var check_engine = func {
 		setprop("/engines/engine[0]/overrev", 1);
 		kill_engine();
 	}	
-	#check for overboostbreakload - 0.2 * ow * ow
+	#check for overboost
 	if (mp > 55) {
 		var ob0 = ( mp - 57)*(mp - 57);
 		oboost.setValue (ob + ob0);
@@ -121,7 +120,7 @@ var check_airframe = func {
 	var fail = failure.getValue();
 	var ow = gw - emptyw;
 		#print(gl, breakload - 0.0004 * ow );
-	if (gl > (breakload - 0.0003 * ow)) {
+	if (gl > (breakload - 0.0003 * ow) or (as > breakspeed)) {
 		print ("break");
 		if (slip < 0) {
 			setprop ("sim/systems/structural/left-wing-torn", "1");
@@ -133,7 +132,7 @@ var check_airframe = func {
 	}
 	if (gl > (bendload - 0.0004 * ow)) {
 		print ("bend");
-	}
+	}		
 }
 
 var cool_down = func {
@@ -164,7 +163,7 @@ var magicstart = func {
 }
 
 var toggle_canopy = func {
-  canopy = aircraft.door.new ("/controls/canopy/",3);
+  
   if(getprop("/controls/canopy/position-norm") > 0) {
       canopy.close();
   } else {
@@ -173,12 +172,14 @@ var toggle_canopy = func {
 }
 
 var toggle_wingfold = func {
+
 	if (engstat.getValue()){
- 	 wingfold = aircraft.door.new ("/controls/wingfold/",15);
  	 if(getprop("/controls/wingfold/position-norm") > 0) {
 	      wingfold.close();
+				failure.setValue(0);
  	 } else {
   	    wingfold.open();
+				failure.setValue(0.7);
   	}
 	}
 }
@@ -213,16 +214,35 @@ var shift_blower_dn = func {
 
 
 var toggle_tailhook = func {
-  hook = aircraft.door.new ("/controls/gear/tailhook/",3);
   if(getprop("/controls/gear/tailhook/position-norm") > 0) {
       hook.close();
   } else {
-
       hook.open();
   }
 }
 
+    setlistener("/controls/fuel/switch-position", func(n) {
+	position=n.getValue();
+    setprop("/consumables/fuel/tank[0]/selected",0);
+    setprop("/consumables/fuel/tank[1]/selected",0);
+    setprop("/consumables/fuel/tank[2]/selected",0);
+    setprop("/consumables/fuel/tank[3]/selected",0);
+    setprop("/consumables/fuel/tank[4]/selected",0);
+    setprop("/consumables/fuel/tank[5]/selected",0);
+        if(position >= 0.0){
+						print (position);
+
+               setprop("/consumables/fuel/tank[" ~ position ~ "]/selected",1);
+
+    };
+   },1);
+
+
 aircraft.livery.init("Aircraft/F4U/Models/Liveries", "sim/model/livery/name");
+
+var hook = aircraft.door.new ("/controls/gear/tailhook/",3);
+var wingfold = aircraft.door.new ("/controls/wingfold/",15);
+var canopy = aircraft.door.new ("/controls/canopy/",3);
 
 var logo_dialog = gui.OverlaySelector.new("Select Logo", "Aircraft/F4U/Models/logos", "sim/model/logo/name", nil, "sim/multiplay/generic/string");
 
