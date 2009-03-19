@@ -532,7 +532,9 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 		<weapons>
 			<file>Aircraft/F4U/Nasal/weapons.nas</file>
 		</weapons>
-
+		<hitdetect>
+			<file>Aircraft/F4U/Nasal/hitdetect.nas</file>
+		</hitdetect>
   </nasal>
 
 

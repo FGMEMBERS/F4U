@@ -153,13 +153,16 @@ YASim aerodynamic model for a F4U Corsair
 
 <!-- belly gear -->
 <gear x="-2.9" y="-1.62" z="-1.4" compression="0.1" spring="0.7" damp="2.2"
-   dfric="1.7" sfric ="0.40" ignored-by-solver="1">
+   dfric="5.7" sfric ="5.40" ignored-by-solver="1">
 </gear>
 <gear x="-2.9" y="1.62" z="-1.4" compression="0.1" spring="0.7" damp="2.2"
-   dfric="1.7" sfric ="0.40" ignored-by-solver="1">
+   dfric="5.7" sfric ="5.40" ignored-by-solver="1">
 </gear>
 <gear x="-7.817" y="-0.0" z="-0.8" compression="0.1" spring="0.7" damp="2.2"
-   dfric="1.7" sfric ="0.40" ignored-by-solver="1">
+   dfric="5.7" sfric ="5.40" ignored-by-solver="1">
+</gear>
+<gear x="-0.817" y="-0.0" z="-1.0" compression="0.1" spring="0.7" damp="2.2"
+   dfric="5.7" sfric ="5.40" ignored-by-solver="1">
 </gear>
 
 <tank x="-3.4" y="0" z="0.2" capacity="1581"/> 

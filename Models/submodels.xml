@@ -6,7 +6,7 @@
 
   <submodel>
     <name>left-1-tracer</name>
-    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
+    <model>Aircraft/fw190/Models/tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
@@ -28,7 +28,7 @@
 
   <submodel>
     <name>left-2-tracer</name>
-    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
+    <model>Aircraft/fw190/Models/tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
@@ -50,7 +50,7 @@
 
   <submodel>
     <name>left-3-tracer</name>
-    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
+    <model>Aircraft/fw190/Models/tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
@@ -73,7 +73,7 @@
 
   <submodel>
     <name>right-1-tracer</name>
-    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
+    <model>Aircraft/fw190/Models/tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
@@ -96,7 +96,7 @@
 
   <submodel>
     <name>right-2-tracer</name>
-    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
+    <model>Aircraft/fw190/Models/tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
@@ -118,7 +118,7 @@
 
   <submodel>
     <name>right-3-tracer</name>
-    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
+    <model>Aircraft/fw190/Models/tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
