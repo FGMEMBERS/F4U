@@ -1,7 +1,7 @@
 var engine_count = 1;
 var looptime = 0.2;
 var emptyw = 8980;
-var breakload = 8;
+var breakload = 9;
 var breakspeed = 415;
 var bendload = 7;
 var cyltemp = props.globals.getNode("engines/engine[0]/cylinder-temp-degc");
@@ -197,18 +197,18 @@ var close_cowlflaps = func {
 
 var shift_blower_up = func {
 	if (blower.getValue() <= 0.3){
-		interpolate("controls/engines/engine[0]/boost", 0.75, 1);
+		interpolate("controls/engines/engine[0]/boost", 0.75, 30);
 	}
 	else {
-		interpolate("controls/engines/engine[0]/boost", 1.0, 1);
+		interpolate("controls/engines/engine[0]/boost", 1.0, 30);
 	}
 }
 var shift_blower_dn = func {
 	if (blower.getValue() >= 1.0){
-		interpolate("controls/engines/engine[0]/boost", 0.75, 1);
+		interpolate("controls/engines/engine[0]/boost", 0.75, 30);
 	}
 	else {
-		interpolate("controls/engines/engine[0]/boost", 0.3, 1);
+		interpolate("controls/engines/engine[0]/boost", 0.3, 30);
 	}
 }
 

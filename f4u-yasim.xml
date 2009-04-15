@@ -99,7 +99,7 @@ YASim aerodynamic model for a F4U Corsair
   <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
   <piston-engine
     eng-power="2100" eng-rpm="2800"
-    turbo-mul="4.3" wastegate-mp="81"
+    turbo-mul="4.3" wastegate-mp="56"
     >
     <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
     <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
@@ -141,7 +141,7 @@ YASim aerodynamic model for a F4U Corsair
                  dst0="1" dst1="0" control="CASTERING"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-speed control="EXTEND" transition-time="4"/>
-  <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+  <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"
                  src0="-1.0" src1="1.0"
                  dst0="0.5" dst1="-0.5"/>
 </gear>

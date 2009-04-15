@@ -1,9 +1,9 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "lens1" rgb 0.09104 0.165667 0.128353 amb 0.5 0.5 0.5 emis 0 0 0 spec 1 1 1 shi 32 trans 0.733836
-MATERIAL "cushion" rgb 0.386072 0.299006 0.236817 amb 0.5 0.5 0.5 emis 0 0 0 spec 0.5 0.5 0.5 shi 32 trans 0
-MATERIAL "case.001" rgb 0.1 0.1 0.1 amb 0.5 0.5 0.5 emis 0 0 0 spec 0.5 0.5 0.5 shi 32 trans 0
-MATERIAL "case" rgb 0.2 0.2 0.2 amb 0.5 0.5 0.5 emis 0 0 0 spec 0.5 0.5 0.5 shi 32 trans 0
+MATERIAL "lens1" rgb 0.09104 0.165667 0.128353 amb 1 1 1 emis 0 0 0 spec 1 1 1 shi 32 trans 0.733836
+MATERIAL "cushion" rgb 0.386072 0.299006 0.236817 amb 1 1 1 emis 0 0 0 spec 0.5 0.5 0.5 shi 32 trans 0
+MATERIAL "case.001" rgb 0.1 0.1 0.1 amb 1 1 1 emis 0 0 0 spec 0.5 0.5 0.5 shi 32 trans 0
+MATERIAL "case" rgb 0.2 0.2 0.2 amb 1 1 1 emis 0 0 0 spec 0.5 0.5 0.5 shi 32 trans 0
 OBJECT world
 kids 5
 OBJECT poly
