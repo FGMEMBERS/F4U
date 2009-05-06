@@ -236,7 +236,8 @@
  </animation>
  <animation>
   <type>rotate</type>
-  <object-name>stopwheel.L</object-name>
+  <object-name>wheel.L</object-name>
+  <object-name>wheel1.L</object-name>
   <property>gear/gear[0]/position-norm</property>
   <interpolation>
    <entry>
@@ -265,7 +266,8 @@
 
  <animation>
   <type>rotate</type>
-  <object-name>stopwheel.L</object-name>
+  <object-name>wheel.L</object-name>
+  <object-name>wheel1.L</object-name>
   <object-name>gearleg2.L</object-name>
   <property>gear/gear[0]/position-norm</property>
   <interpolation>
@@ -405,21 +407,22 @@
  <animation>
   <type>translate</type>
   <object-name>wheel.L</object-name>
+  <object-name>wheel1.L</object-name>
   <property>gear/gear[0]/compression-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
-    <dep>-0.16</dep>
+    <dep>0.16</dep>
    </entry>
    <entry>
     <ind>1.00</ind>
-    <dep>0.0</dep>
+    <dep>0.32</dep>
    </entry>
   </interpolation>
   <axis>
    <x>0.0</x>
    <y>0.00</y>
-   <z>-1.0</z>
+   <z>1.0</z>
   </axis>
  </animation>
  <animation>
@@ -429,45 +432,26 @@
   <interpolation>
    <entry>
     <ind>0.0</ind>
-    <dep>-0.16</dep>
+    <dep>0.16</dep>
    </entry>
    <entry>
     <ind>1.00</ind>
-    <dep>0.0</dep>
+    <dep>0.32</dep>
    </entry>
   </interpolation>
   <axis>
    <x>0.0</x>
    <y>0.00</y>
-   <z>-1.0</z>
+   <z>1.0</z>
   </axis>
- </animation>
- <animation>
-  <type>select</type>
-  <object-name>stopwheel.L</object-name>
-  <condition>
-   <equals>
-    <property>gear/gear[0]/compression-norm</property>
-    <value>0.0</value>
-   </equals>
-  </condition>
- </animation>
- <animation>
-  <type>select</type>
-  <object-name>wheel.L</object-name>
-  <condition>
-   <greater-than>
-    <property>gear/gear[0]/compression-norm</property>
-    <value>0.0</value>
-   </greater-than>
-  </condition>
  </animation>
 
  <animation>
   <type>spin</type>
   <object-name>wheel.L</object-name>
-  <property>velocities/uBody-fps</property>
-  <factor>-2.0</factor>
+  <object-name>wheel1.L</object-name>
+  <property>gear/gear[0]/rollspeed-ms</property>
+  <factor>-20.0</factor>
   <center>
    <x-m>2.312</x-m>
    <y-m>-1.939</y-m>
@@ -605,7 +589,8 @@
  </animation>
  <animation>
   <type>rotate</type>
-  <object-name>stopwheel.R</object-name>
+  <object-name>wheel.R</object-name>
+  <object-name>wheel1.R</object-name>
   <property>gear/gear[1]/position-norm</property>
   <interpolation>
    <entry>
@@ -634,7 +619,8 @@
 
  <animation>
   <type>rotate</type>
-  <object-name>stopwheel.R</object-name>
+  <object-name>wheel.R</object-name>
+  <object-name>wheel1.R</object-name>
   <object-name>gearleg2.R</object-name>
   <property>gear/gear[1]/position-norm</property>
   <interpolation>
@@ -775,21 +761,22 @@
  <animation>
   <type>translate</type>
   <object-name>wheel.R</object-name>
+  <object-name>wheel1.R</object-name>
   <property>gear/gear[1]/compression-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
-    <dep>-0.16</dep>
+    <dep>0.16</dep>
    </entry>
    <entry>
     <ind>1.00</ind>
-    <dep>0.0</dep>
+    <dep>0.32</dep>
    </entry>
   </interpolation>
   <axis>
    <x>0.0</x>
    <y>0.00</y>
-   <z>-1.0</z>
+   <z>1.0</z>
   </axis>
  </animation>
  <animation>
@@ -799,45 +786,26 @@
   <interpolation>
    <entry>
     <ind>0.0</ind>
-    <dep>-0.16</dep>
+    <dep>0.16</dep>
    </entry>
    <entry>
     <ind>1.00</ind>
-    <dep>0.0</dep>
+    <dep>0.32</dep>
    </entry>
   </interpolation>
   <axis>
    <x>0.0</x>
    <y>0.00</y>
-   <z>-1.0</z>
+   <z>1.0</z>
   </axis>
- </animation>
- <animation>
-  <type>select</type>
-  <object-name>stopwheel.R</object-name>
-  <condition>
-   <equals>
-    <property>gear/gear[1]/compression-norm</property>
-    <value>0.0</value>
-   </equals>
-  </condition>
- </animation>
- <animation>
-  <type>select</type>
-  <object-name>wheel.R</object-name>
-  <condition>
-   <greater-than>
-    <property>gear/gear[1]/compression-norm</property>
-    <value>0.0</value>
-   </greater-than>
-  </condition>
  </animation>
 
  <animation>
   <type>spin</type>
   <object-name>wheel.R</object-name>
-  <property>velocities/uBody-fps</property>
-  <factor>-1.0</factor>
+  <object-name>wheel1.R</object-name>
+  <property>gear/gear[0]/rollspeed-ms</property>
+  <factor>-20.0</factor>
   <center>
    <x-m>2.312</x-m>
    <y-m>-1.939</y-m>
@@ -856,6 +824,7 @@
   <object-name>tailgear2</object-name>
   <object-name>tailgear1</object-name>
   <object-name>tailwheel</object-name>
+  <object-name>tailwheel1</object-name>
   <object-name>hook</object-name>
   <property>gear/gear[2]/position-norm</property>
   <interpolation>
@@ -949,6 +918,7 @@
  <animation>
   <type>translate</type>
   <object-name>tailwheel</object-name>
+  <object-name>tailwheel1</object-name>
   <object-name>tailgear1</object-name>
   <property>gear/gear[2]/compression-norm</property>
   <interpolation>
@@ -1598,6 +1568,7 @@
 <animation> 
       <type>rotate</type>
       <object-name>tailwheel</object-name>
+ 			<object-name>tailwheel1</object-name>
       <object-name>tailgear1</object-name>
       <property>gear/gear[2]/caster-angle-deg</property>
       <factor>1</factor>
@@ -1692,20 +1663,20 @@
     <type>select</type>
     <object-name>leftwing</object-name>      
     <condition>
-        <equals>
+        <not-equals>
           <property>sim/systems/structural/left-wing-torn</property>
-          <value>false</value>
-        </equals>
+          <value>true</value>
+        </not-equals>
     </condition>
   </animation>
   <animation>
     <type>select</type>
     <object-name>rightwing</object-name>      
     <condition>
-        <equals>
+        <not-equals>
           <property>sim/systems/structural/right-wing-torn</property>
-          <value>false</value>
-        </equals>
+          <value>true</value>
+        </not-equals>
     </condition>
   </animation>
 
@@ -1807,7 +1778,8 @@
 	</model>	
  <animation>
     <type>material</type>
-      <object-name>cowllogo</object-name>
+      <object-name>logo.L</object-name>
+      <object-name>logo.R</object-name>
         <texture-prop>sim/model/logo/texture</texture-prop>
   </animation>
 

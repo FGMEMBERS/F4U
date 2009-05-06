@@ -1,7 +1,7 @@
 var engine_count = 1;
 var looptime = 0.2;
 var emptyw = 8980;
-var breakload = 9;
+var breakload = 8;
 var breakspeed = 415;
 var bendload = 7;
 var cyltemp = props.globals.getNode("engines/engine[0]/cylinder-temp-degc");
@@ -24,8 +24,8 @@ var nofuel = props.globals.getNode("engines/engine[0]/out-of-fuel",1 );
 var gload = props.globals.getNode("accelerations/pilot-g",1);
 var weight = props.globals.getNode("yasim/gross-weight-lbs",1);
 var turn = props.globals.getNode("instrumentation/turn-indicator/indicated-turn-rate");
-var failure = props.globals.getNode("controls/flight/controls-failure");
-
+var fail_r = props.globals.getNode("controls/flight/controls-failure-roll");
+var fail_d = props.globals.getNode("controls/flight/controls-failure-drag");
 
 var init = func {
 	var et0 = envtemp.getValue();
@@ -117,17 +117,17 @@ var check_airframe = func {
 	var gw = weight.getValue();
 	var as = airspeed.getValue();
 	var slip = turn.getValue();
-	var fail = failure.getValue();
+	var fail = fail_r.getValue();
 	var ow = gw - emptyw;
 		#print(gl, breakload - 0.0004 * ow );
 	if (gl > (breakload - 0.0003 * ow) or (as > breakspeed)) {
 		print ("break");
 		if (slip < 0) {
 			setprop ("sim/systems/structural/left-wing-torn", "1");
-			failure.setValue(1);
+			fail_r.setValue(1);
 		} else {
 			setprop ("sim/systems/structural/right-wing-torn", "1");
-			failure.setValue(-1);
+			fail_r.setValue(-1);
 		}
 	}
 	if (gl > (bendload - 0.0004 * ow)) {
@@ -176,10 +176,12 @@ var toggle_wingfold = func {
 	if (engstat.getValue()){
  	 if(getprop("/controls/wingfold/position-norm") > 0) {
 	      wingfold.close();
-				failure.setValue(0);
+				fail_d.setValue(0);
+				fail_r.setValue(0);
  	 } else {
   	    wingfold.open();
-				failure.setValue(0.7);
+				fail_d.setValue(1.0);
+				fail_r.setValue(0.7);
   	}
 	}
 }
@@ -197,18 +199,18 @@ var close_cowlflaps = func {
 
 var shift_blower_up = func {
 	if (blower.getValue() <= 0.3){
-		interpolate("controls/engines/engine[0]/boost", 0.75, 30);
+		interpolate("controls/engines/engine[0]/boost", 0.75, 1);
 	}
 	else {
-		interpolate("controls/engines/engine[0]/boost", 1.0, 30);
+		interpolate("controls/engines/engine[0]/boost", 1.0, 1);
 	}
 }
 var shift_blower_dn = func {
 	if (blower.getValue() >= 1.0){
-		interpolate("controls/engines/engine[0]/boost", 0.75, 30);
+		interpolate("controls/engines/engine[0]/boost", 0.75, 1);
 	}
 	else {
-		interpolate("controls/engines/engine[0]/boost", 0.3, 30);
+		interpolate("controls/engines/engine[0]/boost", 0.3, 1);
 	}
 }
 
@@ -244,6 +246,6 @@ var hook = aircraft.door.new ("/controls/gear/tailhook/",3);
 var wingfold = aircraft.door.new ("/controls/wingfold/",15);
 var canopy = aircraft.door.new ("/controls/canopy/",3);
 
-var logo_dialog = gui.OverlaySelector.new("Select Logo", "Aircraft/F4U/Models/logos", "sim/model/logo/name", nil, "sim/multiplay/generic/string");
+var logo_dialog = gui.OverlaySelector.new("Select Logo", "Aircraft/Generic/Logos", "sim/model/logo/name", nil, "sim/multiplay/generic/string");
 
 setlistener("/sim/signals/fdm-initialized",init);

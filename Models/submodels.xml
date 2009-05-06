@@ -6,11 +6,11 @@
 
   <submodel>
     <name>left-1-tracer</name>
-    <model>Aircraft/fw190/Models/tracer.xml</model>
+    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
-    <delay>1.02</delay>
+    <delay>0.82</delay>
     <count>-1</count>
     <x-offset>-4.9</x-offset>
     <y-offset>-9.1</y-offset>
@@ -28,11 +28,11 @@
 
   <submodel>
     <name>left-2-tracer</name>
-    <model>Aircraft/fw190/Models/tracer.xml</model>
+    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
-    <delay>1.11</delay>
+    <delay>0.88</delay>
     <count>-1</count>
     <x-offset>-4.9</x-offset>
     <y-offset>-8.4</y-offset>
@@ -50,11 +50,11 @@
 
   <submodel>
     <name>left-3-tracer</name>
-    <model>Aircraft/fw190/Models/tracer.xml</model>
+    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
-    <delay>1.03</delay>
+    <delay>0.9</delay>
     <count>-1</count>
     <x-offset>-4.9</x-offset>
     <y-offset>-7.7</y-offset>
@@ -73,11 +73,11 @@
 
   <submodel>
     <name>right-1-tracer</name>
-    <model>Aircraft/fw190/Models/tracer.xml</model>
+    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
-    <delay>1.03</delay>
+    <delay>0.85</delay>
     <count>-1</count>
     <x-offset>-4.9</x-offset>
     <y-offset>9.1</y-offset>
@@ -96,11 +96,11 @@
 
   <submodel>
     <name>right-2-tracer</name>
-    <model>Aircraft/fw190/Models/tracer.xml</model>
+    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
-    <delay>1.11</delay>
+    <delay>0.89</delay>
     <count>-1</count>
     <x-offset>-4.9</x-offset>
     <y-offset>8.4</y-offset>
@@ -118,11 +118,11 @@
 
   <submodel>
     <name>right-3-tracer</name>
-    <model>Aircraft/fw190/Models/tracer.xml</model>
+    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
-    <delay>1.07</delay>
+    <delay>0.83</delay>
     <count>-1</count>
     <x-offset>-4.9</x-offset>
     <y-offset>7.7</y-offset>

@@ -380,7 +380,8 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
       </engine>
    </engines>
 	<flight>
-		<controls-failure type="double">0.7</controls-failure>
+		<controls-failure-drag type="double">1.0</controls-failure-drag>
+		<controls-failure-roll type="double">0.7</controls-failure-roll>
 	</flight>
    <fuel>
      <switch-position type = "int">-1</switch-position>
@@ -389,6 +390,7 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
      </tank>
    </fuel>
    <gear>
+			<bellybrake type="int">1</bellybrake>
       <tailwheel-lock>true</tailwheel-lock>
    </gear>
 	 <wingfold>
