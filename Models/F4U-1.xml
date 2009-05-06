@@ -12,7 +12,7 @@
     <load>
       var update = aircraft.overlay_update.new();
       update.add("Aircraft/F4U/Models/AI-Liveries", "sim/model/livery/file");
-      update.add("Aircraft/F4U/Models/logos", "sim/multiplay/generic/string");
+      update.add("Aircraft/Generic/Logos", "sim/multiplay/generic/string");
     </load>
     <unload>
       update.stop();
