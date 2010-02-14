@@ -30,15 +30,15 @@ YASim aerodynamic model for a F4U Corsair
 <!-- pilot's eyepoint -->
 <cockpit x="-4.495" y="0" z="0.689"/>
 
-<fuselage ax="-0.7" ay="0.0" az="0.0" bx="-10.2" by="0.0" bz="0.3"
-          width="0.5" taper="0.8" midpoint="0.4" />
-<fuselage ax="-4.5" ay="0.0" az="1.0" bx="-10.2" by="0.0" bz="0.3"
-          width="0.6" taper="0.3" midpoint="0.9" />
+<fuselage ax="-0.7" ay="0.0" az="0.0" bx="-4.5" by="0.0" bz="0.1"
+          width="1.6" taper="0.8" midpoint="1.0" />
+<fuselage ax="-3.9" ay="0.0" az="0.3" bx="-10.1" by="0.0" bz="0.3"
+          width="1.8" taper="0.2" midpoint="0.1" />
 
 
 <!--Main Wing -->
-<wing x="-3.33" y="0.575" z="-0.84" taper="0.8" incidence="3.0" twist="1.0"
-      length="5.0" chord="2.7" sweep="-0.1" dihedral="4" camber="0.0">
+<wing x="-3.52" y="1.8" z="-0.84" taper="0.7" incidence="3.0" twist="1.0"
+      length="3.9" chord="2.7" sweep="-1.9" dihedral="10" camber="0.0">
   <stall aoa="12" width="12" peak="1.5"/>
   <flap0 start="0.0" end="0.39" lift="1.5" drag="2.6"/>
   <flap1 start="0.39" end="1.0" lift="1.3" drag="1.1"/>
@@ -50,8 +50,8 @@ YASim aerodynamic model for a F4U Corsair
 </wing>
 
 <!--Stub wing -->
-<mstab x="-3.33" y="0.565" z="-0.395" taper="1.0" incidence="1.0"
-      length="1.3" chord="2.7" sweep="0.0" dihedral="-12.0" camber="0.0">
+<mstab x="-3.52" y="0.565" z="-0.395" taper="1.0" incidence="2.0"
+      length="1.3" chord="2.7" sweep="0.0" dihedral="-20.0" camber="0.0">
   <stall aoa="13" width="15" peak="1.5"/>
   <flap0 start="0.0" end="1.0" lift="1.5" drag="2.6"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
@@ -61,24 +61,24 @@ YASim aerodynamic model for a F4U Corsair
 
 <!--Wing tip -->
 
-<mstab x="-3.25" y="5.77" z="-0.183 " chord="1.47" length="0.4" taper="0.6"
-         dihedral="10">
+<mstab x="-3.42" y="5.64" z="-0.15" chord="1.8" length="0.6" taper="0.4"
+       sweep="-19.9" incidence="4.0" dihedral="11">
    <stall aoa="14" width="15" peak="1.5"/>
 </mstab>
 
 
-<hstab x="-9.28" y="0.22" z="0.46" taper="0.639" 
-       length="2.5" chord="1.43" sweep="0" incidence="2.0">
+<hstab x="-9.28" y="0.22" z="0.46" taper="0.5" 
+       length="2.3" chord="1.43" sweep="2" incidence="2.0">
   <stall aoa="17" width="16" peak="1.5"/>
-  <flap0 start="0.0" end="1.1" lift="2.1" drag="2.9"/>
+  <flap0 start="0.0" end="1.0" lift="2.4" drag="2.9"/>
   <control-input axis="/controls/flight/elevator" control="FLAP0"/>
   <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
   <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
 </hstab>
 
 <!-- rudder has to be able to counteract aileron drag -->
-<vstab x="-8.30" y="0" z="-0.6" taper="0.432" 
-       length="2.1" chord="1.65" sweep="0" >
+<vstab x="-8.60" y="0" z="0.6" taper="0.5" 
+       length="1.7" chord="1.65" sweep="3" >
   <stall aoa="15" width="14" peak="1.5"/>
   <flap0 start="0" end="1" lift="1.3" drag="2.5"/>
   <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
@@ -104,12 +104,12 @@ YASim aerodynamic model for a F4U Corsair
            cruise-speed="190" cruise-rpm="1037"
            gear-ratio="0.479"
            min-rpm="766" max-rpm="1637" >
-  <actionpt x="-1.25" y="0" z="0"/>
+  <actionpt x="-0.4" y="0" z="0"/>
   <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
   <piston-engine
     eng-power="2100" eng-rpm="2800"
     turbo-mul="4.3" wastegate-mp="56"
-    >
+    turbo-lag="0.1">
     <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
     <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
     <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
@@ -165,19 +165,19 @@ YASim aerodynamic model for a F4U Corsair
 </gear>
 
 <!-- belly gear -->
-<gear x="-2.9" y="-1.62" z="-1.4" compression="0.1" spring="0.7" damp="2.2"
+<gear x="-2.9" y="-1.62" z="-1.0" compression="0.1" spring="0.7" damp="2.2"
    dfric="1.7" sfric ="1.40" ignored-by-solver="1" on-water="1">
   <control-input axis="/controls/gear/bellybrake" control="BRAKE"/>
 </gear>
-<gear x="-2.9" y="1.62" z="-1.4" compression="0.1" spring="0.7" damp="2.2"
+<gear x="-2.9" y="1.62" z="-1.0" compression="0.1" spring="0.7" damp="2.2"
    dfric="1.7" sfric ="1.40" ignored-by-solver="1" on-water="1">
   <control-input axis="/controls/gear/bellybrake" control="BRAKE"/>
 </gear>
-<gear x="-7.817" y="-0.0" z="-1.0" compression="0.1" spring="0.7" damp="2.2"
+<gear x="-7.817" y="-0.0" z="-0.5" compression="0.1" spring="0.7" damp="2.2"
    dfric="1.7" sfric ="1.40" ignored-by-solver="1" on-water="1">
   <control-input axis="/controls/gear/bellybrake" control="BRAKE"/>
 </gear>
-<gear x="-0.817" y="-0.0" z="-1.25" compression="0.1" spring="0.7" damp="2.2"
+<gear x="-0.817" y="-0.0" z="-0.8" compression="0.1" spring="0.7" damp="2.2"
    dfric="1.7" sfric ="1.40" ignored-by-solver="1" on-water="1">
   <control-input axis="/controls/gear/bellybrake" control="BRAKE"/>
 </gear>
@@ -185,18 +185,18 @@ YASim aerodynamic model for a F4U Corsair
 <tank x="-3.4" y="0" z="0.2" capacity="1581"/> 
 <tank x="-2.468" y="3.65" z="-0.5" capacity="306"/> 
 <tank x="-2.468" y="-3.65" z="-0.5" capacity="306"/>
-<tank x="2.454" y="0" z="-1.152" capacity="0"/>
-<tank x="2.454" y="0" z="-1.152" capacity="0"/>
-<tank x="2.454" y="0" z="-1.152" capacity="0"/>
+<tank x="-2.454" y="0" z="-1.152" capacity="0"/>
+<tank x="-2.454" y="0" z="-1.152" capacity="0"/>
+<tank x="-2.454" y="0" z="-1.152" capacity="0"/>
 
 <!-- pilot -->
 <ballast x="-4.495" y="0" z="0.689" mass="180"/>
 
 <ballast x="-8.0" y="0" z="0.689" mass="-1000"/>
-<weight x="2.654" y="0" z="-1.152" mass-prop="sim/weight[0]/weight-lb" size="0.6" />
-<weight x="3.628" y="-0.808" z="-1.089" mass-prop="sim/weight[1]/weight-lb" size="0.6" />
-<weight x="3.428" y="0.808" z="-1.089" mass-prop="sim/weight[2]/weight-lb" size="0.6" />
-<weight x="3.07" y="3.226" z="-0.78" mass-prop="sim/weight[3]/weight-lb" size="0.3" />
-<weight x="3.07" y="-3.226" z="-0.78" mass-prop="sim/weight[4]/weight-lb" size="0.3" />
+<weight x="-2.654" y="0" z="-1.152" mass-prop="sim/weight[0]/weight-lb" size="0.6" />
+<weight x="-3.628" y="-0.808" z="-1.089" mass-prop="sim/weight[1]/weight-lb" size="0.6" />
+<weight x="-3.428" y="0.808" z="-1.089" mass-prop="sim/weight[2]/weight-lb" size="0.6" />
+<weight x="-3.07" y="3.226" z="-0.78" mass-prop="sim/weight[3]/weight-lb" size="0.3" />
+<weight x="-3.07" y="-3.226" z="-0.78" mass-prop="sim/weight[4]/weight-lb" size="0.3" />
 
 </airplane>
