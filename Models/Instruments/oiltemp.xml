@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
 
- <path>oiltemp.ac</path>
+ <path>temp150-us.ac</path>
 
  <animation>
   <type>material</type>

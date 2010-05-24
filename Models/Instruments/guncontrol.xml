@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>guncontrol.ac</path>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>gundimmer</object-name>
+  <property>controls/lighting/gunsight-norm</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0.0</dep>
+   </entry>
+  <entry>
+    <ind>1.00</ind>
+    <dep>230.0</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0.012</x-m>
+   <y-m>0.029</y-m>
+   <z-m>0.047</z-m>
+  </center>
+  <axis>
+   <x>-1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+  <animation>
+    <type>pick</type>
+    <object-name>gundimmer</object-name>
+    <visible>true</visible>
+    <action>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/lighting/gunsight-norm</property>
+        <step>0.02</step>
+        <min>0</min>
+        <max>60</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+ </animation>
+  <animation>
+    <type>pick</type>
+    <object-name>gundimmer</object-name>
+    <visible>true</visible>
+    <action>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/lighting/gunsight-norm</property>
+        <step>-0.02</step>
+        <min>0</min>
+        <max>60</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+ </animation>
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>gunsight</object-name>
+  <property>controls/lighting/gunsight-on</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0.0</dep>
+   </entry>
+  <entry>
+    <ind>1.00</ind>
+    <dep>-40.0</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0.004</x-m>
+   <y-m>0.015</y-m>
+   <z-m>0.012</z-m>
+  </center>
+  <axis>
+   <x1-m>0.004</x1-m>
+   <y1-m>0.012</y1-m>
+   <z1-m>0.011</z1-m>
+   <x2-m>0.004</x2-m>
+   <y2-m>0.017</y2-m>
+   <z2-m>0.013</z2-m>
+  </axis>
+ </animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>sightoff</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/lighting/gunsight-on</property>
+    <value>0.0</value>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>sighton</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/lighting/gunsight-on</property>
+    <value>1.0</value>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>sightalt</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/lighting/gunsight-on</property>
+    <value>1.0</value>
+    </binding>
+  </action>
+</animation>
+
+
+</PropertyList>

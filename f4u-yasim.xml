@@ -127,7 +127,7 @@ YASim aerodynamic model for a F4U Corsair
    dfric="0.7" sfric ="0.40">
   <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
-  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/gear[0]/gear-down" control="EXTEND"/>
   <control-speed control="EXTEND" transition-time="6"/>
   <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
 </gear>
@@ -137,7 +137,7 @@ YASim aerodynamic model for a F4U Corsair
    dfric="0.7" sfric ="0.40">
   <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
-  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/gear[1]/gear-down" control="EXTEND"/>
   <control-speed control="EXTEND" transition-time="8"/>
   <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
 </gear>
@@ -148,7 +148,7 @@ YASim aerodynamic model for a F4U Corsair
   dfric="0.6" sfric ="0.40">
   <control-input axis="/controls/gear/tailwheel-lock" src0="0" src1="1"
                  dst0="1" dst1="0" control="CASTERING"/>
-  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-input axis="/controls/gear/gear[2]/gear-down" control="EXTEND"/>
   <control-speed control="EXTEND" transition-time="4"/>
   <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"
                  src0="-1.0" src1="1.0"
@@ -161,7 +161,7 @@ YASim aerodynamic model for a F4U Corsair
     </hook>
 
 <!-- prop-gear-->
-<gear x="-0.405" y="0.0" z="-2.05" compression="1.1" ignored-by-solver="1" >
+<gear x="-0.405" y="0.0" z="-2.05" compression="1.1" ignored-by-solver="1" on-water="1">
 </gear>
 
 <!-- belly gear -->

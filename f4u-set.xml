@@ -16,15 +16,26 @@ October 2006,  Detlef Faber
   <status>beta</status>  
   <flight-model>yasim</flight-model>
   <aero>f4u-yasim</aero>
-
+	<failure>
+			<flaps type="bool">false</flaps>
+			<left-wing-torn type="bool">false</left-wing-torn>
+			<right-wing-torn type="bool">false</right-wing-torn>
+			<gear>
+					<gear n="0">
+							<jammed type="bool">false</jammed>
+					</gear>
+					<gear n="1">
+							<jammed type="bool">false</jammed>
+					</gear>
+					<gear n="2">
+							<jammed type="bool">false</jammed>
+					</gear>
+			</gear>
+	</failure>
   <systems>
    <electrical>
     <path>Aircraft/Generic/generic-electrical.xml</path>
    </electrical>
-	<structural>
-		<left-wing-torn type="bool">false</left-wing-torn>
-		<right-wing-torn type="bool">false</right-wing-torn>
-	</structural>
   </systems> 
  
   <virtual-cockpit archive="y">true</virtual-cockpit>
@@ -254,7 +265,7 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 						<label>Magically start engine</label>
 						<binding>
 							<command>nasal</command>
-							<script>f4u.magicstart();</script>
+							<script>R2800.magicstart();</script>
 						</binding>
 					</item>
 					<item>
@@ -293,7 +304,15 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 	</menubar>
 	<multiplay>
 		<generic>
-			<string/>
+				<float>0</float>
+				<float>1</float>
+				<float>2</float>
+				<float>3</float>
+				<float>4</float>
+				<float>5</float>
+				<float>6</float>
+				<string>0</string>
+				<string n="1">0</string>
 		</generic>
 	</multiplay>
  </sim>
@@ -375,6 +394,7 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 			<on-startup-running type="bool">false</on-startup-running>
       <engine n="0">
         <magnetos>0</magnetos>
+				<mixture0>0</mixture0>
         <cowl-flaps-norm type="float">1.0</cowl-flaps-norm>
         <boost type="double">0.3</boost>
       </engine>
@@ -391,11 +411,24 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
    </fuel>
    <gear>
 			<bellybrake type="int">1</bellybrake>
+			<gear n="0">
+					<gear-down type="bool">true</gear-down>
+			</gear>
+			<gear n="1">
+					<gear-down type="bool">true</gear-down>
+			</gear>
+			<gear n="2">
+					<gear-down type="bool">0</gear-down>
+			</gear>
       <tailwheel-lock>true</tailwheel-lock>
    </gear>
 	 <wingfold>
 			<position-norm type="double">1.0</position-norm>
 	 </wingfold>
+	 <lighting>
+			<gunsight-norm type="float">1.0</gunsight-norm>
+			<gunsight-on type="bool">false</gunsight-on>
+	 </lighting>
  </controls>
  <!-- Map Keys -->
  <input>
@@ -414,7 +447,7 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
         <desc>close Cowlflaps</desc>
         <binding> 
           <command>nasal</command>
-          <script>f4u.close_cowlflaps()</script>
+          <script>R2800.close_cowlflaps()</script>
         </binding>
       </key>
       <key n="99">
@@ -422,24 +455,17 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
         <desc>open Cowlflaps</desc>
         <binding> 
           <command>nasal</command>
-          <script>f4u.open_cowlflaps()</script>
+          <script>R2800.open_cowlflaps()</script>
         </binding>
       </key>
 
-      <key n="68">
-        <name>D</name>
-        <desc>Toggle Cowl Flaps</desc>
-        <binding>
-          <command>nasal</command>
-          <script>f4u.toggle_cowlflaps()</script>
-        </binding>
-      </key>
+
       <key n="102">
         <name>f</name>
         <desc>shift Blower down</desc>
         <binding> 
           <command>nasal</command>
-          <script>f4u.shift_blower_dn()</script>
+          <script>R2800.shift_blower_dn()</script>
         </binding>
       </key>
 
@@ -448,7 +474,7 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
         <desc>shift Blower up</desc>
         <binding>
           <command>nasal</command>
-          <script>f4u.shift_blower_up()</script>
+          <script>R2800.shift_blower_up()</script>
         </binding>
       </key>
 <!-- boost levels: neutral 0.3, low Blower 0.75, high Blower 1.0 -->
@@ -528,6 +554,9 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 
 <!-- Nasal files/scripts -->
   <nasal>
+		<R2800>
+				<file>Aircraft/F4U/Nasal/R2800.nas</file>
+		</R2800>
     <f4u>
       <file>Aircraft/F4U/Nasal/f4u.nas</file>
     </f4u>
@@ -535,6 +564,9 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
 			<file>Aircraft/F4U/Nasal/weapons.nas</file>
 		</weapons>
 
+		<failure>
+			<file>Aircraft/F4U/Nasal/failure.nas</file>
+		</failure>
   </nasal>
 
 

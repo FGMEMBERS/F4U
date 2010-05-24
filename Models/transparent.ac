@@ -1,13 +1,13 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "glass" rgb 0.1 0.1 0.1 amb 1 1 1 emis 0 0 0 spec 1 1 1 shi 32 trans 0.726301
+MATERIAL "glass" rgb 0.1 0.1 0.1 amb 0.5 0.5 0.5 emis 0 0 0 spec 1 1 1 shi 32 trans 0.726301
 OBJECT world
 kids 2
 OBJECT poly
 name "canopyglas"
 data 10
 Circle.026
-crease 30
+crease 30.000000
 numvert 68
 4.582112 1.075348 -0.276382
 4.582112 0.94587 -0.325971
@@ -539,7 +539,7 @@ OBJECT poly
 name "frontglass"
 data 10
 Circle.027
-crease 30
+crease 30.000000
 numvert 25
 4.496368 1.04961 -0.258346
 4.496368 0.928581 -0.304699

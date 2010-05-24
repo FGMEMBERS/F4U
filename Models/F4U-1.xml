@@ -13,9 +13,60 @@
       var update = aircraft.overlay_update.new();
       update.add("Aircraft/F4U/Models/AI-Liveries", "sim/model/livery/file");
       update.add("Aircraft/Generic/Logos", "sim/multiplay/generic/string");
+				var self = cmdarg();
+      var target_in = self.getNode("sim/multiplay/generic/string[1]", 1);
+			var hitcount = self.getNode("hitcount",1);
+			var hit_x = self.getNode("combat/hit/hit_x",1);
+			var hit_y = self.getNode("combat/hit/hit_y",1);
+			var hit_z = self.getNode("combat/hit/hit_z",1);
+
+			hitcount.setValue(0);
+      var hitcount_in = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var hitx_in = self.getNode("sim/multiplay/generic/float[1]", 1);
+      var hity_in = self.getNode("sim/multiplay/generic/float[2]", 1);
+      var hitz_in = self.getNode("sim/multiplay/generic/float[3]", 1);
+			
+			var combat = self.getNode("combat",1);
+			combat.setValue("true");
+			var size = self.getNode("size",1);
+			size.setValue(9);
+
+			var loopid = 0;
+			var loop = func(id) {
+			var ownsign = getprop ("/sim/multiplay/callsign");
+			if (target_in.getValue() == ownsign ) {
+					var hits0 = getprop("/hitcount" );
+					var hits1 = hitcount_in.getValue();
+
+					if (hits1 > hits0) {
+							var hitx = hitx_in.getValue();
+							var hity = hity_in.getValue();
+							var hitz = hitz_in.getValue();
+							print ("Damn, I'm hit!", hits0," ",hits1);
+							setprop("/hitcount" , hits1);
+							setprop("combat/hit/hit_x", hitx);
+							setprop("combat/hit/hit_y", hity);
+							setprop("combat/hit/hit_z", hitz);
+							
+							failure.process_hit();				
+					}
+			}
+
+				id == loopid or return;
+#				var v = hitcount.getValue();
+#				print ("Hitcount: ",v);			# debug output
+#				if (v != nil and 0 > v) {	# 
+#					print ("Ouch!");					# debug output
+
+#					loopid += 1;							# end loop
+#				}
+				settimer(func { loop(id) }, 0);
+			}
+			settimer(func { loop(loopid) }, 0);
     </load>
     <unload>
       update.stop();
+			loopid += 1;
     </unload>
   </nasal>
 	<model>
@@ -1664,7 +1715,7 @@
     <object-name>leftwing</object-name>      
     <condition>
         <not-equals>
-          <property>sim/systems/structural/left-wing-torn</property>
+          <property>sim/failure/left-wing-torn</property>
           <value>true</value>
         </not-equals>
     </condition>
@@ -1674,7 +1725,7 @@
     <object-name>rightwing</object-name>      
     <condition>
         <not-equals>
-          <property>sim/systems/structural/right-wing-torn</property>
+          <property>sim/failure/right-wing-torn</property>
           <value>true</value>
         </not-equals>
     </condition>
