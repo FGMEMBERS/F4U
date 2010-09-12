@@ -1833,6 +1833,26 @@
       <object-name>logo.R</object-name>
         <texture-prop>sim/model/logo/texture</texture-prop>
   </animation>
+ <animation>
+  <type>select</type>
+      <object-name>logo.L</object-name>
+  <condition>
+   <greater-than>
+    <property>sim/model/logo/display</property>
+    <value>0</value>
+   </greater-than>
+  </condition>
+ </animation>
+ <animation>
+  <type>select</type>
+      <object-name>logo.R</object-name>
+  <condition>
+   <greater-than>
+    <property>sim/model/logo/display</property>
+    <value>1</value>
+   </greater-than>
+  </condition>
+ </animation>
 
   <animation>
     <type>material</type>

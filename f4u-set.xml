@@ -54,6 +54,7 @@ October 2006,  Detlef Faber
    <path>Aircraft/F4U/Models/F4U-1.xml</path>
 		<cockpit-visible type="bool">true</cockpit-visible>
 		<logo>
+			<display type="int">2</display>
 			<name>Skull</name>
 			<texture>logos/skull.rgb</texture>
 		</logo>
@@ -281,6 +282,17 @@ lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Appro
                 <command>nasal</command>
                 <script>f4u.logo_dialog.toggle()</script>
               </binding>
+					</item>
+					<item>
+						<label>Toggle Logo display</label>
+        <binding> 
+          <command>property-adjust</command>
+          <property>sim/model/logo/display</property>
+          <step type="int">1</step>
+          <min type="int">0</min>
+          <max type="int">3</max>
+					<wrap>1</wrap>
+        </binding>
 					</item>
 
 			</menu>
