@@ -32,6 +32,9 @@ October 2006,  Detlef Faber
 					</gear>
 			</gear>
 	</failure>
+    <startup>
+      <splash-texture>Aircraft/F4U/f4u-splash.png</splash-texture>
+    </startup>
   <systems>
    <electrical>
     <path>Aircraft/Generic/generic-electrical.xml</path>
