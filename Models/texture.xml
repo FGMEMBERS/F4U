@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<!--back-->
+	<!--right -->
+	<!--up -->
+	
+	<model>
+		<name>logos</name>
+		<path>Aircraft/F4U/Models/logos.ac</path>
+		<offsets>
+			<x-m>0.0</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+	</model>	
+
+	<!--+++++++++++++++++++++++++++++++++++++++++++++-->
+	<!--++++++++++++  ANIMATIONS  +++++++++++++++++++-->
+	<!--+++++++++++++++++++++++++++++++++++++++++++++-->
+
+
+  <animation>
+    <type>material</type>
+      <object-name>cowllogo</object-name>
+        <texture-prop>sim/model[0]/corsair/front</texture-prop>
+  </animation>
+
+  <animation>
+    <type>material</type>
+      <object-name>number</object-name>
+        <texture-prop>sim/model[0]/corsair/number</texture-prop>
+  </animation>
+
+
+</PropertyList>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<!--back-->
+	<!--right -->
+	<!--up -->
+	<path>transparent.ac</path>
+
+	<animation>
+		<type>shader</type>
+		<shader>chrome</shader>
+		<texture>Aircraft/F4U/Models/glass_shader.png</texture>
+		<object-name>canopyglas</object-name>
+		<object-name>frontglass</object-name>
+	</animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>canopyglas</object-name>
+  <property>controls/canopy/position-norm</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.00</ind>
+    <dep>0.7</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>1.0</x>
+   <y>0.000000</y>
+   <z>-0.0</z>
+  </axis>
+ </animation>
+
+</PropertyList>

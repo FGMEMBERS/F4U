@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<!-- air speed indicator -->
+
+<PropertyList>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>needle1</object-name>
+  <emission>
+    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    <red>0.5</red>
+    <green>0.25</green>
+    <blue>0.25</blue>
+  </emission>
+ </animation>
+
+
+	<path>asi430kt-us.ac</path>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>needle1</object-name>
+		<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>40</ind>
+				<dep>19</dep>
+			</entry>
+			<entry>
+				<ind>60</ind>
+				<dep>44</dep>
+			</entry>
+			<entry>
+				<ind>80</ind>
+				<dep>89</dep>
+			</entry>
+			<entry>
+				<ind>100</ind>
+				<dep>135</dep>
+			</entry>
+			<entry>
+				<ind>120</ind>
+				<dep>180</dep>
+			</entry>
+			<entry>
+				<ind>140</ind>
+				<dep>226</dep>
+			</entry>
+			<entry>
+				<ind>160</ind>
+				<dep>270</dep>
+			</entry>
+			<entry>
+				<ind>180</ind>
+				<dep>315</dep>
+			</entry>
+			<entry>
+				<ind>200</ind>
+				<dep>360</dep>
+			</entry>
+			<entry>
+				<ind>250</ind>
+				<dep>438</dep>
+			</entry>
+			<entry>
+				<ind>300</ind>
+				<dep>515</dep>
+			</entry>
+			<entry>
+				<ind>350</ind>
+				<dep>577</dep>
+			</entry>
+			<entry>
+				<ind>400</ind>
+				<dep>635</dep>
+			</entry>
+			<entry>
+				<ind>430</ind>
+				<dep>671</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

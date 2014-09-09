@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>fuelf4u.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>plate</object-name>
+  <object-name>bezelinside</object-name>
+  <object-name>needle1</object-name>
+  <emission>
+    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    <red>0.5</red>
+    <green>0.25</green>
+    <blue>0.25</blue>
+  </emission>
+ </animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>needle1</object-name>
+		<property>consumables/fuel/tank/level-gal_us</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>-151</dep>
+			</entry>
+			<entry>
+				<ind>40</ind>
+				<dep>-100</dep>
+			</entry>
+			<entry>
+				<ind>80</ind>
+				<dep>-44</dep>
+			</entry>
+			<entry>
+				<ind>120</ind>
+				<dep>39</dep>
+			</entry>
+			<entry>
+				<ind>160</ind>
+				<dep>74</dep>
+			</entry>
+			<entry>
+				<ind>200</ind>
+				<dep>114</dep>
+			</entry>
+			<entry>
+				<ind>250</ind>
+				<dep>152</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

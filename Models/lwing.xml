@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+
+<!-- Vought F4U Corsair by Detlef Faber -->
+
+<PropertyList>
+ <path>lwing.ac</path>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>flap3.L</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <factor>50.0</factor>
+  <center>
+   <x-m>4.309</x-m>
+   <y-m>-2.841</y-m>
+   <z-m>-0.766</z-m>
+  </center>
+  <axis>
+   <x1-m>4.205</x1-m>
+   <y1-m>-3.438</y1-m>
+   <z1-m>-0.668</z1-m>
+   <x2-m>4.358</x2-m>
+   <y2-m>-2.245</y2-m>
+   <z2-m>-0.864</z2-m>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>aileron.L</object-name>
+  <property>controls/flight/aileron</property>
+  <factor>18.0</factor>
+  <center>
+   <x-m>4.054</x-m>
+   <y-m>-4.545</y-m>
+   <z-m>-0.47</z-m>
+  </center>
+  <axis>
+   <x1-m>3.96</x1-m>
+   <y1-m>-5.787</y1-m>
+   <z1-m>-0.20</z1-m>
+   <x2-m>4.235</x2-m>
+   <y2-m>-3.438</y2-m>
+   <z2-m>-0.676</z2-m>
+  </axis>
+ </animation>
+  <animation>
+    <type>select</type>
+    <object-name>rocketrails.L</object-name>      
+    <condition>
+        <not-equals>
+          <property>sim/weight[3]/selected</property>
+          <value>none</value>
+        </not-equals>
+    </condition>
+  </animation>
+	<model>
+		<name>left Rocket 1</name>
+		<path>Aircraft/F4U/Models/loads/rocket.ac</path>
+		<offsets>
+			<x-m>3.072</x-m>
+			<y-m>-2.490</y-m>
+			<z-m>-1.055</z-m>
+		</offsets>
+	</model>	
+  <animation>
+    <type>select</type>
+    <object-name>left Rocket 1</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[3]/selected</property>
+          <value>Rockets</value>
+        </equals>
+        <greater-than>
+          <property>controls/armament/station[3]/release</property>
+          <value>0</value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+	<model>
+		<name>left Rocket 2</name>
+		<path>Aircraft/F4U/Models/loads/rocket.ac</path>
+		<offsets>
+			<x-m>3.072</x-m>
+			<y-m>-2.893</y-m>
+			<z-m>-0.976</z-m>
+		</offsets>
+	</model>	
+  <animation>
+    <type>select</type>
+    <object-name>left Rocket 2</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[3]/selected</property>
+          <value>Rockets</value>
+        </equals>
+        <greater-than>
+          <property>controls/armament/station[3]/release</property>
+          <value>1</value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+	<model>
+		<name>left Rocket 3</name>
+		<path>Aircraft/F4U/Models/loads/rocket.ac</path>
+		<offsets>
+			<x-m>3.072</x-m>
+			<y-m>-3.553</y-m>
+			<z-m>-0.870</z-m>
+		</offsets>
+	</model>	
+  <animation>
+    <type>select</type>
+    <object-name>left Rocket 3</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[3]/selected</property>
+          <value>Rockets</value>
+        </equals>
+        <greater-than>
+          <property>controls/armament/station[3]/release</property>
+          <value>2</value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+	<model>
+		<name>left Rocket 4</name>
+		<path>Aircraft/F4U/Models/loads/rocket.ac</path>
+		<offsets>
+			<x-m>3.072</x-m>
+			<y-m>-3.960</y-m>
+			<z-m>-0.786</z-m>
+		</offsets>
+	</model>	
+  <animation>
+    <type>select</type>
+    <object-name>left Rocket 4</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[3]/selected</property>
+          <value>Rockets</value>
+        </equals>
+        <greater-than>
+          <property>controls/armament/station[3]/release</property>
+          <value>3</value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+<!-- right side -->
+
+  <animation>
+    <type>material</type>
+    <object-name>outerwing.L</object-name>
+    <object-name>aileron.L</object-name>
+    <object-name>flap3.L</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture-left</texture-prop>
+    <texture>f4u-2.png</texture>
+  </animation>
+</PropertyList>

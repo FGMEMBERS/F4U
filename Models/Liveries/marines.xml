@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">US Marines</name>
+
+            <texture>f4u-1.png</texture>
+						<texture-left>f4u-2.png</texture-left>
+						<texture-right>f4u-3.png</texture-right>
+        </livery>
+    </model>
+</sim>
+</PropertyList>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>mp60-us.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>needle1</object-name>
+  <emission>
+    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    <red>0.5</red>
+    <green>0.25</green>
+    <blue>0.25</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>needle1</object-name>
+  <property>/engines/engine/mp-osi</property>
+  <min>10</min>
+  <max>100</max>
+  <interpolation>
+   <entry>
+    <ind>10</ind>
+    <dep>-111</dep>
+   </entry>
+   <entry>
+    <ind>30</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>50</ind>
+    <dep>111</dep>
+   </entry>
+   <entry>
+    <ind>100</ind>
+    <dep>238</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+</PropertyList>
+
+

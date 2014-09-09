@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <!-- left-1 -->
+
+  <submodel>
+    <name>left-1-tracer</name>
+    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2840.0</speed>
+    <repeat>true</repeat>
+    <delay>0.82</delay>
+    <count>-1</count>
+    <x-offset>-4.9</x-offset>
+    <y-offset>-9.1</y-offset>
+    <z-offset>-2.3</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-1</pitch-offset>
+    <life>2.0</life>
+    <wind>false</wind>
+    <weight>0.1069</weight>
+    <cd>0.193</cd>
+    <eda>0.00136354</eda> 
+  </submodel>
+
+<!--left-2-->
+
+  <submodel>
+    <name>left-2-tracer</name>
+    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2840.0</speed>
+    <repeat>true</repeat>
+    <delay>0.88</delay>
+    <count>-1</count>
+    <x-offset>-4.9</x-offset>
+    <y-offset>-8.4</y-offset>
+    <z-offset>-2.3</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-1</pitch-offset>
+    <life>2.0</life>
+    <wind>false</wind>
+    <weight>0.1069</weight>
+    <cd>0.193</cd>
+    <eda>0.00136354</eda> 
+  </submodel>
+
+<!--left-3-->
+
+  <submodel>
+    <name>left-3-tracer</name>
+    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2840.0</speed>
+    <repeat>true</repeat>
+    <delay>0.9</delay>
+    <count>-1</count>
+    <x-offset>-4.9</x-offset>
+    <y-offset>-7.7</y-offset>
+    <z-offset>-2.2</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-1</pitch-offset>
+    <life>2.0</life>
+    <wind>false</wind>
+    <weight>0.1069</weight>
+    <cd>0.193</cd>
+    <eda>0.00136354</eda> 
+  </submodel>
+
+
+  <!-- right-1 -->
+
+  <submodel>
+    <name>right-1-tracer</name>
+    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2840.0</speed>
+    <repeat>true</repeat>
+    <delay>0.85</delay>
+    <count>-1</count>
+    <x-offset>-4.9</x-offset>
+    <y-offset>9.1</y-offset>
+    <z-offset>-2.3</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-1</pitch-offset>
+    <life>2.0</life>
+    <wind>false</wind>
+    <weight>0.1069</weight>
+    <cd>0.193</cd>
+    <eda>0.00136354</eda> 
+  </submodel>
+
+	
+<!--right-2-->
+
+  <submodel>
+    <name>right-2-tracer</name>
+    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2840.0</speed>
+    <repeat>true</repeat>
+    <delay>0.89</delay>
+    <count>-1</count>
+    <x-offset>-4.9</x-offset>
+    <y-offset>8.4</y-offset>
+    <z-offset>-2.3</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-1</pitch-offset>
+    <life>2.0</life>
+    <wind>false</wind>
+    <weight>0.1069</weight>
+    <cd>0.193</cd>
+    <eda>0.00136354</eda> 
+  </submodel>
+
+<!--right-3-->
+
+  <submodel>
+    <name>right-3-tracer</name>
+    <model>Aircraft/F4U/Models/Effects/tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2840.0</speed>
+    <repeat>true</repeat>
+    <delay>0.83</delay>
+    <count>-1</count>
+    <x-offset>-4.9</x-offset>
+    <y-offset>7.7</y-offset>
+    <z-offset>-2.2</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-1</pitch-offset>
+    <life>2.0</life>
+    <wind>false</wind>
+    <weight>0.1069</weight>
+    <cd>0.193</cd>
+    <eda>0.00136354</eda> 
+  </submodel>
+
+
+<!--non tracer-->
+ 
+
+<!--left-2-->
+
+  <submodel>
+    <name>left-2-tracer</name>
+    <model>Models/Geometry/null.ac</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2840.0</speed>
+    <repeat>true</repeat>
+    <delay>0.25</delay>
+    <count>-1</count>
+    <x-offset>-4.9</x-offset>
+    <y-offset>-8.4</y-offset>
+    <z-offset>-2.3</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-1</pitch-offset>
+    <life>2.0</life>
+    <wind>false</wind>
+    <weight>0.1069</weight>
+    <cd>0.193</cd>
+    <eda>0.00136354</eda> 
+		<collision>true</collision>
+		<collision-reports>ai/models/model-collision</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/F4U/Models/subsubmodels.xml</submodel-path>
+  </submodel>
+
+
+	
+<!--right-2-->
+
+  <submodel>
+    <name>right-2-tracer</name>
+    <model>Models/Geometry/null.ac</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2840.0</speed>
+    <repeat>true</repeat>
+    <delay>0.21</delay>
+    <count>-1</count>
+    <x-offset>-4.9</x-offset>
+    <y-offset>8.4</y-offset>
+    <z-offset>-2.3</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>-1</pitch-offset>
+    <life>2.0</life>
+    <wind>false</wind>
+    <weight>0.1069</weight>
+    <cd>0.193</cd>
+    <eda>0.00136354</eda> 
+		<collision>true</collision>
+		<collision-reports>ai/models/model-collision</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/F4U/Models/subsubmodels.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>r_l4</name>
+    <model>Aircraft/F4U/Models/loads/rocket.ac</model>
+    <trigger>controls/armament/rocket1</trigger>
+    <speed>500</speed>
+    <delay>2.0</delay>
+    <repeat>false</repeat>
+    <count>-1</count>
+    <x-offset>10.0787</x-offset>
+    <y-offset>-12.9921</y-offset>
+    <z-offset>-2.57874</z-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <life>50</life>
+    <aero-stabilised>true</aero-stabilised>
+    <wind>false</wind>
+    <weight>60.0</weight>
+    <eda>1.2</eda>
+    <cd>0.5</cd>
+		<collision>true</collision>
+		<collision-reports>ai/models/model-collision</collision-reports>
+		<impact>true</impact>
+		<impact-reports>ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/F4U/Models/subsubmodels.xml</submodel-path>
+		<external-force>true</external-force>
+		<force-path>sim/ai/ballistic/force[0]</force-path>
+  </submodel>
+
+</PropertyList>

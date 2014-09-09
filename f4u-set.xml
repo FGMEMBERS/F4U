@@ -1,0 +1,592 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+F4U-1 Corsair simulation config.
+
+October 2006,  Detlef Faber
+************************************************************************
+-->
+
+<PropertyList>
+
+ <sim>
+
+  <description>Vought F4U-1 Corsair</description>
+  <author>Detlef Faber</author>
+  <status>beta</status>  
+  <flight-model>yasim</flight-model>
+  <aero>f4u-yasim</aero>
+	<failure>
+			<flaps type="bool">false</flaps>
+			<left-wing-torn type="bool">false</left-wing-torn>
+			<right-wing-torn type="bool">false</right-wing-torn>
+			<gear>
+					<gear n="0">
+							<jammed type="bool">false</jammed>
+					</gear>
+					<gear n="1">
+							<jammed type="bool">false</jammed>
+					</gear>
+					<gear n="2">
+							<jammed type="bool">false</jammed>
+					</gear>
+			</gear>
+	</failure>
+    <startup>
+      <splash-texture>Aircraft/F4U/f4u-splash.png</splash-texture>
+    </startup>
+  <systems>
+   <electrical>
+    <path>Aircraft/Generic/generic-electrical.xml</path>
+   </electrical>
+  </systems> 
+ 
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+  <sound>
+   <path>Aircraft/p51d/p51d-sound.xml</path>
+  </sound>
+
+  <submodels> 
+    <serviceable type="bool">true</serviceable>
+    <path>Aircraft/F4U/Models/submodels.xml</path>
+  </submodels>
+
+  <model>
+   <path>Aircraft/F4U/Models/F4U-1.xml</path>
+		<cockpit-visible type="bool">true</cockpit-visible>
+		<logo>
+			<display type="int">2</display>
+			<name>Skull</name>
+			<texture>logos/skull.rgb</texture>
+		</logo>
+  <livery>
+    <file/>
+  </livery>
+   <crew>
+      <pilot>
+        <visible>1.0</visible>
+      </pilot>
+   </crew>
+    <corsair>
+      <front>logos/skull.rgb</front>
+      <number>logos/224.rgb</number>
+    </corsair>
+
+		<aircraft>
+			<impact>
+				<splash type="bool">false</splash>
+			</impact>
+		</aircraft>
+  </model> 
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y" type="double">0.0</x-offset-m>
+    <y-offset-m archive="y" type="double">1.0</y-offset-m>
+    <z-offset-m archive="y" type="double">5.1</z-offset-m>
+    <pitch-offset-deg>-7.5</pitch-offset-deg>
+   </config>
+  </view>
+
+  <view n="1">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="2">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="3">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="4">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="5">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="6">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
+   </config>
+  </view>
+
+ <autopilot>
+   <config>
+     <min-climb-speed-kt type="float">70.0</min-climb-speed-kt>
+     <best-climb-speed-kt type="float">75.0</best-climb-speed-kt>
+     <target-climb-rate-fpm type="float">500.0</target-climb-rate-fpm>
+     <target-descent-rate-fpm type="float">1000.0</target-descent-rate-fpm>
+     <elevator-adj-factor type="float">4000.0</elevator-adj-factor>
+     <integral-contribution type="float">0.01</integral-contribution>
+     <zero-pitch-throttle type="float">0.45</zero-pitch-throttle>
+     <zero-pitch-trim-full-throttle type="float">0.14</zero-pitch-trim-full-throttle>
+   </config>
+ </autopilot>
+
+  <hud>
+   <enable3d>false</enable3d>
+  </hud>  
+
+    <help>
+    <key>
+      <name>Ctrl-l</name>
+      <desc>toggle Tailwheel Lock</desc>
+    </key>
+    <key>
+      <name>Ctrl-c</name>
+      <desc>toggle Canopy</desc>
+    </key>
+    <key>
+      <name>Ctrl-f</name>
+      <desc>toggle Wingfold (only when Engine is running)</desc>
+    </key>
+    <key>
+      <name>o/O</name>
+      <desc>extend/retract Tailhook</desc>
+    </key>
+    <key>
+      <name>C/c</name>
+      <desc>close/open Cowlflaps</desc>
+    </key>
+    <key>
+      <name>F/f</name>
+      <desc>shift Blower one Gear higher/</desc>
+    </key>
+    <key>
+      <name>d/D</name>
+      <desc>Master Arm on/off</desc>
+    </key>
+    <key>
+      <name>e</name>
+      <desc>fire MGs</desc>
+    </key>
+    <text>
+Maximum allowable Manifold pressure is 54 inhg, War emergency power is 59 inhg for 5 minutes. Maximum allowable RPM is 2700. Allowed Cylinder Head Temperature is 260 °C. Adjust Cowlflaps (c/C) to maintain approx. 230 °C.
+The engines supercharger can be operated in three modes: neutral, low Blower and high Blower. neutral is used from ground level up to 5500 ft, low Blower from 5500 ft up to 22000 ft, high Blower from 16500 and upwards. To shift blower upwards throttle back to avoid excessive Manifold Pressure, then shift Blower up (F).
+
+---Take Off---
+Flaps down 10 degrees. Do not apply too much power. Be prepared to use Aileron against Torque and Rudder to counteract Swing. Keep elevator neutral and wait for the tail to raise. The aircraft will lift off easily. 
+
+---Landing---
+lower Flaps and Gear under 150 kts. Approach Speed is 90-100 kts. A curved Approach is recommended, because visibility on Final is bad. Approach the carrier with 90 kts and hook down.</text>
+  </help>
+
+
+  <weight n="0">
+      <name>Center</name>
+      <tank>3</tank>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>Droptank</name>
+      <lbs>50.0</lbs>
+	<gals>146</gals>
+      </opt>
+      <opt><name>500 lbs Bomb</name>
+      <lbs>510.0</lbs>
+      </opt>
+      <opt><name>1000 lbs Bomb</name>
+      <lbs>1020.0</lbs>
+      </opt>
+  </weight>
+  <weight n="1">
+      <name>left Wing</name>
+      <tank>4</tank>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>Droptank</name>
+      <lbs>50.0</lbs>
+	<gals>146</gals>
+      </opt>
+      <opt><name>500 lbs Bomb</name>
+      <lbs>510.0</lbs>
+      </opt>
+      <opt><name>1000 lbs Bomb</name>
+      <lbs>1020.0</lbs>
+      </opt>
+  </weight>
+  <weight n="2">
+      <name>right Wing</name>
+      <tank>5</tank>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>Droptank</name>
+      <lbs>50.0</lbs>
+	<gals>146</gals>
+      </opt>
+      <opt><name>500 lbs Bomb</name>
+      <lbs>510.0</lbs>
+      </opt>
+      <opt><name>1000 lbs Bomb</name>
+      <lbs>1020.0</lbs>
+      </opt>
+  </weight>
+  <weight n="3">
+      <name>left outer Wing</name>
+      <weight-lb type="double">0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>Rockets</name>
+      <lbs>110.0</lbs>
+      </opt>
+  </weight>
+
+
+  <weight n="4">
+      <name>right outer Wing</name>
+      <weight-lb type="double">0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>Rockets</name>
+      <lbs>110.0</lbs>
+      </opt>
+  </weight>
+	<menubar>
+		<default>
+			<menu n="10">
+				<label>F4U-1</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Magically start engine</label>
+						<binding>
+							<command>nasal</command>
+							<script>R2800.magicstart();</script>
+						</binding>
+					</item>
+					<item>
+						<label>Select Livery</label>
+              <binding>
+                <command>nasal</command>
+                <script>aircraft.livery.dialog.toggle()</script>
+              </binding>
+					</item>
+					<item>
+						<label>Select Logo</label>
+              <binding>
+                <command>nasal</command>
+                <script>f4u.logo_dialog.toggle()</script>
+              </binding>
+					</item>
+					<item>
+						<label>Toggle Logo display</label>
+        <binding> 
+          <command>property-adjust</command>
+          <property>sim/model/logo/display</property>
+          <step type="int">1</step>
+          <min type="int">0</min>
+          <max type="int">3</max>
+					<wrap>1</wrap>
+        </binding>
+					</item>
+
+			</menu>
+		</default>  <weight n="2">
+      <name>right Wing</name>
+      <tank>5</tank>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>Droptank</name>
+      <lbs>50.0</lbs>
+	<gals>86</gals>
+      </opt>
+      <opt><name>500 lbs Bomb</name>
+      <lbs>510.0</lbs>
+      </opt>
+      <opt><name>1000 lbs Bomb</name>
+      <lbs>1020.0</lbs>
+      </opt>
+  </weight>
+	</menubar>
+	<multiplay>
+		<generic>
+				<float>0</float>
+				<float>1</float>
+				<float>2</float>
+				<float>3</float>
+				<float>4</float>
+				<float>5</float>
+				<float>6</float>
+				<string>0</string>
+				<string n="1">0</string>
+		</generic>
+	</multiplay>
+ </sim>
+
+	<engines>
+		<engine>
+			<fuel-pump-psi type="double">18</fuel-pump-psi>
+			<oil-pressure-psi type="double">75</oil-pressure-psi>
+			<oil-temp-calc type="double">15</oil-temp-calc>
+			<oil-visc type="double">0.0</oil-visc>
+			<cylinder-temp-degc type="double">15</cylinder-temp-degc>
+			<carburator-entry-temp-degc type="double">15</carburator-entry-temp-degc>
+			<rev-strain type="double">0.0</rev-strain>
+			<boost-strain type="double">0.0</boost-strain>
+			<overrev type="bool">false</overrev>
+			<overboost type="bool">false</overboost>
+		</engine>
+	</engines>
+
+ <consumables>
+  <fuel>
+   <tank n="0">
+    <name>Internal</name>
+    <selected type="bool">false</selected>
+   </tank>
+   <tank n="1">
+    <name>left wing tank</name>
+    <selected type="bool">false</selected>
+   </tank>
+   <tank n="2">
+    <name>right wing tank</name>
+    <selected type="bool">false</selected>
+   </tank>
+   <tank n="3">
+    <name>center Droptank</name>
+    <selected type="bool">false</selected>
+   </tank>
+   <tank n="4">
+    <name>left Droptank</name>
+    <selected type="bool">false</selected>
+   </tank>
+   <tank n="5">
+    <name>right Droptank</name>
+    <selected type="bool">false</selected>
+   </tank>
+  </fuel>
+ </consumables>
+
+ <!-- set prop for the manual "bookmark" arrow on the remote compas -->
+ <instrumentation>
+    <magnetic-compass>
+       <bookmark-heading-deg type="double">43.0</bookmark-heading-deg>
+    </magnetic-compass>
+ </instrumentation>
+
+ <!-- set up control properties for YASim -->
+ <controls>
+		<armament>
+			<station n="0">
+				<release type="bool">false</release>
+			</station>
+			<station n="1">
+				<release type="bool">false</release>
+			</station>
+			<station n="2">
+				<release type="bool">false</release>
+			</station>
+			<station n="3">
+				<release type="int">4</release>
+			</station>
+			<station n="4">
+				<release type="int">4</release>
+			</station>
+		</armament>
+   <canopy>
+      <position-norm type="float">1.0</position-norm>
+   </canopy>
+   <engines>
+			<on-startup-running type="bool">false</on-startup-running>
+      <engine n="0">
+        <magnetos>0</magnetos>
+				<mixture0>0</mixture0>
+        <cowl-flaps-norm type="float">1.0</cowl-flaps-norm>
+        <boost type="double">0.3</boost>
+      </engine>
+   </engines>
+	<flight>
+		<controls-failure-drag type="double">1.0</controls-failure-drag>
+		<controls-failure-roll type="double">0.7</controls-failure-roll>
+	</flight>
+   <fuel>
+     <switch-position type = "int">-1</switch-position>
+     <tank n="0">
+       <fuel_selector>false</fuel_selector>
+     </tank>
+   </fuel>
+   <gear>
+			<bellybrake type="int">1</bellybrake>
+			<gear n="0">
+					<gear-down type="bool">true</gear-down>
+			</gear>
+			<gear n="1">
+					<gear-down type="bool">true</gear-down>
+			</gear>
+			<gear n="2">
+					<gear-down type="bool">0</gear-down>
+			</gear>
+      <tailwheel-lock>true</tailwheel-lock>
+   </gear>
+	 <wingfold>
+			<position-norm type="double">1.0</position-norm>
+	 </wingfold>
+	 <lighting>
+			<gunsight-norm type="float">1.0</gunsight-norm>
+			<gunsight-on type="bool">false</gunsight-on>
+	 </lighting>
+ </controls>
+ <!-- Map Keys -->
+ <input>
+    <keyboard>
+      <key n="12"> 
+          <name>Ctrl-L</name>
+          <desc>Toggle Tailwheel Lock.</desc>
+          <binding> 
+            <command>property-toggle</command>
+            <property>controls/gear/tailwheel-lock</property>
+          </binding>
+      </key>
+
+      <key n="67">
+        <name>C</name>
+        <desc>close Cowlflaps</desc>
+        <binding> 
+          <command>nasal</command>
+          <script>R2800.close_cowlflaps()</script>
+        </binding>
+      </key>
+      <key n="99">
+        <name>c</name>
+        <desc>open Cowlflaps</desc>
+        <binding> 
+          <command>nasal</command>
+          <script>R2800.open_cowlflaps()</script>
+        </binding>
+      </key>
+
+
+      <key n="102">
+        <name>f</name>
+        <desc>shift Blower down</desc>
+        <binding> 
+          <command>nasal</command>
+          <script>R2800.shift_blower_dn()</script>
+        </binding>
+      </key>
+
+      <key n="70">
+        <name>F</name>
+        <desc>shift Blower up</desc>
+        <binding>
+          <command>nasal</command>
+          <script>R2800.shift_blower_up()</script>
+        </binding>
+      </key>
+<!-- boost levels: neutral 0.3, low Blower 0.75, high Blower 1.0 -->
+      <key n="3">
+        <name>Ctrl-c</name>
+        <desc>Toggle Canopy.</desc>
+        <binding>
+          <command>nasal</command>
+          <script>f4u.toggle_canopy()</script>
+        </binding>
+			</key>
+      <key n="6">
+        <name>Ctrl-f</name>
+        <desc>Toggle Wingfold.</desc>
+        <binding>
+          <command>nasal</command>
+          <script>f4u.toggle_wingfold()</script>
+        </binding>
+      </key>
+        <key n="111"> 
+          <name>o</name>
+          <desc>Hook down.</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>controls/gear/tailhook</property>    <selected type="bool">false</selected>
+            <value type="double">1.0</value>
+          </binding>
+        </key>
+        <key n="79"> 
+          <name>O</name>
+          <desc>Hook Up.</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>controls/gear/tailhook</property>
+            <value type="double">0.0</value>
+          </binding>
+        </key>
+      <key n="100"> 
+        <name>d</name>
+        <desc>Toggle Master Arm on</desc>
+        <binding> 
+          <command>property-adjust</command>
+          <property>/controls/armament/master-arm</property>
+          <step type="double">1</step>
+          <min type="double">0</min>
+          <max type="double">1</max>
+        </binding>
+      </key>
+      <key n="68"> 
+        <name>D</name>
+        <desc>Toggle Master Arm off</desc>
+        <binding> 
+          <command>property-adjust</command>
+          <property>/controls/armament/master-arm</property>
+          <step type="double">-1</step>
+          <min type="double">0</min>
+          <max type="double">1</max>
+        </binding>
+      </key>
+      <key n="101">
+        <name>e</name>
+        <desc>Fire MG</desc>
+        <binding>
+          <command>nasal</command>
+          <script>weapons.fire_MG()</script>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>nasal</command>
+            <script>weapons.stop_MG()</script>
+          </binding>
+        </mod-up>
+      </key>
+
+     </keyboard>
+ </input>
+
+<!-- Nasal files/scripts -->
+  <nasal>
+		<R2800>
+				<file>Aircraft/F4U/Nasal/R2800.nas</file>
+		</R2800>
+    <f4u>
+      <file>Aircraft/F4U/Nasal/f4u.nas</file>
+    </f4u>
+		<weapons>
+			<file>Aircraft/F4U/Nasal/weapons.nas</file>
+		</weapons>
+
+		<failure>
+			<file>Aircraft/F4U/Nasal/failure.nas</file>
+		</failure>
+  </nasal>
+
+
+</PropertyList>
+
+
+
+

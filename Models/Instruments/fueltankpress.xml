@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>press25-us.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>plate</object-name>
+  <object-name>bezelinside</object-name>
+  <object-name>Needle1</object-name>
+  <emission>
+    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+    <red>0.5</red>
+    <green>0.25</green>
+    <blue>0.25</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Needle1</object-name>
+  <property>engines/engine[0]/oil-press</property>
+	<factor>0.3</factor>
+  <center>
+     <x-m>0.00</x-m>
+     <y-m>0.0</y-m>
+     <z-m>-0.003</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>

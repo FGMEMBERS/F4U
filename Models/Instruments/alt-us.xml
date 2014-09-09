@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>alt-us.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>needle1</object-name>
+  <object-name>needle2</object-name>
+  <object-name>needle3</object-name>
+  <object-name>Background</object-name>
+  <object-name>PressureDial</object-name>
+  <emission>
+    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    <red>0.5</red>
+    <green>0.25</green>
+    <blue>0.25</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>3</max-m>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>needle1</object-name>
+  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.36</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>needle2</object-name>
+  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.036</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>needle3</object-name>
+  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.0036</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>PressureDial</object-name>
+  <property>/instrumentation/altimeter/setting-inhg</property>
+  <interpolation>
+   <entry>
+    <ind>28</ind>
+    <dep>-200</dep>
+   </entry>
+   <entry>
+    <ind>30</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>31.3</ind>
+    <dep>130</dep>
+   </entry>
+  </interpolation>
+  <axis>
+
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>PressureDial</object-name>
+    <visible>true</visible>
+    <action>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step>0.009</step>
+        <min>0</min>
+        <max>60</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+ </animation>
+  <animation>
+    <type>pick</type>
+    <object-name>PressureDial</object-name>
+    <visible>true</visible>
+    <action>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step>-0.009</step>
+        <min>0</min>
+        <max>60</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+ </animation>
+
+</PropertyList>
+
+
