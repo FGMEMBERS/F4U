@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Takeoff checklist for the F4U Corsair in Flightgear
+Copyright (c) 2015 Ludovic Brenta <ludovic@ludovic-brenta.org>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+-->
+<PropertyList>
+
+  <title>Take off from carrier</title>
+
+  <item>
+    <name>Ailerons</name>
+    <value>30&#37; RIGHT</value>
+    <condition>
+      <greater-than>
+        <property>controls/flight/aileron</property>
+        <value>0.28</value>
+      </greater-than>
+      <less-than>
+        <property>controls/flight/aileron</property>
+        <value>0.32</value>
+      </less-than>
+    </condition>
+    <binding>
+      <command>property-assign</command>
+        <property>controls/flight/aileron</property>
+        <value>0.30</value>
+    </binding>
+  </item>
+
+  <item>
+    <name>Rudder</name>
+    <value>50&#37; LEFT</value>
+    <condition>
+      <greater-than>
+        <property>controls/flight/rudder</property>
+        <value>-0.52</value>
+      </greater-than>
+      <less-than>
+        <property>controls/flight/rudder</property>
+        <value>-0.48</value>
+      </less-than>
+    </condition>
+    <binding>
+      <command>property-assign</command>
+        <property>controls/flight/rudder</property>
+        <value>-0.50</value>
+    </binding>
+  </item>
+  
+  <item>
+    <name>Flaps</name>
+    <value>10 degrees</value>
+    <condition>
+      <greater-than>
+        <property>controls/flight/flaps</property>
+        <value>0.32</value>
+      </greater-than>
+      <less-than>
+        <property>controls/flight/flaps</property>
+        <value>0.34</value>
+      </less-than>
+    </condition>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/flight/flaps</property>
+      <value>0.3333334</value>
+    </binding>
+  </item>
+
+  <item>
+    <name>Propeller pitch (N)</name>
+    <value>Full fine</value>
+    <condition>
+      <greater-than>
+        <property>controls/engines/engine[0]/propeller-pitch</property>
+        <value>0.99</value>
+      </greater-than>
+    </condition>
+    <binding>
+      <command>property-interpolate</command>
+      <property>controls/engines/engine[0]/propeller-pitch</property>
+      <value>1</value>
+      <rate>0.5</rate>
+    </binding>
+  </item>
+
+  <item>
+    <name>Throttle: manifold pressure</name>
+    <value>53 inches</value>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/mp-inhg</property>
+        <value>50</value>
+      </greater-than>
+      <less-than>
+        <property>engines/engine[0]/mp-inhg</property>
+        <value>53.5</value>
+      </less-than>
+    </condition>
+  </item>
+
+  <item>
+    <name>Parking brake</name>
+    <value>RELEASED</value>
+    <condition>
+      <equals>
+        <property>controls/gear/brake-parking</property>
+        <value>0</value>
+      </equals>
+    </condition>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/gear/brake-parking</property>
+      <value>0</value>
+    </binding>
+  </item>
+
+  <item>
+    <name>Lift the tail SLOWLY</name>
+  </item>
+
+  <item>
+    <name>Airspeed: accelerate to</name>
+    <value>100 knots</value>
+    <condition>
+      <greater-than>
+        <property>instrumentation/airspeed-indicator/indicated-speed-kts</property>
+        <value>98</value>
+      </greater-than>
+    </condition>
+  </item>
+
+</PropertyList>

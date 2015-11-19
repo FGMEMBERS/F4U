@@ -92,7 +92,7 @@ var check_engine = func {
 	}
 	if (rs > 300000 ) {
 		setprop("/engines/engine[0]/overrev", 1);
-		kill_engine();
+		failure.kill_engine();
 	}	
 	#check for overboost
 	if (mp > 55) {
@@ -154,6 +154,7 @@ var close_cowlflaps = func {
 }
 
 var shift_blower_up = func {
+print ("Shift blower up");
 	if (blower.getValue() <= 0.3){
 		interpolate("controls/engines/engine[0]/boost", 0.75, 45);
 	}
@@ -162,6 +163,7 @@ var shift_blower_up = func {
 	}
 }
 var shift_blower_dn = func {
+print ("Shift blower down");
 	if (blower.getValue() >= 1.0){
 		interpolate("controls/engines/engine[0]/boost", 0.75, 45);
 	}

@@ -1,22 +1,5 @@
 This model is released under the terms of the GPLv2
 
-Keys:
-
-C	toggle canopy
-
-F	toggle forward fuselage door
-
-D	toggle cowlflaps
-
-Ctrl-b	toggle Blower
-
-Ctrl-l	lock tailwheel
-
-O	extend Tailhook
-
-o	retract Tailhook
-
-
 The Corsair has a working tailhook, the Logo and number
 are customizable by the properties "/sim/model/corsair/front"
 and "/sim/model/corsair/number". There are some examples in
