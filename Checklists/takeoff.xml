@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Takeoff checklist for the F4U Corsair in Flightgear
+Copyright (c) 2015 Ludovic Brenta <ludovic@ludovic-brenta.org>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+-->
+<PropertyList>
+
+  <title>Take off from land</title>
+
+  <item>
+    <name>Ailerons</name>
+    <value>50&#37; RIGHT</value>
+    <condition>
+      <greater-than>
+        <property>controls/flight/aileron</property>
+        <value>0.48</value>
+      </greater-than>
+      <less-than>
+        <property>controls/flight/aileron</property>
+        <value>0.52</value>
+      </less-than>
+    </condition>
+    <binding>
+      <command>property-assign</command>
+        <property>controls/flight/aileron</property>
+        <value>0.50</value>
+    </binding>
+  </item>
+
+  <item>
+    <name>Rudder</name>
+    <value>15&#37; LEFT</value>
+    <condition>
+      <greater-than>
+        <property>controls/flight/rudder</property>
+        <value>-0.17</value>
+      </greater-than>
+      <less-than>
+        <property>controls/flight/rudder</property>
+        <value>-0.13</value>
+      </less-than>
+    </condition>
+    <binding>
+      <command>property-assign</command>
+        <property>controls/flight/rudder</property>
+        <value>-0.15</value>
+    </binding>
+  </item>
+
+  <item>
+    <name>Parking brake</name>
+    <value>RELEASED</value>
+    <condition>
+      <equals>
+        <property>controls/gear/brake-parking</property>
+        <value>0</value>
+      </equals>
+    </condition>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/gear/brake-parking</property>
+      <value>0</value>
+    </binding>
+  </item>
+
+  <item>
+    <name>Throttle: manifold pressure</name>
+    <value>40 inches</value>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/mp-inhg</property>
+        <value>39</value>
+      </greater-than>
+      <less-than>
+        <property>engines/engine[0]/mp-inhg</property>
+        <value>41</value>
+      </less-than>
+    </condition>
+  </item>
+
+  <item>
+    <name>Airspeed: accelerate to</name>
+    <value>80 knots</value>
+    <condition>
+      <greater-than>
+        <property>instrumentation/airspeed-indicator/indicated-speed-kts</property>
+        <value>78</value>
+      </greater-than>
+    </condition>
+  </item>
+
+  <item>
+    <name>Lift the tail SLOWLY</name>
+  </item>
+
+  <item>
+    <name>Airspeed: accelerate to</name>
+    <value>100 knots</value>
+    <condition>
+      <greater-than>
+        <property>instrumentation/airspeed-indicator/indicated-speed-kts</property>
+        <value>78</value>
+      </greater-than>
+    </condition>
+  </item>
+
+  <item>
+    <name>Liftoff</name>
+  </item>
+
+</PropertyList>

@@ -131,7 +131,7 @@ setlistener("/controls/gear/gear-down", func(n) {
 setlistener("/gear/gear[3]/compression-norm", func(n) {
 		if (n.getValue() >=0.1 ) {
 				kill_engine();
-				print("propsrtrike");
+				print("Propeller strike!");
 		}
 });
 

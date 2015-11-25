@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Takeoff checklist for the F4U Corsair in Flightgear
+Copyright (c) 2015 Ludovic Brenta <ludovic@ludovic-brenta.org>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+-->
+<PropertyList>
+
+  <title>Before take-off</title>
+  <item>
+    <name>Engine</name>
+    <value>STARTED</value>
+    <condition>
+      <property>engines/engine[0]/engine-running</property>
+    </condition>
+    <binding>
+      <command>nasal</command>
+      <script>R2800.magicstart()</script>
+    </binding>
+  </item>
+  <item>
+    <name>Parking brake</name>
+    <value>SET</value>
+    <condition>
+      <property>controls/gear/brake-parking</property>
+    </condition>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/gear/brake-parking</property>
+      <value>1</value>
+    </binding>
+  </item>
+  <item>
+    <name>Wings</name>
+    <value>UNFOLDED</value>
+    <condition>
+      <equals>
+        <property>controls/wingfold/position-norm</property>
+        <value>0</value>
+      </equals>
+    </condition>
+    <binding>
+      <command>nasal</command>
+      <script>f4u.toggle_wingfold()</script>
+    </binding>
+  </item>
+  <item>
+    <name>Auto-coordination</name>
+    <value>OFF</value>
+    <condition>
+      <equals>
+        <property>/controls/flight/auto-coordination</property>
+        <value>false</value>
+      </equals>
+    </condition>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/flight/auto-coordination</property>
+      <value>false</value>
+    </binding>
+  </item>
+
+  <item>
+    <name>Elevator</name>
+    <value>FULL BACK</value>
+    <condition>
+      <equals>
+        <property>controls/flight/elevator</property>
+        <value>-1</value>
+      </equals>
+    </condition>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/flight/elevator</property>
+      <value>-1</value>
+    </binding>
+  </item>
+
+</PropertyList>

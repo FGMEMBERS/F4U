@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Climb checklist for the F4U Corsair in Flightgear
+Copyright (c) 2015 Ludovic Brenta <ludovic@ludovic-brenta.org>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+-->
+<PropertyList>
+
+  <title>Climb</title>
+
+  <item>
+    <name>Flaps</name>
+    <value>UP</value>
+    <condition>
+      <equals>
+        <property>controls/flight/flaps</property>
+        <value>0</value>
+      </equals>
+    </condition>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/flight/flaps</property>
+      <value>0</value>
+    </binding>
+  </item>
+
+  <item>
+    <name>Propeller pitch (Shift+N)</name>
+    <value>2500 RPM</value>
+    <condition>
+      <greater-than>
+        <property>controls/engines/engine[0]/propeller-pitch</property>
+        <value>0.48</value>
+      </greater-than>
+      <less-than>
+        <property>controls/engines/engine[0]/propeller-pitch</property>
+        <value>0.52</value>
+      </less-than>
+    </condition>
+    <binding>
+      <command>property-interpolate</command>
+      <property>controls/engines/engine[0]/propeller-pitch</property>
+      <value>0.5</value>
+      <rate>0.5</rate>
+    </binding>
+  </item>
+
+  <item>
+    <name>Throttle: manifold pressure</name>
+    <value>40 inches</value>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/mp-inhg</property>
+        <value>39</value>
+      </greater-than>
+      <less-than>
+        <property>engines/engine[0]/mp-inhg</property>
+        <value>41</value>
+      </less-than>
+    </condition>
+  </item>
+
+  <item>
+    <name>Gear</name>
+    <value>UP</value>
+    <condition>
+      <not>
+        <property>controls/gear/gear-down</property>
+      </not>
+    </condition>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/gear/gear-down</property>
+      <value>0</value>
+    </binding>
+  </item>
+
+  <item>
+    <name>Canopy</name>
+    <value>CLOSED</value>
+    <condition>
+      <equals>
+        <property>controls/canopy/position-norm</property>
+        <value>0</value>
+      </equals>
+    </condition>
+    <binding>
+      <command>nasal</command>
+      <script>f4u.toggle_canopy()</script>
+    </binding>
+  </item>
+
+  <item>
+    <name>Climb to</name>
+    <value>5500 ft</value>
+    <condition>
+      <greater-than>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        <value>5500</value>
+      </greater-than>
+    </condition>
+  </item>
+
+  <item>
+    <name>Throttle: manifold pressure</name>
+    <value>37 inches</value>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/mp-inhg</property>
+        <value>35</value>
+      </greater-than>
+      <less-than>
+        <property>engines/engine[0]/mp-inhg</property>
+        <value>49</value>
+      </less-than>
+    </condition>
+  </item>
+  
+  <item>
+    <name>Set supercharger</name>
+    <value>Low speed</value>
+    <condition>
+      <greater-than>
+        <property>controls/engines/engine[0]/boost</property>
+        <value>0.35</value> <!-- takes seconds to reach the next value -->
+      </greater-than>
+    </condition>
+    <binding>
+      <command>nasal</command>
+      <script>R2800.shift_blower_up()</script>
+    </binding>
+  </item>
+
+  <item>
+    <name>Throttle: manifold pressure</name>
+    <value>40 inches</value>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/mp-inhg</property>
+        <value>38</value>
+      </greater-than>
+      <less-than>
+        <property>engines/engine[0]/mp-inhg</property>
+        <value>41</value>
+      </less-than>
+    </condition>
+  </item>
+
+  <item>
+    <name>Climb to</name>
+    <value>16500 ft</value>
+    <condition>
+      <greater-than>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        <value>16500</value>
+      </greater-than>
+    </condition>
+  </item>
+
+  <item>
+    <name>Throttle: manifold pressure</name>
+    <value>37 inches</value>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/mp-inhg</property>
+        <value>35</value>
+      </greater-than>
+      <less-than>
+        <property>engines/engine[0]/mp-inhg</property>
+        <value>49</value>
+      </less-than>
+    </condition>
+  </item>
+  
+  <item>
+    <name>Set supercharger</name>
+    <value>High speed</value>
+    <condition>
+      <greater-than>
+        <property>controls/engines/engine[0]/boost</property>
+        <value>0.80</value> <!-- takes seconds to reach the next value -->
+      </greater-than>
+    </condition>
+    <binding>
+      <command>nasal</command>
+      <script>R2800.shift_blower_up()</script>
+    </binding>
+  </item>
+
+  <item>
+    <name>Throttle: manifold pressure</name>
+    <value>40 inches</value>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/mp-inhg</property>
+        <value>38</value>
+      </greater-than>
+      <less-than>
+        <property>engines/engine[0]/mp-inhg</property>
+        <value>41</value>
+      </less-than>
+    </condition>
+  </item>
+
+</PropertyList>
