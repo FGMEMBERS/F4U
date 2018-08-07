@@ -23,12 +23,16 @@ October 2006,  Detlef Faber
       <tag>ww2</tag>
       <tag>1940s</tag>
       <tag>tail-dragger</tag>
-      <tag>carrier-hook</tag>
+      <tag>tail-hook</tag>
       <tag>wing-fold</tag>
       <tag>fighter</tag>
       <tag>single-engine</tag>
       <tag>piston</tag>
       <tag>retractable-gear</tag>
+      <tag>propeller</tag>
+      <tag>radial</tag>
+      <tag>supercharged</tag>
+      <tag>variable-pitch</tag>
     </tags>
 
     <author>Detlef Faber</author>
@@ -74,6 +78,7 @@ October 2006,  Detlef Faber
 
     <model>
       <path>Aircraft/F4U/Models/F4U-1.xml</path>
+      <fallback-model-index type="int">404</fallback-model-index>
       <cockpit-visible type="bool">true</cockpit-visible>
       <logo>
 	<display type="int">2</display>

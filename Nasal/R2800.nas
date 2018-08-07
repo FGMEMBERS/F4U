@@ -137,7 +137,7 @@ var magicstart = func {
     setprop("/controls/engines/engine[0]/propeller-pitch",0.5);
     setprop("/engines/engine[0]/oil-visc",1);
     setprop("/engines/engine[0]/rpm",800);
-    setprop("/engines/engine[0]/engine-running",1);
+    setprop("/engines/engine[0]/running",1);
     setprop("/engines/engine[0]/out-of-fuel",0);
 }
 

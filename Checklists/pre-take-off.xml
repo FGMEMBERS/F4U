@@ -20,7 +20,7 @@ GNU General Public License for more details.
     <name>Engine</name>
     <value>STARTED</value>
     <condition>
-      <property>engines/engine[0]/engine-running</property>
+      <property>engines/engine[0]/running</property>
     </condition>
     <binding>
       <command>nasal</command>
