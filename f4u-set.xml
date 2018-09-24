@@ -183,32 +183,28 @@ October 2006,  Detlef Faber
       </key>
       <key>
         <name>f/F</name>
-        <desc>shift Blower one Gear lower/higher</desc>
+        <desc>open/close cowl flaps</desc>
       </key>
       <key>
-        <name>Ctrl-F</name>
+        <name>Ctrl+F</name>
         <desc>toggle Wingfold (only when Engine is running)</desc>
-      </key>
-      <key>
-        <name>Ctrl+L</name>
-        <desc>toggle Tailwheel Lock</desc>
       </key>
       <key>
         <name>o/O</name>
         <desc>extend/retract Tailhook</desc>
       </key>
       <key>
-        <name>u/U</name>
-        <desc>open/close cowl Flaps</desc>
+        <name>Alt+S</name>
+        <desc>Toggle supercharger speed</desc>
       </key>
       <key>
         <name>Ctrl+W</name>
         <desc>Master Arm on/off</desc>
       </key>
       <text>
-Maximum allowable Manifold pressure is 54 inhg, War emergency power is 59 inhg for 5 minutes. Maximum allowable RPM is 2700. Allowed Cylinder Head Temperature is 260 °C. Adjust Cowlflaps (c/C) to maintain approx. 230 °C.
+Maximum allowable Manifold pressure is 54 inhg, War emergency power is 59 inhg for 5 minutes. Maximum allowable RPM is 2700. Allowed Cylinder Head Temperature is 260 °C. Adjust Cowlflaps (f/F) to maintain approx. 230 °C.
 
-The engines supercharger can be operated in three modes: neutral, low Blower and high Blower. neutral is used from ground level up to 5500 ft, low Blower from 5500 ft up to 22000 ft, high Blower from 16500 and upwards. To shift blower upwards throttle back to avoid excessive Manifold Pressure, then shift Blower up (F).
+The enging has a two-speed, two-stage supercharger.  Initially the supercharger is in low speed.  When climbing above 16400 ft, throttle back to avoid excessive Manifold Pressure, then shift to high speed (Alt+S).
 
 ---Take Off---
 See aircraft checklists.
@@ -354,6 +350,9 @@ Lower flaps and gear under 150 kts. Approach Speed is 90-100 kts.  A curved appr
 	<float>4</float>
 	<float>5</float>
 	<float>6</float>
+        <float n="7" alias="/surface-positions/cowl-flaps-norm"/>
+        <float n="8" alias="/controls/canopy/position-norm"/>
+        <float n="9" alias="/controls/wingfold/position-norm"/>
 	<string>0</string>
 	<string n="1">0</string>
       </generic>
@@ -501,21 +500,12 @@ Lower flaps and gear under 150 kts. Approach Speed is 90-100 kts.  A curved appr
         </binding>
       </key>
 
-      <key n="12">
-        <name>Ctrl+L</name>
-        <desc>Toggle Tailwheel Lock</desc>
-        <binding>
-          <command>property-toggle</command>
-          <property>controls/gear/tailwheel-lock</property>
-        </binding>
-      </key>
-
       <key n="23">
         <name>Ctrl+W</name>
         <desc>Toggle Master Arm</desc>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/armament/master-arm</property>
+          <property>controls/armament/master-arm</property>
         </binding>
       </key>
 
@@ -530,10 +520,19 @@ Lower flaps and gear under 150 kts. Approach Speed is 90-100 kts.  A curved appr
 
       <key n="70">
         <name>F</name>
-        <desc>shift blower up</desc>
+        <desc>Close cowl flaps</desc>
         <binding>
-          <command>nasal</command>
-          <script>R2800.shift_blower_up()</script>
+          <command>property-adjust</command>
+          <property>controls/engines/engine/cowl-flaps-norm</property>
+          <step>-0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+        <binding>
+          <command>property-interpolate</command>
+          <property>surface-positions/cowl-flaps-norm</property> <!-- prop to adjust -->
+          <property>controls/engines/engine/cowl-flaps-norm</property> <!-- target value -->
+          <rate>0.1</rate> <!-- per second -->
         </binding>
       </key>
 
@@ -544,15 +543,6 @@ Lower flaps and gear under 150 kts. Approach Speed is 90-100 kts.  A curved appr
           <command>property-assign</command>
           <property>controls/gear/tailhook</property>
           <value type="double">0.0</value>
-        </binding>
-      </key>
-
-      <key n="85">
-        <name>U</name>
-        <desc>Close cowl flaps</desc>
-        <binding>
-          <command>nasal</command>
-          <script>R2800.close_cowlflaps()</script>
         </binding>
       </key>
 
@@ -573,10 +563,19 @@ Lower flaps and gear under 150 kts. Approach Speed is 90-100 kts.  A curved appr
 
       <key n="102">
         <name>f</name>
-        <desc>shift Blower down</desc>
+        <desc>Open cowl flaps</desc>
         <binding>
-          <command>nasal</command>
-          <script>R2800.shift_blower_dn()</script>
+          <command>property-adjust</command>
+          <property>controls/engines/engine/cowl-flaps-norm</property>
+          <step>0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+        <binding>
+          <command>property-interpolate</command>
+          <property>surface-positions/cowl-flaps-norm</property> <!-- prop to adjust -->
+          <property>controls/engines/engine/cowl-flaps-norm</property> <!-- target value -->
+          <rate>0.1</rate> <!-- per second -->
         </binding>
       </key>
 
@@ -589,6 +588,19 @@ Lower flaps and gear under 150 kts. Approach Speed is 90-100 kts.  A curved appr
           <selected type="bool">false</selected>
           <value type="double">1.0</value>
         </binding>
+      </key>
+
+      <key n="115">
+        <name>s</name>
+        <mod-alt>
+          <desc>Toggle supercharger speed</desc>
+          <binding>
+            <command>property-cycle</command>
+            <property>controls/engines/engine/boost</property>
+            <value>0.7</value> <!-- low speed -->
+            <value>1.0</value> <!-- high speed -->
+          </binding>
+        </mod-alt>
       </key>
 
       <key n="117">
@@ -618,5 +630,9 @@ Lower flaps and gear under 150 kts. Approach Speed is 90-100 kts.  A curved appr
       <file>Aircraft/F4U/Nasal/failure.nas</file>
     </failure>
   </nasal>
+
+  <surface-positions>
+    <cowl-flaps-norm type="double">1.0</cowl-flaps-norm>
+  </surface-positions>
 
 </PropertyList>

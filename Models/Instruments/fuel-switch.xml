@@ -1,0 +1,56 @@
+<PropertyList>
+  <path>fuel-switch.ac</path>
+
+  <animation>
+    <type>knob</type>
+    <object-name>lever</object-name>
+    <property>controls/fuel/tank-selector</property>
+    <factor>-60</factor>
+    <offset-deg>5</offset-deg>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/fuel/tank-selector</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>5</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script><![CDATA[
+          var switch = getprop ("controls/fuel/tank-selector");
+          print ("Selecting fuel tanks: switch = " ~ switch);
+          var main_tank = props.globals.getNode ("consumables/fuel/tank[0]/selected");
+          var left_wing_tank = props.globals.getNode ("consumables/fuel/tank[1]/selected");
+          var right_wing_tank = props.globals.getNode ("consumables/fuel/tank[2]/selected");
+          var center_drop_tank = props.globals.getNode ("consumables/fuel/tank[3]/selected");
+          var left_drop_tank = props.globals.getNode ("consumables/fuel/tank[4]/selected");
+          var right_drop_tank = props.globals.getNode ("consumables/fuel/tank[5]/selected");
+          var configurations = [ [ 0, 0, 0, 0, 0 ],
+                                 [ 0, 1, 0, 0, 0 ],
+                                 [ 0, 0, 1, 0, 0 ],
+                                 [ 1, 0, 0, 0, 0 ],
+                                 [ 0, 0, 0, 1, 0 ],
+                                 [ 0, 0, 0, 0, 1 ] ];
+          main_tank.setBoolValue (configurations [switch] [0]);
+          left_wing_tank.setBoolValue (configurations [switch] [1]);
+          right_wing_tank.setBoolValue (configurations [switch] [2]);
+          center_drop_tank.setBoolValue (configurations [switch] [3]);
+          left_drop_tank.setBoolValue (configurations [switch] [4]);
+          right_drop_tank.setBoolValue (configurations [switch] [4]);
+        ]]></script>
+      </binding>
+    </action>
+  </animation>
+</PropertyList>

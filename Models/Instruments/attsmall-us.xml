@@ -10,7 +10,7 @@
   <object-name>Pin</object-name>
   <object-name>Wings</object-name>
   <emission>
-    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    <factor-prop>controls/lighting/instruments-norm</factor-prop>
     <red>0.5</red>
     <green>0.25</green>
     <blue>0.25</blue>

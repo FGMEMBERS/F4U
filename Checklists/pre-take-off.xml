@@ -59,7 +59,7 @@ GNU General Public License for more details.
     <condition>
       <equals>
         <property>/controls/flight/auto-coordination</property>
-        <value>false</value>
+        <value>0</value>
       </equals>
     </condition>
     <binding>

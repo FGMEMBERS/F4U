@@ -56,23 +56,6 @@ var toggle_tailhook = func {
   }
 }
 
-    setlistener("/controls/fuel/switch-position", func(n) {
-	position=n.getValue();
-    setprop("/consumables/fuel/tank[0]/selected",0);
-    setprop("/consumables/fuel/tank[1]/selected",0);
-    setprop("/consumables/fuel/tank[2]/selected",0);
-    setprop("/consumables/fuel/tank[3]/selected",0);
-    setprop("/consumables/fuel/tank[4]/selected",0);
-    setprop("/consumables/fuel/tank[5]/selected",0);
-        if(position >= 0.0){
-						print (position);
-
-               setprop("/consumables/fuel/tank[" ~ position ~ "]/selected",1);
-
-    };
-   },1);
-
-
 aircraft.livery.init("Aircraft/F4U/Models/Liveries", "sim/model/livery/name");
 
 var hook = aircraft.door.new ("/controls/gear/tailhook/",3);

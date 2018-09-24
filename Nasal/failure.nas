@@ -46,7 +46,7 @@ var check_airframe = func {
 	if ( flappos.getValue() > 0 ) {
 
 				if (as > flapoverspeed) {
-						print ("flaps overspeed!");
+						setprop ("/sim/messages/copilot", "flaps overspeed!");
 						var load = as - flapoverspeed;
 						print (load*flappos.getValue());
 						if (load * flappos.getValue() > 20 ) {
@@ -63,7 +63,7 @@ var check_airframe = func {
 # check for excessive g-load or overspeed
 		#print(gl, breakload - 0.0004 * ow );
 	if (gl > (breakload - 0.0003 * ow) or (as > breakspeed)) {
-		print ("break");
+		setprop ("/sim/messages/copilot", "Wing torn by excessive G-load!");
 		if (slip < 0) {
 			setprop ("sim/failure/left-wing-torn", "1");
 			fail_r.setValue(1);
@@ -73,7 +73,7 @@ var check_airframe = func {
 		}
 	}
 	if (gl > (bendload - 0.0004 * ow)) {
-		print ("bend");
+		setprop ("/sim/messages/copilot", "Gear bent and stuck by excessive G-load!");
 		if (slip < 0) {
 			gear0.setAttribute("writable",0);
 		} else {
@@ -98,12 +98,11 @@ var process_hit = func {
 		var hit1z = hitz.getValue();
 
 		print ("hit X: ", hitx.getValue(), " hit_y: ", hity.getValue(), "hit_Z: ", hitz.getValue());
-	
 		var count = 0;
 		var zone = 1;
 		while ( zone > 0 ) {
 				if ( hit1x >= hitZones[count][2] and hit1x <= hitZones[count][3] ) {
-						print ( hitZones[count][0], " was hit!");
+						setprop ("/sim/messages/copilot",  hitZones[count][0], " was hit!");
 						}
 				zone = hitZones[count][1];
 				print (zone);

@@ -9,7 +9,7 @@
   <object-name>Face</object-name>
   <object-name>needle1</object-name>
   <emission>
-    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    <factor-prop>controls/lighting/instruments-norm</factor-prop>
     <red>0.5</red>
     <green>0.25</green>
     <blue>0.25</blue>
@@ -19,7 +19,7 @@
  <animation>
   <type>rotate</type>
   <object-name>needle1</object-name>
-  <property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+  <property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
   <interpolation>
    <entry>
     <ind>-6000</ind>
