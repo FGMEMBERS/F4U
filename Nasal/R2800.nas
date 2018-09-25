@@ -8,7 +8,6 @@ var carbetemp = props.globals.getNode("engines/engine[0]/carburator-entry-temp-d
 var manpress = props.globals.getNode("engines/engine[0]/mp-osi");
 var engstat = props.globals.getNode("engines/engine[0]/running");
 var oiltemp = props.globals.getNode("engines/engine[0]/oil-temperature-degf");
-var blower = props.globals.getNode("controls/engines/engine[0]/boost");
 var airspeed = props.globals.getNode("velocities/airspeed-kt");
 var envtemp = props.globals.getNode("environment/temperature-degc");
 var cowlflap = props.globals.getNode("controls/engines/engine[0]/cowl-flaps-norm");
@@ -130,3 +129,23 @@ var magicstart = func {
 }
 
 setlistener("/sim/signals/fdm-initialized",init);
+
+var boost = props.globals.getNode ("controls/engines/engine/boost");
+var shift_boost_up = func {
+print ("Shift boost up");
+	if (boost.getValue() <= 0.3){
+		boost.setValue(0.7);
+	}
+	else {
+		boost.setValue(1.0);
+	}
+}
+var shift_boost_down = func {
+print ("Shift boost down");
+	if (boost.getValue() >= 1.0){
+		boost.setValue(0.75);
+	}
+	else {
+		boost.setValue(0.3);
+	}
+}

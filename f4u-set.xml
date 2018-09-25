@@ -14,7 +14,7 @@ October 2006,  Detlef Faber
     <long-description>The Vought F4U Corsair is an American fighter aircraft that
       saw service primarily in World War II and the Korean War.  The Corsair was
       designed as a carrier-based aircraft but was initially used on land by the
-      U.S. marines due to it's difficult carrier landing characteristics.  Once
+      U.S. marines due to its difficult carrier landing characteristics.  Once
       the landing problems were resolved by the Royal Navy Fleet Air Arm, it
       was used extensively on carriers by a variety of nationalities.
     </long-description>
@@ -37,6 +37,12 @@ October 2006,  Detlef Faber
 
     <author>Detlef Faber</author>
     <status>beta</status>
+    <rating>
+      <FDM type="int">3</FDM>
+      <systems type="int">3</systems>
+      <cockpit type="int">3</cockpit>
+      <model type="int">4</model>
+    </rating>
     <flight-model>yasim</flight-model>
     <aero>f4u-yasim</aero>
     <failure>
@@ -194,8 +200,12 @@ October 2006,  Detlef Faber
         <desc>extend/retract Tailhook</desc>
       </key>
       <key>
+        <name>Alt+Q</name>
+        <desc>Shift supercharger speed down: high, low, neutral</desc>
+      </key>
+      <key>
         <name>Alt+S</name>
-        <desc>Toggle supercharger speed</desc>
+        <desc>Shift supercharger speed up: neutral, low, high</desc>
       </key>
       <key>
         <name>Ctrl+W</name>
@@ -204,7 +214,7 @@ October 2006,  Detlef Faber
       <text>
 Maximum allowable Manifold pressure is 54 inhg, War emergency power is 59 inhg for 5 minutes. Maximum allowable RPM is 2700. Allowed Cylinder Head Temperature is 260 °C. Adjust Cowlflaps (f/F) to maintain approx. 230 °C.
 
-The enging has a two-speed, two-stage supercharger.  Initially the supercharger is in low speed.  When climbing above 16400 ft, throttle back to avoid excessive Manifold Pressure, then shift to high speed (Alt+S).
+The enging has a two-speed, two-stage supercharger.  Initially the supercharger is in neutral speed (i.e. only the first stage is engaged).  When climbing above 8000 ft, throttle back to avoid excessive Manifold Pressure, then shift to low speed (Alt+S).  Simiarly shift to high speed above 16400 ft.
 
 ---Take Off---
 See aircraft checklists.
@@ -445,7 +455,7 @@ Lower flaps and gear under 150 kts. Approach Speed is 90-100 kts.  A curved appr
         <magnetos>0</magnetos>
 	<mixture0>0</mixture0>
         <cowl-flaps-norm type="float">1.0</cowl-flaps-norm>
-        <boost type="double">0.3</boost>
+        <boost type="double">0.3</boost> <!-- "neutral" position, only the first stage engaged -->
       </engine>
     </engines>
     <flight>
@@ -590,26 +600,26 @@ Lower flaps and gear under 150 kts. Approach Speed is 90-100 kts.  A curved appr
         </binding>
       </key>
 
-      <key n="115">
-        <name>s</name>
+      <key n="113">
+        <name>q</name>
         <mod-alt>
-          <desc>Toggle supercharger speed</desc>
+          <desc>Shift supercharger speeds down</desc>
           <binding>
-            <command>property-cycle</command>
-            <property>controls/engines/engine/boost</property>
-            <value>0.7</value> <!-- low speed -->
-            <value>1.0</value> <!-- high speed -->
+            <command>nasal</command>
+            <script>R2800.shift_boost_down();</script>
           </binding>
         </mod-alt>
       </key>
 
-      <key n="117">
-        <name>u</name>
-        <desc>Open cowl flaps</desc>
-        <binding>
-          <command>nasal</command>
-          <script>R2800.open_cowlflaps()</script>
-        </binding>
+      <key n="115">
+        <name>s</name>
+        <mod-alt>
+          <desc>Shift supercharger speeds up</desc>
+          <binding>
+            <command>nasal</command>
+            <script>R2800.shift_boost_up();</script>
+          </binding>
+        </mod-alt>
       </key>
 
     </keyboard>
