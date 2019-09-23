@@ -20,7 +20,7 @@ GNU General Public License for more details.
     <name>Engine</name>
     <value>STARTED</value>
     <condition>
-      <property>engines/engine[0]/engine-running</property>
+      <property>engines/engine[0]/running</property>
     </condition>
     <binding>
       <command>nasal</command>
@@ -59,7 +59,7 @@ GNU General Public License for more details.
     <condition>
       <equals>
         <property>/controls/flight/auto-coordination</property>
-        <value>false</value>
+        <value>0</value>
       </equals>
     </condition>
     <binding>

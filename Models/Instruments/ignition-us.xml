@@ -4,9 +4,9 @@
  <path>ignition-us.ac</path>
 
  <animation>
-  <type>rotate</type>
+  <type>knob</type>
   <object-name>Handle</object-name>
-  <property>/controls/engines/engine[0]/magnetos</property>
+  <property>controls/engines/engine[0]/magnetos</property>
   <interpolation>
    <entry>
     <ind>0</ind>
@@ -35,6 +35,16 @@
    <y>0</y>
    <z>0</z>
   </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>controls/engines/engine[0]/magnetos</property>
+      <factor>1</factor>
+      <min>0</min>
+      <max>3</max>
+      <wrap>false</wrap>
+    </binding>
+  </action>
  </animation>
 
 </PropertyList>

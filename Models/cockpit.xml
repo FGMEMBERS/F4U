@@ -245,7 +245,7 @@
  </model>
  <model>
   <name>fuel switch</name>
-  <path>Aircraft/F4U/Models/Instruments/fuel-switch.ac</path>
+  <path>Aircraft/F4U/Models/Instruments/fuel-switch.xml</path>
   <offsets>
    <x-m>4.68</x-m>
    <y-m>-0.238</y-m>

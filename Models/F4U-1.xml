@@ -13,7 +13,10 @@
       var update = aircraft.overlay_update.new();
       update.add("Aircraft/F4U/Models/AI-Liveries", "sim/model/livery/file");
       update.add("Aircraft/Generic/Logos", "sim/multiplay/generic/string");
-				var self = cmdarg();
+      var self = cmdarg();
+      self.getNode ("surface-positions/cowl-flaps-norm", 1).alias (self.getNode ("sim/multiplay/generic/float[7]"));
+      self.getNode ("controls/canopy/position-norm", 1).alias (self.getNode ("sim/multiplay/generic/float[8]"));
+      self.getNode ("controls/wingfold/position-norm", 1).alias (self.getNode ("sim/multiplay/generic/float[9]"));
       var target_in = self.getNode("sim/multiplay/generic/string[1]", 1);
 			var hitcount = self.getNode("hitcount",1);
 			var hit_x = self.getNode("combat/hit/hit_x",1);
@@ -1098,7 +1101,7 @@
  <animation>
   <type>rotate</type>
   <object-name>cowlflap1.L</object-name>
-  <property>controls/engines/engine[0]/cowl-flaps-norm</property>
+  <property>surface-positions/cowl-flaps-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -1127,7 +1130,7 @@
  <animation>
   <type>rotate</type>
   <object-name>cowlflap2.L</object-name>
-  <property>controls/engines/engine[0]/cowl-flaps-norm</property>
+  <property>surface-positions/cowl-flaps-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -1155,7 +1158,7 @@
  <animation>
   <type>rotate</type>
   <object-name>cowlflap3.L</object-name>
-  <property>controls/engines/engine[0]/cowl-flaps-norm</property>
+  <property>surface-positions/cowl-flaps-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -1183,7 +1186,7 @@
  <animation>
   <type>rotate</type>
   <object-name>cowlflap4.L</object-name>
-  <property>controls/engines/engine[0]/cowl-flaps-norm</property>
+  <property>surface-positions/cowl-flaps-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -1211,7 +1214,7 @@
  <animation>
   <type>rotate</type>
   <object-name>cowlflap5.L</object-name>
-  <property>controls/engines/engine[0]/cowl-flaps-norm</property>
+  <property>surface-positions/cowl-flaps-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -1239,7 +1242,7 @@
  <animation>
   <type>rotate</type>
   <object-name>cowlflap1.R</object-name>
-  <property>controls/engines/engine[0]/cowl-flaps-norm</property>
+  <property>surface-positions/cowl-flaps-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -1268,7 +1271,7 @@
  <animation>
   <type>rotate</type>
   <object-name>cowlflap2.R</object-name>
-  <property>controls/engines/engine[0]/cowl-flaps-norm</property>
+  <property>surface-positions/cowl-flaps-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -1296,7 +1299,7 @@
  <animation>
   <type>rotate</type>
   <object-name>cowlflap3.R</object-name>
-  <property>controls/engines/engine[0]/cowl-flaps-norm</property>
+  <property>surface-positions/cowl-flaps-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -1324,7 +1327,7 @@
  <animation>
   <type>rotate</type>
   <object-name>cowlflap4.R</object-name>
-  <property>controls/engines/engine[0]/cowl-flaps-norm</property>
+  <property>surface-positions/cowl-flaps-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -1352,7 +1355,7 @@
  <animation>
   <type>rotate</type>
   <object-name>cowlflap5.R</object-name>
-  <property>controls/engines/engine[0]/cowl-flaps-norm</property>
+  <property>surface-positions/cowl-flaps-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -1382,7 +1385,7 @@
  <animation>
   <type>rotate</type>
   <object-name>cowlflap6</object-name>
-  <property>controls/engines/engine[0]/cowl-flaps-norm</property>
+  <property>surface-positions/cowl-flaps-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>

@@ -8,7 +8,6 @@ var carbetemp = props.globals.getNode("engines/engine[0]/carburator-entry-temp-d
 var manpress = props.globals.getNode("engines/engine[0]/mp-osi");
 var engstat = props.globals.getNode("engines/engine[0]/running");
 var oiltemp = props.globals.getNode("engines/engine[0]/oil-temperature-degf");
-var blower = props.globals.getNode("controls/engines/engine[0]/boost");
 var airspeed = props.globals.getNode("velocities/airspeed-kt");
 var envtemp = props.globals.getNode("environment/temperature-degc");
 var cowlflap = props.globals.getNode("controls/engines/engine[0]/cowl-flaps-norm");
@@ -33,13 +32,9 @@ var init = func {
 }
 var main_loop = func {
 #	print ("engstat: ", engstat.getValue());
-	if (engstat.getValue() == 1){
-		engine_update();
-		fluid_update();
-		check_engine();
-	} else {
-		cool_down();
-	}
+	engine_update();
+	fluid_update();
+	check_engine();
   settimer(main_loop, looptime);
 }
 
@@ -59,7 +54,10 @@ var engine_update = func {
 	var mp = manpress.getValue();
 	var mix = mixture.getValue();
 	# calculate carburator entry temperature
-	var cat = et0 + 0.6 * mp;
+        var cat = et0;
+        if (engstat.getBoolValue ()) {
+		cat += 0.6 * mp;
+        }
 	#print ("CET: ",cat);
 	carbetemp.setValue(cat);
 	# summing up various parameters with a weighing factor
@@ -91,6 +89,7 @@ var check_engine = func {
 		# print (rs0, " ",rs + rs0);
 	}
 	if (rs > 300000 ) {
+                setprop ("/sim/messages/copilot", "Engine died due to excessive RPM!");
 		setprop("/engines/engine[0]/overrev", 1);
 		failure.kill_engine();
 	}	
@@ -102,6 +101,7 @@ var check_engine = func {
 	}
 	if (ob > 500 ) {
 		setprop("/engines/engine[0]/overboost", 1);
+                setprop ("/sim/messages/copilot", "Engine died due to excessive manifold pressure!");
 		failure.kill_engine();
 	}
 	if ( gload.getValue() < -0.3 ) {
@@ -119,58 +119,33 @@ var check_engine = func {
 }
 
 
-
-var cool_down = func {
-#	print ("cooling");
-	var et0 = envtemp.getValue();
-	interpolate ("engines/engine[0]/cylinder-temp-degc", et0, 300);
-	interpolate ("engines/engine[0]/oil-temp-calc", et0, 500);
-	interpolate ("engines/engine[0]/oil-visc" , 0, 500);
-}
-
-
 var magicstart = func {
     setprop("/consumables/fuel/tank[0]/selected",1);
     setprop("/controls/engines/engine[0]/magnetos",3);
-    setprop("/controls/engines/engine[0]/coolflap-auto",1);
-    setprop("/controls/engines/engine[0]/radlever",1);
-    setprop("/controls/engines/engine[0]/propeller-pitch",0.5);
     setprop("/engines/engine[0]/oil-visc",1);
     setprop("/engines/engine[0]/rpm",800);
-    setprop("/engines/engine[0]/engine-running",1);
+    setprop("/engines/engine[0]/running",1);
     setprop("/engines/engine[0]/out-of-fuel",0);
 }
 
-
-var open_cowlflaps = func {
-	if (cowlflap.getValue() < 1.0){
-		interpolate("controls/engines/engine[0]/cowl-flaps-norm",cowlflap.getValue() + 0.1,1);
-	}
-}
-var close_cowlflaps = func {
-	if (cowlflap.getValue() > 0.0){
-		interpolate("controls/engines/engine[0]/cowl-flaps-norm",cowlflap.getValue() -0.1,1);
-	}
-}
-
-var shift_blower_up = func {
-print ("Shift blower up");
-	if (blower.getValue() <= 0.3){
-		interpolate("controls/engines/engine[0]/boost", 0.75, 45);
-	}
-	else {
-		interpolate("controls/engines/engine[0]/boost", 1.0, 45);
-	}
-}
-var shift_blower_dn = func {
-print ("Shift blower down");
-	if (blower.getValue() >= 1.0){
-		interpolate("controls/engines/engine[0]/boost", 0.75, 45);
-	}
-	else {
-		interpolate("controls/engines/engine[0]/boost", 0.3, 45);
-	}
-}
-
-
 setlistener("/sim/signals/fdm-initialized",init);
+
+var boost = props.globals.getNode ("controls/engines/engine/boost");
+var shift_boost_up = func {
+print ("Shift boost up");
+	if (boost.getValue() <= 0.3){
+		boost.setValue(0.7);
+	}
+	else {
+		boost.setValue(1.0);
+	}
+}
+var shift_boost_down = func {
+print ("Shift boost down");
+	if (boost.getValue() >= 1.0){
+		boost.setValue(0.75);
+	}
+	else {
+		boost.setValue(0.3);
+	}
+}

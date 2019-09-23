@@ -9,7 +9,7 @@
   <object-name>Needle1</object-name>
   <object-name>Needle2</object-name>
   <emission>
-    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    <factor-prop>controls/lighting/instruments-norm</factor-prop>
     <red>0.5</red>
     <green>0.25</green>
     <blue>0.25</blue>
@@ -19,7 +19,7 @@
  <animation>
   <type>rotate</type>
   <object-name>Needle1</object-name>
-  <property>/instrumentation/magnetic-compass/indicated-heading-deg</property>
+  <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
   <axis>
    <x>-1</x>
    <y>0</y>
@@ -30,7 +30,7 @@
  <animation>
   <type>rotate</type>
   <object-name>Needle2</object-name>
-  <property>/instrumentation/magnetic-compass/bookmark-heading-deg</property>
+  <property>instrumentation/magnetic-compass/bookmark-heading-deg</property>
   <axis>
    <x>-1</x>
    <y>0</y>

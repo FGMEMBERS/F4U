@@ -16,6 +16,7 @@ GNU General Public License for more details.
 <PropertyList>
 
   <title>Climb</title>
+  <!-- source: F4U Corsair instructional video, https://www.youtube.com/watch?v=PzLM4-grT2g -->
 
   <item>
     <name>Flaps</name>
@@ -56,15 +57,15 @@ GNU General Public License for more details.
 
   <item>
     <name>Throttle: manifold pressure</name>
-    <value>40 inches</value>
+    <value>48 inches</value>
     <condition>
       <greater-than>
         <property>engines/engine[0]/mp-inhg</property>
-        <value>39</value>
+        <value>47</value>
       </greater-than>
       <less-than>
         <property>engines/engine[0]/mp-inhg</property>
-        <value>41</value>
+        <value>49</value>
       </less-than>
     </condition>
   </item>
@@ -101,26 +102,26 @@ GNU General Public License for more details.
 
   <item>
     <name>Climb to</name>
-    <value>5500 ft</value>
+    <value>8000 ft</value>
     <condition>
       <greater-than>
         <property>instrumentation/altimeter/indicated-altitude-ft</property>
-        <value>5500</value>
+        <value>8000</value>
       </greater-than>
     </condition>
   </item>
 
   <item>
     <name>Throttle: manifold pressure</name>
-    <value>37 inches</value>
+    <value>38 inches</value>
     <condition>
       <greater-than>
         <property>engines/engine[0]/mp-inhg</property>
-        <value>35</value>
+        <value>37</value>
       </greater-than>
       <less-than>
         <property>engines/engine[0]/mp-inhg</property>
-        <value>49</value>
+        <value>39</value>
       </less-than>
     </condition>
   </item>
@@ -129,28 +130,29 @@ GNU General Public License for more details.
     <name>Set supercharger</name>
     <value>Low speed</value>
     <condition>
-      <greater-than>
+      <equals>
         <property>controls/engines/engine[0]/boost</property>
-        <value>0.35</value> <!-- takes seconds to reach the next value -->
-      </greater-than>
+        <value>0.7</value>
+      </equals>
     </condition>
     <binding>
-      <command>nasal</command>
-      <script>R2800.shift_blower_up()</script>
+      <command>property-assign</command>
+      <property>controls/engines/engine[0]/boost</property>
+      <value>0.7</value>
     </binding>
   </item>
 
   <item>
     <name>Throttle: manifold pressure</name>
-    <value>40 inches</value>
+    <value>48 inches</value>
     <condition>
       <greater-than>
         <property>engines/engine[0]/mp-inhg</property>
-        <value>38</value>
+        <value>47</value>
       </greater-than>
       <less-than>
         <property>engines/engine[0]/mp-inhg</property>
-        <value>41</value>
+        <value>49</value>
       </less-than>
     </condition>
   </item>
@@ -168,15 +170,15 @@ GNU General Public License for more details.
 
   <item>
     <name>Throttle: manifold pressure</name>
-    <value>37 inches</value>
+    <value>38 inches</value>
     <condition>
       <greater-than>
         <property>engines/engine[0]/mp-inhg</property>
-        <value>35</value>
+        <value>37</value>
       </greater-than>
       <less-than>
         <property>engines/engine[0]/mp-inhg</property>
-        <value>49</value>
+        <value>39</value>
       </less-than>
     </condition>
   </item>
@@ -185,28 +187,29 @@ GNU General Public License for more details.
     <name>Set supercharger</name>
     <value>High speed</value>
     <condition>
-      <greater-than>
+      <equals>
         <property>controls/engines/engine[0]/boost</property>
-        <value>0.80</value> <!-- takes seconds to reach the next value -->
-      </greater-than>
+        <value>1.0</value>
+      </equals>
     </condition>
     <binding>
-      <command>nasal</command>
-      <script>R2800.shift_blower_up()</script>
+      <command>property-assign</command>
+      <property>controls/engines/engine[0]/boost</property>
+      <value>1.0</value>
     </binding>
   </item>
 
   <item>
     <name>Throttle: manifold pressure</name>
-    <value>40 inches</value>
+    <value>48 inches</value>
     <condition>
       <greater-than>
         <property>engines/engine[0]/mp-inhg</property>
-        <value>38</value>
+        <value>47</value>
       </greater-than>
       <less-than>
         <property>engines/engine[0]/mp-inhg</property>
-        <value>41</value>
+        <value>49</value>
       </less-than>
     </condition>
   </item>
